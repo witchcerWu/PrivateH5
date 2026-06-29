@@ -1,0 +1,115 @@
+/* ========================================
+   base.css - Reset + CSS Variables + 通用容器
+   ======================================== */
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/Alibaba-PuHuiTi-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/Alibaba-PuHuiTi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/Alibaba-PuHuiTi-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/Alibaba-PuHuiTi-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/Alibaba-PuHuiTi-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'AlibabaPuHuiTi', 'AlibabaSans112-Medium', sans-serif;
+}
+
+:root {
+  --bg: #F0F0F0;
+  --black: #000000;
+  --white: #FFFFFF;
+  --green: #41AB6B;
+  --page-width: 1440px;
+  --side-padding: 47px;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.4s;
+  --transition-normal: 0.5s;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;            /* 保持可滚动，macOS 动量引擎才会持续生成 wheel 事件 */
+  overscroll-behavior: none;
+  scrollbar-width: none;          /* Firefox 隐藏滚动条 */
+  background: var(--bg);
+}
+html::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari 隐藏滚动条 */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  min-height: calc(100% + 10000px); /* 巨大滚动空间，动量永远触不到边缘 */
+  overflow: hidden;
+  overscroll-behavior: none;
+  margin: 0;
+  opacity: 0;
+}
+body.ready {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* 分页滚动容器 - fixed 定位，html 滚动不影响视觉 */
+.page-wrapper {
+  width: var(--page-width);
+  height: 1080px;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--page-scale, 1));
+  transform-origin: center center;
+}
+
+/* 内层包裹，通过 transform 移动 */
+.page-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  will-change: transform;
+  transition: none;
+}
+
+/* 通用 Section 容器 */
+.section {
+  background: var(--bg);
+  overflow: hidden;
+  width: var(--page-width);
+  position: relative;
+  flex-shrink: 0;
+  contain: layout style paint;
+}

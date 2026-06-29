@@ -1,0 +1,2981 @@
+/* ========================================
+   sections.css - 各屏特有定位/尺寸样式
+   ======================================== */
+
+/* ========== Section 1: From Random To Organized Shop ========== */
+.s1 { height: 1710px; }
+
+/* Header with subtitle */
+.s1 .section-header {
+  width: 1346px;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 38px;
+  left: var(--side-padding);
+}
+
+.s1 .section-header__top {
+  width: 1346px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s1 .section-header__title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.s1 .section-header__line {
+  flex: 1;
+}
+
+/* Main titles */
+.s1__title-top {
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 120px;
+  color: var(--black);
+  white-space: nowrap;
+  position: absolute;
+  z-index: 3;
+  top: 134px;
+  left: 162px;
+}
+
+.s1__title-bottom {
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 120px;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 5;
+  top: 254px;
+  left: 163px;
+}
+
+.s1__title-bottom .green { color: var(--green); }
+.s1__title-bottom .black { color: var(--black); }
+
+/* Display area */
+.s1__display {
+  width: 1050px;
+  height: 732px;
+  position: absolute;
+  z-index: 4;
+  top: 277px;
+  left: 187px;
+}
+
+.s1__display img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Decoration icon */
+.s1__deco-icon {
+  width: 151px;
+  height: 67px;
+  position: absolute;
+  z-index: 6;
+  top: 372px;
+  left: 414px;
+}
+
+/* Capsule button position */
+.s1 .capsule-btn {
+  min-width: 629px;
+  min-height: 50px;
+  z-index: 7;
+  top: 411px;
+  right: 243px;
+}
+
+/* Deco lines */
+.s1 .deco-line-left { top: 103px; }
+.s1 .deco-line-right { top: 1px; }
+.s1__deco-line-bottom {
+  bottom: 210px;
+  width: 1390px;
+  height: 0.5px;
+  background: #000;
+}
+
+/* Phone cards */
+.s1 .phone-card--left {
+  width: 384px; height: 1032px;
+  z-index: 10; bottom: 157px; left: 108px;
+}
+.s1 .phone-card--center {
+  width: 384px; height: 1032px;
+  z-index: 11; bottom: 109px; left: 528px;
+}
+.s1 .phone-card--right {
+  width: 384px; height: 1032px;
+  z-index: 12; bottom: 61px; right: 108px;
+}
+
+.s1 .phone-card--left:hover,
+.s1 .phone-card--center:hover,
+.s1 .phone-card--right:hover {
+  transform: translateY(-30px) scale(1.03);
+  z-index: 20 !important;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
+}
+
+.s1__display:hover {
+  transform: translateY(-16px) scale(1.02);
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.12));
+}
+
+
+/* ========== Section 2: 现状梳理 ========== */
+.s2 { height: 1512px; }
+.s2 [data-anim] { pointer-events: none; }
+
+.s2 .section-header {
+  width: 1357px;
+  top: 37px;
+  left: 36px;
+}
+
+.s2 .section-header__title {
+  font-size: 40px;
+}
+
+.s2 .section-header__line {
+  flex: 1;
+  margin-left: 27px;
+}
+
+/* Left decoration */
+.s2__left-deco {
+  width: 29px;
+  height: 1376px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+  top: 136px;
+  left: 35px;
+}
+
+.s2__left-deco-icon { width: 29px; height: 30px; }
+
+.s2__left-deco-line {
+  width: 0.5px;
+  height: 1306px;
+  margin-top: 40px;
+}
+
+/* Deco lines */
+.s2__deco-line-right {
+  top: 0;
+  width: 2px;
+  height: 1512px;
+}
+
+/* Quote blocks */
+.s2 .quote-block--top {
+  min-width: 881px;
+  z-index: 13;
+  top: 132px;
+  left: 117px;
+}
+
+.s2 .quote-block__line:first-child {
+  position: relative;
+}
+
+.s2 .quote-block__line:first-child .quote-block__mark {
+  position: absolute;
+  right: 100%;
+  top: 0;
+}
+
+.s2 .quote-block--top .quote-block__line:last-child {
+  margin-top: 2px;
+}
+
+.s2 .quote-block--bottom {
+  min-width: 880px;
+  z-index: 13;
+  bottom: 68px;
+  left: 132px;
+}
+
+.s2 .quote-block--bottom .quote-block__line:last-child {
+  margin-top: 2px;
+}
+
+.s2__bottom-mark-end {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 41px;
+  color: var(--black);
+  position: absolute;
+  z-index: 3;
+  bottom: 70px;
+  left: 776px;
+}
+
+/* Stats bar */
+.s2__stats-bar {
+  position: absolute;
+  z-index: 13;
+  top: 245px;
+  left: 157px;
+}
+
+/* Labels */
+.s2 .labels-col {
+  z-index: 21;
+  top: 388px;
+  left: 172px;
+}
+
+.s2 .labels-col__item + .labels-col__item {
+  margin-top: 111px;
+}
+
+.s2 .labels-col__item:last-child {
+  margin-top: 439px;
+}
+
+
+/* ========== Section 3: 问题与策略 ========== */
+.s3 { height: 1080px; background: #F0F0F0; }
+
+/* Quote banner */
+.s3__quote-banner {
+  width: 1391px;
+  height: 118px;
+  position: relative;
+  z-index: 1;
+}
+
+.s3__quote-banner-bg {
+  width: 1391px;
+  height: 118px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.s3__quote-banner-content {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 29px;
+  min-width: 976px;
+  height: 97px;
+}
+
+.s3__quote-sub {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 33px;
+  color: var(--white);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 45px;
+}
+
+.s3__quote-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 1px;
+  left: 0;
+  height: 63px;
+}
+
+.s3__quote-main .quote-block__mark {
+  color: var(--white);
+}
+
+.s3__quote-main-text {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 41px;
+  color: var(--white);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  margin-left: 22px;
+}
+
+.s3__quote-main-text--green {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 41px;
+  color: #ABF78E;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+}
+
+.s3__emoji {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 55px;
+  position: absolute;
+  z-index: 2;
+  top: 48px;
+  right: 45px;
+}
+
+/* Layer card images */
+.s3__layer-card-img {
+  width: 366px;
+  height: 163px;
+  position: absolute;
+}
+
+/* Problem rows */
+.s3__problem-row {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.s3__problem-labels {
+  display: flex;
+  flex-direction: row;
+  width: 662px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.s3__label {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+}
+
+.s3__problem-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s3__problem-title {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 41px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s3__problem-dash-img {
+  width: 327px;
+  height: 6px;
+  margin-left: 24px;
+}
+
+.s3__strategy-title {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 41px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-left: 54px;
+}
+
+.s3__problem-detail-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.s3__problem-desc {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  width: 543px;
+  flex-shrink: 0;
+  word-break: break-all;
+}
+
+/* Step badge */
+.s3__step-badge {
+  background: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 210px;
+  min-height: 45px;
+  padding: 6px 16px;
+  box-sizing: border-box;
+  margin-left: 44px;
+}
+
+.s3__step-text {
+  font-size: 24px;
+  line-height: 33px;
+  color: #ABF78E;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s3__step-text .light { font-weight: 300; }
+.s3__step-text .bold { font-weight: 500; }
+
+/* Decoration lines */
+.s3__vline-left {
+  width: 6px;
+  height: 584px;
+  position: absolute;
+  z-index: 0;
+  top: 294px;
+  left: 41px;
+}
+
+.s3__vline-right {
+  width: 0.5px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  background: #000;
+}
+
+.s3__hline {
+  width: 1156px;
+  height: 2px;
+  position: absolute;
+  z-index: 4;
+  left: 238px;
+}
+
+.s3__hline-bottom {
+  width: 1158px;
+  height: 2px;
+  position: absolute;
+  z-index: 10;
+  bottom: 198px;
+  left: 236px;
+}
+
+
+/* ========== Section 4: 三组机制 ========== */
+.s4 { height: 1080px; }
+
+/* Header */
+.s4__header {
+  width: 1357px;
+  height: 82px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 1;
+  top: 39px;
+  left: 36px;
+}
+
+.s4__header-top {
+  width: 475px;
+  height: 82px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -15px;
+}
+
+.s4__header-title-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 443px;
+}
+
+.s4__header-title {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 41px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s4__header-line {
+  flex: 1;
+  height: 0.5px;
+  margin-left: 15px;
+  margin-top: 24px;
+}
+
+.s4__header-subtitle {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 41px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+/* Column dividers */
+.s4__col-divider {
+  width: 0.5px;
+  height: 685px;
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  overflow: hidden;
+}
+
+.s4__col-line-mid {
+  width: 0.5px;
+  height: 547px;
+  position: absolute;
+  z-index: 5;
+  bottom: 148px;
+}
+
+.s4__col-num {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 6;
+  top: 386px;
+}
+
+/* Column content */
+.s4__col-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 9;
+}
+
+.s4__col-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: break-spaces;
+  word-break: break-all;
+  width: 324px;
+  margin-top: 58px;
+}
+
+.s4__col-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 30px;
+}
+
+.s4__bullet {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 33px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s4__bullet b {
+  font-weight: 500;
+}
+
+.s4__col-icon {
+  position: absolute;
+  z-index: 10;
+  width: 122px;
+  height: 116px;
+}
+
+/* Bottom bar */
+.s4__bottom-bar {
+  width: 1391px;
+  height: 91px;
+  position: absolute;
+  z-index: 14;
+  bottom: 73px;
+  left: 0;
+}
+
+.s4__bottom-bar-line {
+  width: 1395px;
+  height: 0.5px;
+  position: absolute;
+  bottom: 0;
+  left: -3px;
+}
+
+.s4__bottom-bar-bg {
+  width: 1343px;
+  height: 76px;
+  position: absolute;
+  top: 15px;
+  left: 48px;
+}
+
+.s4__bar-text {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 33px;
+  color: #F0F0F0;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 21px;
+}
+
+.s4__bar-icon {
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  bottom: 23px;
+}
+
+.s4__bar-sep {
+  width: 0.5px;
+  height: 91px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* ========== Section 5: 基建重构详解 (3帧滚动切换) ========== */
+.s5 {
+  height: 1080px;
+  overflow: visible;
+  scroll-snap-align: none;
+}
+
+.s5__sticky {
+  position: relative;
+  top: 0;
+  width: var(--page-width);
+  height: 1080px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Header */
+.s5__header {
+  width: 1357px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 20;
+  top: 38px;
+  left: 36px;
+}
+
+.s5__header-top {
+  width: 1357px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s5__header-label {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s5__header-line {
+  flex: 1;
+  height: 0.5px;
+}
+
+.s5__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-top: -1px;
+}
+
+/* Decoration lines */
+.s5__vline-left {
+  width: 0.5px;
+  height: 685px;
+  position: absolute;
+  z-index: 20;
+  top: 131px;
+  left: 47px;
+}
+
+.s5__bottom-line {
+  width: 1390px;
+  height: 0.5px;
+  position: absolute;
+  z-index: 20;
+  bottom: 47px;
+  left: 0;
+}
+
+.s5__bottom-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 20;
+  bottom: 48px;
+  left: 48px;
+}
+
+/* Bottom info */
+.s5__bottom-info {
+  width: 286px;
+  height: 33px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  bottom: 356px;
+  left: 150px;
+}
+
+.s5__info-dot {
+  background: #2D2D2B;
+  width: 11px;
+  height: 11px;
+}
+
+.s5__info-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  margin-left: 7px;
+}
+
+/* Indicator dots */
+.s5__indicator {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  bottom: 242px;
+  left: 688px;
+}
+
+.s5__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #9596A2;
+  transition: width 0.4s var(--ease-out), background 0.4s ease;
+}
+
+.s5__dot--active {
+  width: 48px;
+  background: var(--black);
+}
+
+/* Frames */
+.s5__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms var(--ease-out);
+}
+
+.s5__frame--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.s5__frame--below {
+  opacity: 0;
+}
+
+/* 右侧面板做垂直动画，左侧不动 */
+.s5__frame .s5__panel,
+.s5__frame .s5__overflow-img {
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s5__frame--active .s5__panel,
+.s5__frame--active .s5__overflow-img {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.s5__frame--below .s5__panel,
+.s5__frame--below .s5__overflow-img {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Left diagram */
+.s5__left-diagram {
+  width: 557px;
+  height: 446px;
+  position: absolute;
+  z-index: 4;
+  top: 269px;
+  left: 73px;
+}
+
+/* Connector image */
+.s5__connector {
+  position: absolute;
+  z-index: 3;
+}
+
+.s5__connector-label {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 5;
+}
+
+/* Right panel */
+.s5__panel {
+  position: absolute;
+  z-index: 6;
+  top: 230px;
+  right: 100px;
+  width: 682px;
+}
+
+.s5__panel-header {
+  border-radius: 12px 12px 0 0;
+  background: var(--black);
+  width: 682px;
+  min-height: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.s5__panel-title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 41px;
+  color: #ABF78E;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s5__panel-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: var(--white);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  margin-left: 8px;
+}
+
+.s5__panel-body {
+  border-radius: 0 0 12px 12px;
+  background: var(--white);
+  border: 0.5px solid var(--black);
+  border-top: none;
+  width: 682px;
+  height: 498px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.s5__panel-body img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Frame 3 overflow/breakout image */
+.s5__overflow-img {
+  position: absolute;
+}
+
+.s5__panel-body--overflow {
+  height: 478px;
+}
+
+/* ========== Section 6: 拉齐UI Token界定约束边界 ========== */
+.s6 {
+  height: 1080px;
+  background: #F0F0F0;
+}
+
+.s6__header {
+  width: 1357px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  top: 38px;
+  left: 36px;
+}
+
+.s6__header-top {
+  width: 1357px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s6__header-label {
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.s6__header-line {
+  flex: 1;
+  height: 0.5px;
+}
+
+.s6__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: #000;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-top: -1px;
+}
+
+.s6__left {
+  position: absolute;
+  top: 145px;
+  left: 42px;
+  width: 316px;
+  height: 935px;
+  display: flex;
+  flex-direction: row;
+}
+
+.s6__dot-line {
+  width: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 11px;
+}
+
+.s6__dot {
+  background: #000;
+  width: 11px;
+  height: 11px;
+}
+
+.s6__vline {
+  width: 0.5px;
+  height: 908px;
+  margin-top: 8px;
+}
+
+.s6__left-content {
+  width: 293px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.s6__left-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s6__left-sub {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #000;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-top: 20px;
+  margin-left: 1px;
+}
+
+.s6__left-images {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 260px;
+  margin-top: 12px;
+  margin-left: 1px;
+}
+
+.s6__left-images img {
+  width: 260px;
+  height: 156px;
+}
+
+.s6__right {
+  position: absolute;
+  top: 198px;
+  left: 366px;
+  width: 960px;
+  height: 849px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s6__right-sub {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #000;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s6__right-top-img {
+  width: 960px;
+  height: 332px;
+  margin-top: 12px;
+}
+
+.s6__right-bottom-img {
+  width: 960px;
+  height: 466px;
+  margin-top: 12px;
+}
+
+.s6__vline-right {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+
+/* ========== Section 7: 拉通首页标准化框架 (2帧切换) ========== */
+.s7 {
+  height: 1080px;
+  overflow: visible;
+}
+
+.s7__sticky {
+  position: relative;
+  top: 0;
+  width: var(--page-width);
+  height: 1080px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Frames */
+.s7__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 21;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms var(--ease-out);
+}
+
+.s7__frame--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* State label (Before/After) */
+.s7__state-label {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 2;
+  top: 238px;
+  left: 131px;
+}
+
+/* Indicator dots */
+.s7__indicator {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  bottom: 60px;
+  left: 688px;
+}
+
+.s7__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #9596A2;
+  transition: width 0.4s var(--ease-out), background 0.4s ease;
+}
+
+.s7__dot--active {
+  width: 48px;
+  background: var(--black);
+}
+
+/* Title block */
+.s7__title-block {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 20;
+  top: 38px;
+  left: 36px;
+}
+
+.s7__title-sub {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s7__title-main {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-top: -1px;
+}
+
+
+
+/* Left vertical line */
+.s7__vline-left {
+  width: 0.5px;
+  height: 914px;
+  position: absolute;
+  z-index: 3;
+  top: 131px;
+  left: 47px;
+}
+
+/* Left annotation */
+.s7__left-annotation {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 4;
+  top: 322px;
+  left: 131px;
+}
+
+.s7__annotation-label {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+}
+
+.s7__annotation-img {
+  width: 318px;
+  height: 505px;
+  margin-top: 17px;
+}
+
+/* Center phone */
+.s7__phone-center {
+  width: 240px;
+  height: 943px;
+  position: absolute;
+  z-index: 25;
+  top: 137px;
+  left: 471px;
+}
+
+/* Right annotation lines */
+.s7__rline-top {
+  width: 0.5px;
+  height: 160px;
+  position: absolute;
+  z-index: 6;
+  top: 177px;
+  left: 729px;
+}
+
+.s7__rline-mid {
+  width: 0.5px;
+  height: 536px;
+  position: absolute;
+  z-index: 6;
+  top: 348px;
+  left: 729px;
+}
+
+.s7__rline-bottom {
+  width: 0.5px;
+  height: 185px;
+  position: absolute;
+  z-index: 6;
+  bottom: 0;
+  left: 729px;
+}
+
+/* Annotation rows */
+.s7__anno-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  z-index: 7;
+  right: 391px;
+}
+
+.s7__anno-row--head {
+  top: 170px;
+  left: 753px;
+}
+
+.s7__anno-row--mid {
+  top: 382px;
+  left: 752px;
+}
+
+.s7__anno-row--waterfall {
+  top: 803px;
+  left: 751px;
+}
+
+.s7__anno-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s7__anno-dash {
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  margin-left: 11px;
+  min-width: 0;
+  background-image: repeating-linear-gradient(to right, var(--black) 0, var(--black) 6px, transparent 6px, transparent 10px);
+}
+
+/* Annotation text blocks */
+.s7__anno-text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 7;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+}
+
+.s7__anno-text--head {
+  top: 200px;
+  left: 755px;
+  width: 237px;
+}
+
+.s7__anno-text--mid {
+  top: 412px;
+  left: 752px;
+  width: 249px;
+}
+
+.s7__anno-text--waterfall {
+  top: 830px;
+  left: 752px;
+  width: 180px;
+}
+
+/* Right phone images (Before frame) */
+.s7__phone-right {
+  position: absolute;
+  z-index: 9;
+  width: 240px;
+  right: 151px;
+}
+
+.s7__phone-right--top {
+  top: 159px;
+  height: 157px;
+}
+
+.s7__phone-right--mid {
+  top: 371px;
+  height: 378px;
+}
+
+.s7__phone-right--bottom {
+  top: 792px;
+  height: 232px;
+}
+
+
+/* Top horizontal line */
+.s7__hline-top {
+  height: 0.5px;
+  position: absolute;
+  z-index: 20;
+  top: 47px;
+  left: 405px;
+  right: 47px;
+  background: #000;
+}
+
+/* Right vertical edge line */
+.s7__vline-right {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+/* Bottom horizontal line */
+.s7__hline-bottom {
+  width: 1440px;
+  height: 0.5px;
+  position: absolute;
+  z-index: 20;
+  bottom: 34px;
+  left: -48px;
+}
+
+
+/* ========== Section 8: 以三组机制重建首页秩序 (选中02) ========== */
+.s8 { height: 1080px; }
+
+/* ========== Section 9: 建立动态流转准入规则 ========== */
+.s9 { height: 1080px; background: #F0F0F0; }
+
+.s9__header {
+  position: absolute;
+  top: 38px;
+  left: 36px;
+  right: 47px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  z-index: 2;
+}
+.s9__header-text {
+  display: flex;
+  flex-direction: column;
+}
+.s9__header-sub {
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+}
+.s9__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: #000;
+  margin-top: -1px;
+}
+.s9__header-line {
+  flex: 1;
+  height: 0.5px;
+  margin-top: 9px;
+}
+
+.s9__section-dot {
+  width: 11px;
+  height: 11px;
+  background: #000;
+  flex-shrink: 0;
+}
+.s9__label {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #000;
+}
+
+/* Left panel */
+.s9__left {
+  position: absolute;
+  top: 145px;
+  left: 42px;
+  width: 505px;
+}
+
+.s9__challenge {
+  position: relative;
+  padding-left: 23px;
+}
+.s9__challenge > .s9__section-dot {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.s9__section-line {
+  position: absolute;
+  left: 5px;
+  top: 20px;
+  width: 0.5px;
+  height: 318px;
+}
+.s9__challenge-content {
+  padding-right: 33px;
+}
+.s9__challenge-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  margin-top: 16px;
+  margin-bottom: 15px;
+}
+.s9__challenge-desc .orange { color: #FF6010; }
+
+.s9__data-table-img {
+  width: 449px;
+  height: 152px;
+}
+
+/* Solution */
+.s9__solution {
+  margin-top: 8px;
+  padding-left: 23px;
+  position: relative;
+}
+.s9__solution > .s9__section-dot {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.s9__solution > .s9__label {
+  display: block;
+  margin-bottom: 17px;
+}
+.s9__solution-body {
+  display: flex;
+  gap: 11px;
+}
+.s9__solution-line {
+  width: 0.5px;
+  height: 504px;
+  position: absolute;
+  left: 5px;
+  top: 44px;
+}
+.s9__solution-content {
+  position: relative;
+  width: 460px;
+  height: 524px;
+}
+.s9__solution-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 435px;
+}
+.s9__solution-desc .orange { color: #FF6010; }
+.s9__solution-img {
+  width: 460px;
+  height: 468px;
+  position: absolute;
+  top: 102px;
+  left: 17px;
+  z-index: 3;
+}
+
+/* Right panel */
+.s9__right {
+  position: absolute;
+  top: 145px;
+  left: 547px;
+  right: 94px;
+}
+.s9__right-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.s9__right-vline-wrap {
+  position: absolute;
+  top: 28px;
+  left: -2px;
+  width: 11px;
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.s9__right-vline {
+  width: 1px;
+  height: 595px;
+}
+.s9__right-vline-dot {
+  width: 11px;
+  height: 11px;
+  background: #000;
+  margin-top: 14px;
+}
+
+/* Phones */
+.s9__phones {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  left: 34px;
+  width: 765px;
+  height: 392px;
+}
+.s9__phone-img {
+  width: 150px;
+  height: 348px;
+}
+.s9__phone-group {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+.s9__phone-arrow {
+  width: 11px;
+  height: 16px;
+  margin-top: 207px;
+}
+.s9__phone-labeled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  margin-left: 20px;
+}
+.s9__phone-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #000;
+}
+
+/* Bottom images */
+.s9__bottom-images {
+  position: absolute;
+  top: 417px;
+  left: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 773px;
+  height: 429px;
+}
+.s9__bottom-img-table {
+  width: 762px;
+  height: 161px;
+}
+.s9__bottom-img-flow {
+  width: 773px;
+  height: 217px;
+  margin-top: 51px;
+}
+
+.s9__vline-right {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+
+/* ========== Section 9: 扩展稳态框架下的弹性模版 ========== */
+.s10 { height: 1080px; background: #F0F0F0; }
+
+.s10__header {
+  position: absolute;
+  top: 38px;
+  left: 36px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.s10__header-sub {
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+}
+.s10__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: #000;
+  margin-top: -1px;
+}
+
+.s10__content {
+  position: absolute;
+  top: 145px;
+  left: 42px;
+  width: 1245px;
+  height: 935px;
+}
+
+.s10__col-marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+.s10__col-marker--left {
+  top: 0;
+  left: 0;
+}
+.s10__col-marker--mid {
+  top: 0;
+  left: 395px;
+}
+.s10__col-marker--right {
+  top: 0;
+  left: 873px;
+}
+.s10__section-dot {
+  width: 11px;
+  height: 11px;
+  background: #000;
+  align-self: flex-start;
+}
+.s10__label {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  position: absolute;
+  top: -11px;
+  left: 23px;
+  white-space: nowrap;
+}
+.s10__vline {
+  width: 1px;
+  height: 908px;
+  margin-top: 8px;
+}
+
+.s10__body {
+  position: relative;
+  margin-top: 46px;
+}
+
+/* Phone column */
+.s10__phone-col {
+  position: absolute;
+  top: 11px;
+  left: 33px;
+}
+.s10__phone-img {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+
+/* Template grid */
+.s10__templates {
+  position: absolute;
+  top: 11px;
+  left: 424px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.s10__template-row {
+  display: flex;
+  align-items: center;
+  gap: 141px;
+}
+.s10__template-row > img {
+  width: 338px;
+  height: 88px;
+  object-fit: cover;
+}
+.s10__template-row--tall > img {
+  height: 226px;
+}
+
+/* S9 Carousel - horizontal slide */
+.s10__carousel {
+  position: relative;
+  width: 338px;
+  height: 88px;
+  overflow: hidden;
+}
+.s10__template-row--tall .s10__carousel {
+  height: 226px;
+}
+.s10__carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+/* 2-image carousel: 6s cycle */
+.s10__carousel--2 img:nth-child(1) {
+  animation: s10SlideX2-1 6s cubic-bezier(.4,0,.2,1) infinite;
+}
+.s10__carousel--2 img:nth-child(2) {
+  animation: s10SlideX2-2 6s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes s10SlideX2-1 {
+  0%, 40%   { transform: translateX(0); }
+  50%       { transform: translateX(-100%); }
+  50.01%    { transform: translateX(100%); }
+  90%       { transform: translateX(100%); }
+  100%      { transform: translateX(0); }
+}
+@keyframes s10SlideX2-2 {
+  0%        { transform: translateX(100%); }
+  40%       { transform: translateX(100%); }
+  50%       { transform: translateX(0); }
+  90%       { transform: translateX(0); }
+  100%      { transform: translateX(-100%); }
+}
+/* 3-image carousel: 9s cycle (3s per image = same rhythm as 2-image) */
+.s10__carousel--3 img:nth-child(1) {
+  animation: s10SlideX3-1 9s cubic-bezier(.4,0,.2,1) infinite;
+}
+.s10__carousel--3 img:nth-child(2) {
+  animation: s10SlideX3-2 9s cubic-bezier(.4,0,.2,1) infinite;
+}
+.s10__carousel--3 img:nth-child(3) {
+  animation: s10SlideX3-3 9s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes s10SlideX3-1 {
+  0%, 27%   { transform: translateX(0); }
+  33%       { transform: translateX(-100%); }
+  33.01%    { transform: translateX(100%); }
+  93%       { transform: translateX(100%); }
+  100%      { transform: translateX(0); }
+}
+@keyframes s10SlideX3-2 {
+  0%        { transform: translateX(100%); }
+  27%       { transform: translateX(100%); }
+  33%       { transform: translateX(0); }
+  60%       { transform: translateX(0); }
+  67%       { transform: translateX(-100%); }
+  67.01%    { transform: translateX(100%); }
+  100%      { transform: translateX(100%); }
+}
+@keyframes s10SlideX3-3 {
+  0%        { transform: translateX(100%); }
+  60%       { transform: translateX(100%); }
+  67%       { transform: translateX(0); }
+  93%       { transform: translateX(0); }
+  100%      { transform: translateX(-100%); }
+}
+
+.s10__vline-right {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+
+/* ========== Section 10: 扩展稳态框架下的弹性模版 (3帧滚动切换) ========== */
+.s11 {
+  height: 1080px;
+  overflow: visible;
+  background: #F0F0F0;
+}
+
+.s11__sticky {
+  position: relative;
+  top: 0;
+  width: var(--page-width);
+  height: 1080px;
+  background: #F0F0F0;
+  overflow: hidden;
+}
+
+/* Header */
+.s11__header {
+  width: 1357px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 20;
+  top: 38px;
+  left: 36px;
+}
+
+.s11__header-top {
+  width: 1357px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s11__header-label {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s11__header-line {
+  flex: 1;
+  height: 0.5px;
+}
+
+.s11__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+  margin-top: -1px;
+}
+
+/* Left marker (matching s10 style) */
+.s11__col-marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  top: 145px;
+  left: 42px;
+}
+.s11__section-dot {
+  width: 11px;
+  height: 11px;
+  background: #000;
+  align-self: flex-start;
+}
+.s11__left-label {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000;
+  position: absolute;
+  top: -11px;
+  left: 23px;
+  white-space: nowrap;
+}
+.s11__vline-left {
+  width: 1px;
+  height: 908px;
+  margin-top: 8px;
+}
+
+/* Left phone card */
+.s11__phone-img {
+  width: 300px;
+  height: 820px;
+  position: absolute;
+  z-index: 20;
+  top: 190px;
+  left: 75px;
+}
+
+/* Right vertical line */
+.s11__vline-right {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+/* Indicator dots */
+.s11__indicator {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  bottom: 40px;
+  left: 688px;
+}
+
+.s11__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #9596A2;
+  transition: width 0.4s var(--ease-out), background 0.4s ease;
+}
+
+.s11__dot--active {
+  width: 48px;
+  background: var(--black);
+}
+
+/* Frames */
+.s11__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.s11__frame--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.s11__frame--below {
+  opacity: 0;
+}
+
+/* Frame content area */
+.s11__frame-content {
+  position: absolute;
+  top: 145px;
+  left: 497px;
+  right: 94px;
+  bottom: 80px;
+  display: flex;
+  gap: 30px;
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s11__frame--active .s11__frame-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.s11__frame--below .s11__frame-content {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+/* Columns */
+.s11__col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  padding-left: 23px;
+}
+
+.s11__col-marker-inline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 11px;
+}
+
+.s11__col-dot {
+  width: 11px;
+  height: 11px;
+  background: #000;
+  flex-shrink: 0;
+}
+
+.s11__col-vline {
+  width: 1px;
+  flex: 1;
+  margin-top: 8px;
+  background: repeating-linear-gradient(to bottom, #000 0px, #000 4px, transparent 4px, transparent 8px);
+}
+
+.s11__col-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  white-space: nowrap;
+}
+
+.s11__col-title--hidden {
+  visibility: hidden;
+}
+
+.s11__col-sub {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  color: var(--black);
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  margin-top: 4px;
+}
+
+.s11__col-sub--hidden {
+  visibility: hidden;
+}
+
+.s11__col-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.s11__col-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ========== Section 12: 以三组机制重建首页秩序 (选中03) ========== */
+.s12 { height: 1080px; }
+
+/* ========== Section 13: 构建信息层级映射体系 ========== */
+.s13 {
+  height: 1080px;
+  background: #F0F0F0;
+}
+
+/* Header */
+.s13__header {
+  position: absolute;
+  top: 38px;
+  left: 36px;
+  right: 47px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s13__header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.s13__header-label {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s13__header-line {
+  flex: 1;
+  height: 0.5px;
+}
+
+.s13__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  font-family: 'AlibabaSans112-Medium', sans-serif;
+  color: var(--black);
+}
+
+/* Subtitle tags row */
+.s13__subtitle-row {
+  position: absolute;
+  top: 157px;
+  left: 42px;
+  width: 849px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s13__tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.s13__tag--right {
+  position: absolute;
+  left: 684px;
+}
+
+.s13__tag-dot {
+  width: 11px;
+  height: 11px;
+  background: var(--black);
+}
+
+.s13__tag-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+/* Bottom horizontal line */
+.s13__hline-bottom {
+  position: absolute;
+  bottom: 34px;
+  left: 2px;
+  width: 1390px;
+}
+
+/* Left vertical line */
+.s13__vline-left {
+  position: absolute;
+  top: 193px;
+  left: 47px;
+  width: 0.5px;
+  height: 855px;
+}
+
+/* Left content area */
+.s13__left-content {
+  position: absolute;
+  top: 195px;
+  left: 64px;
+  width: 601px;
+  height: 806px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Upper comparison */
+.s13__compare-upper {
+  height: 569px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.s13__before-col {
+  width: 261px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s13__after-col {
+  width: 310px;
+  margin-left: 27px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s13__after-col .s13__col-label {
+  margin-left: 3px;
+}
+
+.s13__after-col .s13__col-desc {
+  margin-top: 2px;
+}
+
+.s13__col-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 27px;
+}
+
+.s13__col-desc {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 27px;
+}
+
+.s13__col-desc--pre {
+  white-space: break-spaces;
+}
+
+.s13__col-dash {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  flex-shrink: 0;
+  background-image: repeating-linear-gradient(to right, var(--black) 0, var(--black) 6px, transparent 6px, transparent 10px);
+}
+
+.s13__col-dash--top {
+  margin-top: 44px;
+}
+
+.s13__before-header {
+  width: 255px;
+  height: 61px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.s13__before-header-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 158px;
+}
+
+.s13__before-body {
+  width: 261px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.s13__before-mid-row {
+  width: 255px;
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 34px;
+}
+
+.s13__col-img {
+  display: block;
+}
+
+.s13__col-img--mt19 {
+  margin-top: 19px;
+}
+
+.s13__col-img--mt43 {
+  margin-top: 43px;
+}
+
+.s13__col-img--mt8 {
+  margin-top: 8px;
+}
+
+.s13__col-img--mt13 {
+  margin-top: 13px;
+}
+
+/* Lower comparison */
+.s13__compare-lower {
+  margin-top: 40px;
+  height: 197px;
+}
+
+.s13__lower-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s13__lower-before-text {
+  width: 288px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.s13__lower-images {
+  width: 601px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+
+/* Right content area */
+.s13__right-content {
+  position: absolute;
+  top: 193px;
+  right: 89px;
+  width: 620px;
+  height: 852px;
+  display: flex;
+  flex-direction: row;
+}
+
+.s13__right-before {
+  width: 281px;
+  height: 852px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s13__right-vline {
+  width: 0.5px;
+  height: 852px;
+}
+
+.s13__right-before-inner {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s13__right-label-row {
+  width: 255px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.s13__right-before-inner .s13__col-desc {
+  margin-top: 7px;
+  margin-left: 3px;
+}
+
+.s13__right-after {
+  width: 310px;
+  margin-left: 29px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s13__right-after .s13__col-desc {
+  margin-top: 6px;
+  margin-left: 3px;
+}
+
+/* Right edge vertical line */
+.s13__vline-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+/* ========== Section 12: 构建信息层级映射体系-节促氛围 ========== */
+.s14 {
+  height: 1080px;
+  background: #F0F0F0;
+}
+
+/* Outer container */
+.s14__container {
+  width: 1392px;
+  height: 1008px;
+  position: absolute;
+  top: 36px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.s14__header {
+  width: 1357px;
+  position: absolute;
+  top: 2px;
+  left: 12px;
+}
+
+.s14__header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.s14__header-label {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s14__header-line {
+  flex: 1;
+  height: 0.5px;
+  margin-left: 14px;
+}
+
+.s14__header-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  color: var(--black);
+  margin-top: -1px;
+}
+
+.s14__subtitle {
+  position: absolute;
+  top: 121px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.s14__subtitle-dot {
+  width: 11px;
+  height: 11px;
+  background: #000000;
+  flex-shrink: 0;
+}
+
+.s14__subtitle-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #000000;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: nowrap;
+}
+
+/* Top separator line */
+.s14__hline-top {
+  width: 1386px;
+  height: 0.5px;
+  position: absolute;
+  top: 95px;
+  left: -24px;
+}
+
+/* Main content row */
+.s14__content {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 97px;
+  left: 0;
+  width: 100%;
+  height: 913px;
+}
+
+/* Left vertical line */
+.s14__vline-left {
+  width: 0.5px;
+  height: 855px;
+  flex-shrink: 0;
+  margin-left: 22px;
+  margin-top: 60px;
+}
+
+/* Left Before column */
+.s14__before-col {
+  width: 310px;
+  margin-left: 22px;
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.s14__before-label {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  color: var(--black);
+}
+
+.s14__before-desc {
+  margin-top: 10px;
+  margin-left: 3px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: var(--black);
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: break-spaces;
+  width: 280px;
+  word-break: break-all;
+}
+
+.s14__before-img {
+  width: 310px;
+  height: 671px;
+  margin-top: 17px;
+}
+
+/* Right large image area */
+.s14__right-area {
+  width: 985px;
+  height: 913px;
+  margin-left: 27px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.s14__base-img {
+  width: 985px;
+  height: 913px;
+}
+
+/* Overlay layer */
+.s14__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 985px;
+  height: 913px;
+  z-index: 1;
+}
+
+/* 1. After phone screenshot area */
+.s14__after-phone {
+  position: absolute;
+  z-index: 1;
+  top: 17px;
+  left: 32px;
+  width: 375px;
+  height: 865px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s14__after-label {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #FFFFFF;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  margin-left: 2px;
+}
+
+.s14__after-img {
+  width: 375px;
+  height: 812px;
+  margin-top: 20px;
+}
+
+/* 2. 版头框架改造标注区 */
+.s14__anno-header {
+  position: absolute;
+  z-index: 2;
+  top: 62px;
+  right: 45px;
+  width: 512px;
+  height: 339px;
+}
+
+.s14__anno-header-vline {
+  position: absolute;
+  z-index: 1;
+  top: 27px;
+  left: 5px;
+  width: 0.5px;
+  height: 312px;
+}
+
+.s14__anno-header-title {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.s14__green-dot {
+  width: 11px;
+  height: 11px;
+  background: #ABF78E;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.s14__anno-header-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #ABF78E;
+  font-family: AlibabaSans112-Medium, sans-serif;
+}
+
+.s14__anno-header-desc {
+  position: absolute;
+  z-index: 3;
+  top: 33px;
+  left: 31px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #FFFFFF;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: break-spaces;
+  width: 120px;
+  word-break: break-all;
+}
+
+.s14__anno-header-img {
+  position: absolute;
+  z-index: 4;
+  top: 38px;
+  left: 31px;
+  width: 481px;
+  height: 279px;
+}
+
+.s14__anno-header-sm1 {
+  position: absolute;
+  z-index: 5;
+  bottom: 80px;
+  left: 66px;
+  width: 251px;
+  height: 145px;
+}
+
+.s14__anno-header-sm2 {
+  position: absolute;
+  z-index: 6;
+  top: 34px;
+  right: 36px;
+  width: 265px;
+  height: 153px;
+}
+
+/* 3. 中部绿色圆点 */
+.s14__mid-dot {
+  position: absolute;
+  z-index: 3;
+  top: 412px;
+  left: 427px;
+  width: 11px;
+  height: 11px;
+  background: #ABF78E;
+  display: block;
+}
+
+/* 4. 中部垂直线 */
+.s14__mid-vline {
+  position: absolute;
+  z-index: 4;
+  top: 423px;
+  left: 433px;
+  width: 0.5px;
+  height: 89px;
+}
+
+/* 5. 迎客松标注 */
+.s14__pine-title {
+  position: absolute;
+  z-index: 5;
+  top: 399px;
+  right: 289px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #ABF78E;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: nowrap;
+}
+
+/* 6. 迎客松描述 */
+.s14__pine-desc {
+  position: absolute;
+  z-index: 6;
+  top: 429px;
+  left: 459px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #FFFFFF;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: nowrap;
+}
+
+/* 7. 下部长垂直线 */
+.s14__bottom-vline {
+  position: absolute;
+  z-index: 7;
+  bottom: 29px;
+  left: 433px;
+  width: 0.5px;
+  height: 328px;
+}
+
+/* 8. 右侧小图标 */
+.s14__right-icon {
+  position: absolute;
+  z-index: 8;
+  bottom: 355px;
+  right: 249px;
+  width: 96px;
+  height: 120px;
+}
+
+/* 9. 右侧图标组 */
+.s14__icon-group {
+  position: absolute;
+  z-index: 9;
+  top: 405px;
+  right: 55px;
+  width: 195px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+}
+
+.s14__icon-group img:first-child {
+  width: 86px;
+  height: 112px;
+}
+
+.s14__icon-group-second {
+  width: 96px;
+  height: 103px;
+  margin-left: 13px;
+  margin-top: 27px;
+}
+
+/* 10. 金刚位标注区 */
+.s14__anno-jingang {
+  position: absolute;
+  z-index: 10;
+  bottom: 315px;
+  right: 338px;
+  width: 220px;
+  height: 58px;
+}
+
+.s14__anno-jingang-title {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.s14__anno-jingang-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+  color: #ABF78E;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: nowrap;
+}
+
+.s14__anno-jingang-desc {
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #FFFFFF;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  white-space: nowrap;
+}
+
+/* 11. 底部图片组 */
+.s14__bottom-imgs {
+  position: absolute;
+  z-index: 11;
+  bottom: 28px;
+  right: 28px;
+  width: 500px;
+  height: 272px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.s14__bottom-imgs img:first-child {
+  width: 500px;
+  height: 131px;
+}
+
+.s14__bottom-imgs img:last-child {
+  width: 500px;
+  height: 131px;
+  margin-top: 10px;
+}
+
+/* Bottom horizontal line */
+.s14__hline-bottom {
+  position: absolute;
+  bottom: 34px;
+  left: 26px;
+  width: 1390px;
+  height: 0.5px;
+}
+
+/* Right edge vertical line */
+.s14__vline-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+/* ========== Section 13: 持续探索首页的更多可能性 ========== */
+.s15 {
+  height: 1080px;
+  background: #F0F0F0;
+  overflow: hidden;
+}
+
+/* Header */
+.s15__header {
+  position: absolute;
+  top: 38px;
+  left: 36px;
+  width: 1357px;
+}
+
+.s15__header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s15__header-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.s15__header-line {
+  flex: 1;
+  height: 0.5px;
+}
+
+.s15__header-subtitle {
+  margin-top: -1px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  font-family: AlibabaSans112-Medium, sans-serif;
+  color: var(--black);
+}
+
+/* Right vertical line */
+.s15__vline-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  width: 0.5px;
+  background: #000;
+}
+
+/* Phone screenshots carousel */
+.s15__carousel {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  height: 860px;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.s15__carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  animation: s15ScrollX 40s linear infinite;
+  width: max-content;
+}
+
+.s15__carousel-track img {
+  width: 375px;
+  height: 812px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  transition: transform var(--transition-normal) var(--ease-out), filter var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.s15__carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.s15__carousel-track img:hover {
+  transform: translateY(-20px) scale(1.01);
+  z-index: 20;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+@keyframes s15ScrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-375px * 13 - 20px * 13));
+  }
+}
+
+/* Bottom horizontal line */
+.s15__hline-bottom {
+  position: absolute;
+  bottom: 34px;
+  left: 2px;
+  width: 1390px;
+  height: 0.5px;
+}

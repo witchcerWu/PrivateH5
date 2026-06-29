@@ -1,0 +1,332 @@
+/* ========================================
+   components.css - 可复用组件
+   ======================================== */
+
+/* ---------- Page Indicator ---------- */
+.page-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-indicator__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+  outline: none;
+}
+
+.page-indicator__dot:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(1.4);
+}
+
+.page-indicator__dot--active {
+  background: var(--green);
+  border-color: var(--green);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(65, 171, 107, 0.25);
+}
+
+.page-indicator__dot--active:hover {
+  background: var(--green);
+  border-color: var(--green);
+  transform: scale(1.4);
+}
+
+.page-indicator__dot::after {
+  content: attr(data-page);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.page-indicator__dot:hover::after {
+  opacity: 1;
+}
+
+/* ---------- Section Header ---------- */
+.section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.section-header__title {
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.section-header__line {
+  height: 0.5px;
+  flex: 1;
+  margin-left: 24px;
+}
+
+.section-header__subtitle {
+  opacity: 0.3;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+/* ---------- Decoration Lines ---------- */
+.deco-line-left {
+  position: absolute;
+  z-index: 2;
+  left: 48px;
+}
+
+.deco-line-right {
+  position: absolute;
+  z-index: 8;
+  right: var(--side-padding);
+}
+
+.deco-line-bottom {
+  position: absolute;
+  z-index: 9;
+  left: 2px;
+}
+
+/* ---------- Phone Card ---------- */
+.phone-card {
+  position: absolute;
+  transition: transform var(--transition-normal) var(--ease-out), filter var(--transition-normal) ease;
+  cursor: pointer;
+}
+
+.phone-card:hover {
+  transform: translateY(-20px) scale(1.01);
+  z-index: 20 !important;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+.phone-card--static {
+  cursor: default;
+  pointer-events: none;
+  transition: none;
+}
+.phone-card--static:hover {
+  transform: none !important;
+  z-index: 8 !important;
+  filter: none !important;
+}
+
+.phone-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- Quote Block ---------- */
+.quote-block {
+  position: absolute;
+}
+
+.quote-block__line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.quote-block__mark {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 41px;
+  color: var(--black);
+}
+
+.quote-block__text {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 41px;
+  color: var(--black);
+  margin-left: 10px;
+}
+
+.quote-block__text--bold {
+  font-weight: 700;
+}
+
+.quote-block__text--light {
+  font-weight: 300;
+}
+
+/* ---------- Capsule Button ---------- */
+.capsule-btn {
+  border-radius: 8px;
+  background: var(--black);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: fit-content;
+  height: fit-content;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 10px 0px 12px;
+  position: absolute;
+}
+
+.capsule-btn__logo {
+  width: 138px;
+  height: 34px;
+}
+
+.capsule-btn__content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: fit-content;
+  height: fit-content;
+  gap: 80px;
+  align-items: center;
+}
+
+.capsule-btn__text {
+  font-size: 26px;
+  line-height: 36px;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.capsule-btn__arrow {
+  width: 30px;
+  height: 30px;
+}
+
+/* ---------- Grid Lines ---------- */
+.grid-lines {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 82px;
+  position: absolute;
+}
+
+.grid-lines__item {
+  width: 954px;
+  height: 0.5px;
+}
+
+/* ---------- Labels Column ---------- */
+.labels-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+
+.labels-col__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.labels-col__name {
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--black);
+}
+
+.labels-col__desc {
+  opacity: 0.5;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+}
+
+/* ---------- Content Image Hover Lift Effect ---------- */
+.s4__col-icon,
+.s4__col-content > img,
+.s7__phone-center,
+.s7__phone-right,
+.s9__phone-img,
+.s10__template-row > img:first-child,
+.s10__phone-img,
+.s11__col-images img,
+.s13__col-img,
+.s13__lower-images img,
+.s14__before-img,
+.s14__after-img,
+.s14__anno-header-sm1,
+.s14__anno-header-sm2,
+.s14__right-icon,
+.s14__icon-group img,
+.s14__bottom-imgs img {
+  transition: transform 0.35s var(--ease-out);
+  cursor: pointer;
+}
+
+/* ---------- Entrance Animations ---------- */
+[data-anim] {
+  opacity: 0;
+}
+
+[data-anim="up"] {
+  transform: translateY(54px);
+}
+
+.section.anim-active [data-anim] {
+  opacity: 1;
+  transform: none;
+  will-change: transform, opacity;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) var(--d, 0s),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s);
+}
+
+.section.anim-done [data-anim] {
+  opacity: 1;
+  will-change: auto;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.s4__col-icon:hover,
+.s4__col-content > img:hover,
+.s7__phone-center:hover,
+.s7__phone-right:hover,
+.s9__phone-img:hover,
+.s10__template-row > img:first-child:hover,
+.s10__phone-img:hover,
+.s11__col-images img:hover,
+.s13__col-img:hover,
+.s13__lower-images img:hover,
+.s14__before-img:hover,
+.s14__after-img:hover,
+.s14__anno-header-sm1:hover,
+.s14__anno-header-sm2:hover,
+.s14__right-icon:hover,
+.s14__icon-group img:hover,
+.s14__bottom-imgs img:hover {
+  transform: translateY(-20px) scale(1.01);
+  z-index: 20 !important;
+}
