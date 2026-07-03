@@ -1,0 +1,1125 @@
+/* ============================================
+   New Home - Style System
+   ============================================ */
+
+/* Override base.css - 新首页使用正常文档流滚动，而非全页翻页模式 */
+html {
+  overflow-y: auto;
+  background: #FFFFFF;
+}
+body {
+  opacity: 1 !important;
+  overflow: visible !important;
+  min-height: auto !important;
+  display: block !important;
+}
+
+:root {
+  --primary-blue: #3B5BFF;
+  --primary-orange: #FF6B35;
+  --primary-green: #41AB6B;
+  --accent-pink: #FFB8B8;
+  --accent-purple: #B593FF;
+  --accent-yellow: #F5FF63;
+  --hero-bg-start: #3B5BFF;
+  --hero-bg-end: #2D4AE0;
+  --text-light: #FFFFFF;
+  --text-dark: #19171C;
+  --text-muted: #6E6E73;
+  --card-radius: 16px;
+  --pill-radius: 50px;
+}
+
+/* ============================================
+   Global Reset & Base
+   ============================================ */
+* {
+  cursor: auto;
+}
+
+body {
+  overflow-x: hidden;
+  background: #FFFFFF;
+}
+
+/* ============================================
+   Custom Cursor
+   ============================================ */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #2E06A8;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.custom-cursor.cursor--hover {
+  width: 96px;
+  height: 96px;
+}
+
+.custom-cursor.cursor--text {
+  width: 180px;
+  height: 180px;
+}
+
+/* Navigation styles moved to shared/css/nav.css */
+
+/* ============================================
+   Section 1: Hero
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 80px 60px;
+  overflow: hidden;
+}
+
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 60px;
+}
+
+.hero__text {
+  flex: 1;
+  margin-left: -20px;
+}
+
+.hero__title {
+  font-size: clamp(40px, 5vw, 72px);
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.hero__name {
+  font-size: clamp(60px, 8vw, 120px);
+  color: var(--text-dark);
+  font-weight: 900;
+  line-height: 1.0;
+  margin: 0;
+}
+
+.hero__subtitle {
+  margin-top: 24px;
+  font-size: clamp(20px, 2.5vw, 32px);
+  color: var(--text-dark);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero__role {
+  display: inline-block;
+}
+
+.hero__cursor {
+  animation: blink-cursor 1s infinite;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+/* Pills - 散落堆积布局 */
+.hero__pills {
+  flex: 1;
+  position: relative;
+  min-height: 520px;
+  max-width: 720px;
+}
+
+.pill {
+  padding: 21px 48px;
+  border-radius: var(--pill-radius);
+  font-size: 27px;
+  font-weight: 600;
+  color: #FFFFFF;
+  position: absolute;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 初始状态 - 顶部不可见 */
+  opacity: 0;
+  transform: translateY(-120vh) rotate(var(--rotate, 0deg));
+  will-change: transform, opacity;
+}
+
+/* 圆形胶囊 - 类似参考图中的圆形 */
+.pill--circle {
+  width: 135px;
+  height: 135px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 21px;
+  border: 1.5px solid currentColor;
+  background: transparent !important;
+  text-align: center;
+  line-height: 1.2;
+}
+.pill--circle.pill--lime { color: #D1F957; border-color: #D1F957; background: rgba(209, 249, 87, 0.08) !important; }
+.pill--circle.pill--pink { color: #FF34A0; border-color: #FF34A0; background: rgba(255, 52, 160, 0.08) !important; }
+.pill--circle.pill--yellow { color: #FFDC31; border-color: #FFDC31; background: rgba(255, 220, 49, 0.08) !important; }
+.pill--circle.pill--blue { color: #3E6BFF; border-color: #3E6BFF; background: rgba(62, 107, 255, 0.08) !important; }
+.pill--circle.pill--black { color: #000000; border-color: #000000; background: rgba(0, 0, 0, 0.05) !important; }
+
+/* 实心圆形 - 蓝色（头像前） */
+.pill--circle.pill--solid-blue {
+  background: #3E6BFF !important;
+  border: none;
+  color: #FFFFFF;
+}
+.pill--circle.pill--solid-blue::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px dashed #FFFFFF;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* D2C字号放大1.5倍 */
+.pill--circle.pill--solid-blue {
+  font-size: 31.5px;
+}
+
+/* 圆矩形胶囊 - Design System 风格 */
+.pill--rect {
+  padding: 18px 33px;
+  border-radius: 50px;
+  font-size: 24px;
+}
+
+/* 长条胶囊 - 标准pill形状 */
+.pill--pill {
+  padding: 18px 42px;
+  border-radius: var(--pill-radius);
+  font-size: 24px;
+}
+
+/* 头像大圆形 - 1.5x×1.5x = 2.25倍 */
+.pill--avatar {
+  width: 290px;
+  height: 290px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e8e8e8;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.pill--avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 掉落动画 - 连贯坠落，无碰撞回弹 */
+@keyframes pill-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-120vh) rotate(var(--rotate, 0deg));
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotate, 0deg));
+  }
+}
+
+/* 被撞击回弹动画 - 轻盈大幅度散开 */
+@keyframes pill-bump-1 {
+  0% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  35% { transform: translate(-12px, -18px) rotate(calc(var(--rotate, 0deg) - 4deg)); }
+  65% { transform: translate(-4px, -6px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+  100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+}
+@keyframes pill-bump-2 {
+  0% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  35% { transform: translate(14px, -16px) rotate(calc(var(--rotate, 0deg) + 5deg)); }
+  65% { transform: translate(5px, -5px) rotate(calc(var(--rotate, 0deg) + 1.5deg)); }
+  100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+}
+@keyframes pill-bump-3 {
+  0% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  35% { transform: translate(-10px, -22px) rotate(calc(var(--rotate, 0deg) + 3deg)); }
+  65% { transform: translate(-3px, -7px) rotate(calc(var(--rotate, 0deg) + 1deg)); }
+  100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+}
+@keyframes pill-bump-4 {
+  0% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  35% { transform: translate(10px, -20px) rotate(calc(var(--rotate, 0deg) - 3deg)); }
+  65% { transform: translate(3px, -6px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+  100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+}
+
+/* 胶囊掉落激活态 */
+.pill.pill--dropped {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rotate, 0deg));
+  animation: pill-drop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* 被撞击态 - 不同方向散开 */
+.pill.pill--bump-1 { animation: pill-bump-1 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.pill.pill--bump-2 { animation: pill-bump-2 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.pill.pill--bump-3 { animation: pill-bump-3 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.pill.pill--bump-4 { animation: pill-bump-4 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 气球浮动效果 - 保持旋转角度，模拟彼此碰撞 */
+@keyframes balloon-float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  20% { transform: translate(5px, -7px) rotate(calc(var(--rotate, 0deg) + 2deg)); }
+  40% { transform: translate(-3px, -4px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+  60% { transform: translate(4px, -9px) rotate(calc(var(--rotate, 0deg) + 1.5deg)); }
+  80% { transform: translate(-2px, -5px) rotate(calc(var(--rotate, 0deg) - 0.5deg)); }
+}
+
+@keyframes balloon-float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  20% { transform: translate(-4px, -5px) rotate(calc(var(--rotate, 0deg) - 1.5deg)); }
+  40% { transform: translate(5px, -8px) rotate(calc(var(--rotate, 0deg) + 2deg)); }
+  60% { transform: translate(-3px, -3px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+  80% { transform: translate(3px, -7px) rotate(calc(var(--rotate, 0deg) + 1deg)); }
+}
+
+@keyframes balloon-float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  20% { transform: translate(3px, -9px) rotate(calc(var(--rotate, 0deg) + 1deg)); }
+  40% { transform: translate(-5px, -5px) rotate(calc(var(--rotate, 0deg) - 2deg)); }
+  60% { transform: translate(4px, -6px) rotate(calc(var(--rotate, 0deg) + 1.5deg)); }
+  80% { transform: translate(-2px, -8px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+}
+
+/* 5种胶囊颜色 */
+.pill--lime {
+  background: #D1F957;
+  color: #000000;
+}
+
+.pill--pink {
+  background: #FF34A0;
+  color: #FFFFFF;
+}
+
+.pill--yellow {
+  background: #FFDC31;
+  color: #000000;
+}
+
+.pill--blue {
+  background: #3E6BFF;
+  color: #FFFFFF;
+}
+
+.pill--black {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* 胶囊散落堆积定位 - 1.1x散开 */
+.pill:nth-child(1)  { top: 18%; left: 38%; --rotate: -6deg;  z-index: 6; font-size: 24px; }
+.pill:nth-child(2)  { top: 0%;  left: 39%; --rotate: 14deg; z-index: 14; }
+.pill:nth-child(3)  { top: 65%; left: 19%; --rotate: 8deg;  z-index: 14; }
+.pill:nth-child(4)  { top: 10%; left: 74%; --rotate: -20deg; z-index: 6; }
+.pill:nth-child(5)  { top: 63%; left: 86%; --rotate: 10deg; z-index: 14; }
+.pill:nth-child(6)  { top: 2%;  left: 61%; --rotate: -8deg;  z-index: 14; }
+.pill:nth-child(7)  { top: 36%; left: 19%; --rotate: 6deg;  z-index: 8; }
+.pill:nth-child(8)  { top: 43%; left: 46%; --rotate: -4deg;  z-index: 2; }
+.pill:nth-child(9)  { top: 48%; left: -3%; --rotate: 12deg; z-index: 9; }
+.pill:nth-child(10) { top: 81%; left: 41%; --rotate: -10deg; z-index: 10; }
+.pill:nth-child(11) { top: 21%; left: 57%; --rotate: 4deg;  z-index: 12; }
+
+/* Scroll Hint */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dark);
+  opacity: 0.4;
+}
+
+.hero__scroll-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero__scroll-arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   Section 2: About Me
+   ============================================ */
+.about {
+  background: #FFFFFF;
+  padding: 140px 60px 120px;
+  color: #19171C;
+}
+
+.about__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about__label {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 80px;
+}
+
+.about__text-wrapper {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about__quote {
+  width: 23px;
+  height: 23px;
+  fill: #19171C;
+  opacity: 0.15;
+  flex-shrink: 0;
+}
+
+.about__quote--open {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.about__quote--close {
+  align-self: flex-end;
+  margin-bottom: 60px;
+  transform: translate(-380px, 40px);
+}
+
+.about__text {
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* 打字叠加效果 - 单词容器 */
+.typing-word {
+  position: relative;
+  margin-right: 0.3em;
+  display: inline-block;
+}
+
+/* 打字叠加效果 - 每个字符容器 */
+.typing-char {
+  position: relative;
+  display: inline-block;
+}
+
+/* 底层灰色文字 - 始终可见 */
+.typing-char__ghost {
+  opacity: 0.15;
+  color: #19171C;
+}
+
+/* 覆盖层 - 逐字显现 */
+.typing-char__real {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.typing-char__real.is-typed {
+  opacity: 1;
+}
+
+/* 统计数据 - removed */
+
+/* ============================================
+   Section 3: Projects
+   ============================================ */
+.projects {
+  background: #FFFFFF;
+  padding: 120px 60px;
+}
+
+.projects__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  background: #FFFFFF;
+  border: 1px solid #e8e8e4;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #F3F4F6;
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card__image img {
+  transform: scale(1.05);
+}
+
+.project-card__info {
+  padding: 28px 32px;
+}
+
+.project-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'AlibabaPuHuiTi', 'Alibaba PuHuiTi', sans-serif;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.project-card__desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.project-card__tag {
+  font-size: 12px;
+  font-weight: 300;
+  font-family: 'AlibabaPuHuiTi', 'Alibaba PuHuiTi', sans-serif;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.project-card__tag--lime,
+.project-card__tag--pink,
+.project-card__tag--yellow,
+.project-card__tag--blue {
+  background: #F5F5F5;
+  color: #000000;
+}
+
+/* ============================================
+   Section 3: Experience
+   ============================================ */
+.experience {
+  background: #FFFFFF;
+  padding: 120px 60px;
+  color: #19171C;
+  overflow: hidden;
+}
+
+.experience__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 22px;
+}
+
+.experience__label {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.label-slash {
+  position: absolute;
+  left: -42px;
+}
+
+.experience__intro {
+  margin-bottom: 80px;
+  max-width: 1200px;
+}
+
+/* Marquee 横向滚动布局 */
+.experience__marquee {
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  overflow: hidden;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.experience__marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee-scroll 30s linear infinite;
+  width: max-content;
+}
+
+.experience__marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.experience__marquee-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 48px;
+  white-space: nowrap;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease;
+}
+
+.experience__marquee-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.experience__row-top {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.experience__date {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 400;
+  color: rgba(42, 42, 42, 0.5);
+}
+
+.experience__role {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 400;
+  color: rgba(42, 42, 42, 0.5);
+}
+
+.experience__company {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  color: #19171C;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+.contact-section {
+  background: #19171C;
+  padding: 120px 60px 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   Gallery
+   ============================================ */
+.gallery {
+  background: #19171C;
+}
+
+.gallery__intro {
+  padding: 120px 60px 60px;
+  max-width: 1320px;
+  margin: 0 auto;
+  color: #FFFFFF;
+}
+
+.gallery__label {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.gallery__title {
+  display: none;
+}
+
+.gallery__desc-wrapper {
+  margin-bottom: 0;
+}
+
+.gallery__desc {
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.gallery__sub {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
+}
+
+/* Gallery 内打字效果文字反白 */
+.gallery .typing-char__ghost {
+  color: #FFFFFF;
+}
+
+.gallery__scroll-container {
+  position: relative;
+  height: 500vh;
+  /* 撑满整个视口宽度(section 本身受 --page-width 限制会裁掉放大的视频) */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.gallery__sticky {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  /* 30px间距 + 素材1.2倍放大 */
+  width: calc((85vh - 60px) * 1.777 + 72px);
+  max-width: 100vw;
+}
+
+.gallery__row {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.gallery__item {
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform;
+  position: relative;
+}
+
+/* Row 1 & Row 3: 三张等宽图片 900×506 */
+.gallery__row--top .gallery__item,
+.gallery__row--bot .gallery__item {
+  flex: 1;
+  aspect-ratio: 900 / 506;
+}
+
+/* Row 2: 左637×811 + 中心1440×811 + 右623×811 */
+.gallery__row--mid .gallery__item--4 {
+  flex: 637;
+  aspect-ratio: 637 / 811;
+}
+.gallery__row--mid .gallery__item--center {
+  flex: 1440;
+  aspect-ratio: 1440 / 811;
+}
+.gallery__row--mid .gallery__item--5 {
+  flex: 623;
+  aspect-ratio: 623 / 811;
+}
+
+.gallery__item img,
+.gallery__item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 声音开关 - 叠加在视频右上角 */
+.gallery__mute {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 21;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease, background 0.2s ease;
+}
+.gallery__mute.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.gallery__mute:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.gallery__mute svg {
+  display: block;
+}
+/* 默认静音：显示静音图标；开声(.is-on)后显示有声图标 */
+.gallery__mute .icon-unmuted {
+  display: none;
+}
+.gallery__mute.is-on .icon-unmuted {
+  display: block;
+}
+.gallery__mute.is-on .icon-muted {
+  display: none;
+}
+
+/* 中心视频进度条 - 叠加在视频底部居中 */
+.gallery__progress {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 88%;
+  padding: 14px 0;            /* 扩大可点击/拖动热区 */
+  z-index: 20;
+  cursor: pointer;
+  touch-action: none;         /* 拖动时不触发页面滚动 */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.gallery__progress.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.gallery__progress-track {
+  position: relative;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.gallery__progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: #ffffff;
+}
+.gallery__progress-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
+}
+.gallery__progress:hover .gallery__progress-thumb,
+.gallery__progress.is-dragging .gallery__progress-thumb {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+/* 中心视频 - 滚动时放大到屏幕中央满宽填充 */
+.gallery__item--center {
+  z-index: 10;
+}
+
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 22px;
+  width: 100%;
+}
+
+.contact__label {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.contact__desc {
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #FFFFFF;
+  margin: 0 0 160px;
+}
+
+.contact__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact__item:hover {
+  opacity: 0.7;
+}
+
+.contact__item-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #D1F957;
+}
+
+.contact__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact__value {
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/* ============================================
+   Animation System
+   ============================================ */
+
+/* Entry animations - default fadeUp */
+[data-anim] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-anim].is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* fadeLeft */
+[data-anim="fadeLeft"] {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+[data-anim="fadeLeft"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* fadeRight */
+[data-anim="fadeRight"] {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+[data-anim="fadeRight"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger children */
+[data-stagger-child] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-stagger-child].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Split text characters */
+.split-char {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.split-char > span {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.split-char.is-visible > span {
+  transform: translateY(0);
+}
+
+/* ============================================
+   Keyframes
+   ============================================ */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+  50% { transform: translate(0, -10px) rotate(var(--rotate, 0deg)); }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 900px) {
+  .hero__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero__pills {
+    position: relative;
+    min-height: 300px;
+    max-width: 100%;
+  }
+
+  .about {
+    padding: 80px 24px;
+  }
+
+  .gallery__intro {
+    padding: 80px 24px 40px;
+  }
+
+  .experience {
+    padding: 80px 24px;
+  }
+
+  .experience__marquee {
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+  }
+
+  .experience__marquee-item {
+    gap: 16px;
+    padding: 16px 24px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 24px;
+  }
+
+  .projects {
+    padding: 80px 24px;
+  }
+
+  .contact-section {
+    padding: 80px 24px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__subtitle {
+    justify-content: center;
+  }
+
+  .typing-word {
+    margin-right: 10px;
+  }
+}

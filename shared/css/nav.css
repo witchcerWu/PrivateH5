@@ -1,78 +1,104 @@
 /* ========================================
-   Floating Navigation Bar
+   Site Navigation (Shared)
    ======================================== */
 
-.floating-nav {
+/* 页面切换底色由各页面自行指定，避免闪色 */
+
+/* 页面离开过渡遮罩 */
+.page-exit-overlay {
   position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(0);
-  z-index: 99999;
+  inset: 0;
+  z-index: 9998; /* 导航 9999 之下 */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease-in;
+}
+.page-exit-overlay--active {
+  opacity: 1;
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  /* 初始不可见，等字体加载完再显示，避免导航栏因字体swap而缩窄 */
+  opacity: 0;
+  transition: opacity 0.18s ease-out;
+}
+.site-nav--ready {
+  opacity: 1;
+}
+
+.site-nav__inner {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 4px;
   padding: 6px 8px;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: auto;
 }
 
-.floating-nav--light {
-  background: rgba(240, 240, 240, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+/* 滑动胶囊指示器 */
+.site-nav__slider {
+  position: absolute;
+  top: 6px;
+  left: var(--slider-left, 8px);
+  width: var(--slider-width, 60px);
+  height: calc(100% - 12px);
+  background: #D1F957;
+  border-radius: 100px;
+  z-index: 0;
+  pointer-events: none;
+  /* 初始不可见，等 JS 定位完成后再显示，避免闪回 Home */
+  opacity: 0;
+  transition: none;
 }
 
-.floating-nav__item {
+/* JS 定位完成后显示 */
+.site-nav__slider--visible {
+  opacity: 1;
+}
+
+/* 当滑块在做动画时添加此类 */
+.site-nav__slider--animated {
+  transition: left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-nav__item {
+  position: relative;
+  z-index: 1;
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 13px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease;
-  white-space: nowrap;
+  transition: color 0.3s ease;
   letter-spacing: 0.3px;
-  cursor: pointer;
-  user-select: none;
+  white-space: nowrap;
 }
 
-.floating-nav--light .floating-nav__item {
-  color: rgba(0, 0, 0, 0.45);
+.site-nav__item:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.floating-nav__item:hover {
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.06);
+/* active 项仅改文字颜色，背景由 slider 提供 */
+.site-nav__item--active {
+  color: #0a0a0a;
 }
 
-.floating-nav--light .floating-nav__item:hover {
-  color: rgba(0, 0, 0, 0.75);
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.floating-nav__item--active {
-  color: var(--white) !important;
-  background: rgba(65, 171, 107, 0.9) !important;
-}
-
-.floating-nav--light .floating-nav__item--active {
-  color: var(--white) !important;
-  background: rgba(65, 171, 107, 0.9) !important;
-}
-
-.floating-nav__divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 4px;
-}
-
-.floating-nav--light .floating-nav__divider {
-  background: rgba(0, 0, 0, 0.08);
+.site-nav__item--active:hover {
+  color: #0a0a0a;
 }

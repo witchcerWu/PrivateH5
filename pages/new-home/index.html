@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shirley - Portfolio</title>
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <!-- 预加载首屏关键字体，避免动画等待 -->
+  <link rel="preload" href="../../shared/fonts/Alibaba-PuHuiTi-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../shared/fonts/Alibaba-PuHuiTi-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../shared/css/nav.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="../../shared/js/page-transition.js"></script>
+  <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="site-nav__inner">
+      <span class="site-nav__slider"></span>
+      <a class="site-nav__item site-nav__item--active" data-nav-index="0" href="../new-home/index.html">Home</a>
+      <a class="site-nav__item" data-nav-index="1" href="../page1/index.html">UX Design</a>
+      <a class="site-nav__item" data-nav-index="2" href="../page2/index.html">Visual Design</a>
+      <a class="site-nav__item" data-nav-index="3" href="../others/index.html">Others</a>
+    </div>
+  </nav>
+
+  <!-- Section 1: Hero -->
+  <section class="hero">
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1 class="hero__title" data-split-text>HEY, I'M</h1>
+        <h1 class="hero__name" data-split-text>SHIRLEY</h1>
+        <div class="hero__subtitle">
+          <span class="hero__role" id="roleText">UI Designer</span>
+          <span class="hero__cursor">|</span>
+        </div>
+      </div>
+      <div class="hero__pills">
+        <span class="pill pill--circle pill--pink">Motion<br>&3D</span>
+        <span class="pill pill--pill pill--lime">Visual</span>
+        <span class="pill pill--pill pill--black">AI Workflow</span>
+        <span class="pill pill--pill pill--pink">9+Years</span>
+        <span class="pill pill--circle pill--solid-blue">D2C</span>
+        <span class="pill pill--pill pill--yellow">E-Commerce</span>
+        <span class="pill pill--pill pill--blue">Cross-border UX</span>
+        <span class="pill pill--circle pill--yellow">AI<br>x<br>Design</span>
+        <span class="pill pill--pill pill--lime">Design System</span>
+        <span class="pill pill--pill pill--pink">Art Direction</span>
+        <span class="pill pill--avatar"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sffa58244c9074fc2aeb6d2cbf79b21d6t.png" alt="avatar"></span>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span class="hero__scroll-text">Scroll</span>
+      <div class="hero__scroll-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: About Me -->
+  <section class="about">
+    <div class="about__container">
+      <div class="about__text-wrapper">
+        <svg class="about__quote about__quote--open" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg>
+        <p class="about__text" data-typing-text>专注视觉系统构建与AI&nbsp;workflow。喜欢探索和发现，擅长在复杂场景中建立秩序，相信好的设计不止于漂亮的执行——而是让美好沉淀和持续生长。</p>
+        <svg class="about__quote about__quote--close" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Experience -->
+  <section class="experience">
+    <div class="experience__container">
+      <h3 class="experience__label"><span class="label-slash">/</span>Experience</h3>
+      <div class="experience__intro">
+        <p class="about__text" data-typing-text>9年体验设计经验，先后负责淘宝内容生产、商家生态及AliExpress跨境业务，主导Global首页、商家私域、创作工具等项目升级。</p>
+      </div>
+      <div class="experience__marquee">
+        <div class="experience__marquee-track">
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2023 - 至今</span>
+              <span class="experience__role">体验设计专家</span>
+            </div>
+            <div class="experience__company">阿里国际·AliExpress</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2021 - 2023</span>
+              <span class="experience__role">体验设计专家</span>
+            </div>
+            <div class="experience__company">阿里巴巴·淘宝商家生态</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2019 - 2021</span>
+              <span class="experience__role">体验设计师</span>
+            </div>
+            <div class="experience__company">阿里巴巴·淘宝内容生态</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2017 - 2019</span>
+              <span class="experience__role">UI设计师</span>
+            </div>
+            <div class="experience__company">上海汉得信息</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2014 - 2017</span>
+              <span class="experience__role">工业设计·硕士</span>
+            </div>
+            <div class="experience__company">景德镇陶瓷大学</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2010 - 2014</span>
+              <span class="experience__role">动画·本科</span>
+            </div>
+            <div class="experience__company">哈尔滨师范大学</div>
+          </div>
+          <!-- Duplicated for seamless loop -->
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2023 - 至今</span>
+              <span class="experience__role">体验设计专家</span>
+            </div>
+            <div class="experience__company">阿里国际·AliExpress</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2021 - 2023</span>
+              <span class="experience__role">体验设计专家</span>
+            </div>
+            <div class="experience__company">阿里巴巴·淘宝商家生态</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2019 - 2021</span>
+              <span class="experience__role">体验设计师</span>
+            </div>
+            <div class="experience__company">阿里巴巴·淘宝内容生态</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2017 - 2019</span>
+              <span class="experience__role">UI设计师</span>
+            </div>
+            <div class="experience__company">上海汉得信息</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2014 - 2017</span>
+              <span class="experience__role">工业设计·硕士</span>
+            </div>
+            <div class="experience__company">景德镇陶瓷大学</div>
+          </div>
+          <div class="experience__marquee-item">
+            <div class="experience__row-top">
+              <span class="experience__date">2010 - 2014</span>
+              <span class="experience__role">动画·本科</span>
+            </div>
+            <div class="experience__company">哈尔滨师范大学</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Projects -->
+  <section class="projects">
+    <div class="projects__container">
+      <h2 class="section-title" data-anim="fadeUp"><span class="label-slash">/</span>Projects</h2>
+      <div class="projects__grid" data-anim="fadeUp" data-stagger="0.15">
+        <a href="../page1/index.html" class="project-card" data-stagger-child>
+          <div class="project-card__image">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S639153f140ef49b1894ca1811f531094y.png" alt="UX Design Project">
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">全站首页体验升级</h3>
+            <p class="project-card__desc">用三组系统化机制重建首页秩序——统一框架收敛跨国差异、流量分级治理业务堆叠、视觉降噪提升精致度。</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag project-card__tag--lime">#信息架构</span>
+              <span class="project-card__tag project-card__tag--pink">#设计系统</span>
+              <span class="project-card__tag project-card__tag--blue">#AI知识库</span>
+            </div>
+          </div>
+        </a>
+        <a href="../page2/index.html" class="project-card" data-stagger-child>
+          <div class="project-card__image">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S586aafde933e45309cfd9109c2b350e18.png" alt="Visual Design Project">
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">3D 视觉体系 + AI 工作流</h3>
+            <p class="project-card__desc">从零建立平台 3D 视觉标准，将风格参数化封装为 ComfyUI 工作流，最终产品化为 AI Skill 在集团官方平台商业化发布。</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag project-card__tag--yellow">#3D资产</span>
+              <span class="project-card__tag project-card__tag--blue">#AI Skill</span>
+              <span class="project-card__tag project-card__tag--lime">#ComfyUI</span>
+            </div>
+          </div>
+        </a>
+        <a href="../others/index.html" class="project-card" data-stagger-child>
+          <div class="project-card__image">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf67a4ae8da124d6e9373ecaadb809122Y.png" alt="Project 3">
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">生产工具与创意素材</h3>
+            <p class="project-card__desc">为内容创作者打造直观的生产工具与视觉素材体系，建立标准化内容生产规范，提升内容供给效率与质量。</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag project-card__tag--pink">#内容生态</span>
+              <span class="project-card__tag project-card__tag--lime">#创作工具</span>
+              <span class="project-card__tag project-card__tag--yellow">#创意设计</span>
+            </div>
+          </div>
+        </a>
+        <a href="../others/index.html?start=project4" class="project-card" data-stagger-child>
+          <div class="project-card__image">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7999ec3d3d354c10a63d3d62763b9d16R.png" alt="Project 4">
+          </div>
+          <div class="project-card__info">
+            <h3 class="project-card__title">商家生态 · B 端设计</h3>
+            <p class="project-card__desc">负责淘宝千牛平台的私域管理和店铺阵地页设计，同时统筹淘宝商家大会的品牌 KV 视觉方向。</p>
+            <div class="project-card__tags">
+              <span class="project-card__tag project-card__tag--blue">#B端设计</span>
+              <span class="project-card__tag project-card__tag--yellow">#商家生态</span>
+              <span class="project-card__tag project-card__tag--pink">#设计专利</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gallery Showcase -->
+  <section class="gallery">
+    <div class="gallery__intro">
+      <h3 class="gallery__label"><span class="label-slash">/</span>Showreel</h3>
+      <div class="gallery__desc-wrapper">
+        <p class="gallery__desc" data-typing-text>独立完成从脚本策划、分镜设计到动画制作的全流程——展示团队年度设计成果。</p>
+      </div>
+    </div>
+    <div class="gallery__scroll-container">
+      <div class="gallery__sticky">
+        <div class="gallery__grid">
+          <!-- Row 1: 三张 900×506 图片 -->
+          <div class="gallery__row gallery__row--top">
+            <div class="gallery__item gallery__item--1">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6711a1def5fb42c5b84d5da23ccb346bw.png" alt="Work 1">
+            </div>
+            <div class="gallery__item gallery__item--2">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S73fd23389d5346038b2152afec755439a.png" alt="Work 2">
+            </div>
+            <div class="gallery__item gallery__item--3">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3e9e3b831c744f06bd763ae38fba8595p.png" alt="Work 3">
+            </div>
+          </div>
+          <!-- Row 2: 左图637×811 + 中心视频1440×811 + 右图623×811 -->
+          <div class="gallery__row gallery__row--mid">
+            <div class="gallery__item gallery__item--4">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7ee6ec0c7a984b638eb69354630711b4S.png" alt="Work 4">
+            </div>
+            <div class="gallery__item gallery__item--center">
+              <video src="https://video.aliexpress-media.com/play/5000551464277.mp4" poster="https://ae-pic-a1.aliexpress-media.com/kf/Sd579c09761e14c108e15924e9f969ce3v.png" loop muted playsinline preload="metadata"></video>
+              <!-- 声音开关（默认静音，点击开声） -->
+              <button class="gallery__mute" type="button" aria-label="开关声音">
+                <svg class="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5 6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                <svg class="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5 6 9H2v6h4l5 4V5z"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+              </button>
+              <!-- 中心视频进度条（可拖动，叠加在视频上） -->
+              <div class="gallery__progress" aria-label="视频进度条">
+                <div class="gallery__progress-track">
+                  <div class="gallery__progress-fill"></div>
+                  <div class="gallery__progress-thumb"></div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery__item gallery__item--5">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S19f0e8f68e654b0aa60b255ca58d9826K.png" alt="Work 5">
+            </div>
+          </div>
+          <!-- Row 3: 三张 900×506 图片 -->
+          <div class="gallery__row gallery__row--bot">
+            <div class="gallery__item gallery__item--6">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S68f34b8974ac4c5ea0b6ce6fe888c68e8.png" alt="Work 6">
+            </div>
+            <div class="gallery__item gallery__item--7">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd8479227aad74a4c821f24ce0f9b271d8.png" alt="Work 7">
+            </div>
+            <div class="gallery__item gallery__item--8">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sca842e3a0f1648159e2602ea1efc5d3bP.png" alt="Work 8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <div class="contact" data-anim="fadeUp">
+      <h3 class="contact__label"><span class="label-slash">/</span>Contact</h3>
+      <p class="contact__desc">慢热但真诚🐌，希望被信任和喜欢。</p>
+      <div class="contact__list">
+        <a href="mailto:rainieblank@gmail.com" class="contact__item">
+          <div class="contact__item-top">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="contact__title">Email</span>
+          </div>
+          <span class="contact__value">rainieblank@gmail.com</span>
+        </a>
+        <a href="tel:+8613945301909" class="contact__item">
+          <div class="contact__item-top">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            <span class="contact__title">Phone</span>
+          </div>
+          <span class="contact__value">+86 13945301909</span>
+        </a>
+        <div class="contact__item">
+          <div class="contact__item-top">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M15.85 8.14c.39 0 .77.03 1.14.08C16.31 5.25 13.19 3 9.44 3 5.18 3 1.7 5.92 1.7 9.54c0 2.09 1.13 3.89 2.9 5.14L3.7 17.5l3.18-1.63c.87.24 1.79.37 2.56.37.38 0 .75-.02 1.12-.07a5.15 5.15 0 0 1-.21-1.42c0-3.45 3.07-6.61 5.5-6.61zM12.03 5.5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-5.18 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm8.85 15.5c-3.68 0-6.67-2.52-6.67-5.63 0-3.11 2.99-5.63 6.67-5.63s6.67 2.52 6.67 5.63c0 1.77-.95 3.36-2.44 4.44l.57 1.69-2.31-1.18c-.77.24-1.6.37-2.49.48zm-2.22-7.13c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4.44 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
+            <span class="contact__title">Wechat</span>
+          </div>
+          <span class="contact__value">378477255</span>
+        </div>
+        <a href="#" class="contact__item">
+          <div class="contact__item-top">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <span class="contact__title">Github</span>
+          </div>
+          <span class="contact__value">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/animations.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>

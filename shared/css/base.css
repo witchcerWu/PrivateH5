@@ -4,35 +4,35 @@
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/Alibaba-PuHuiTi-Light.otf') format('opentype');
+  src: url('../fonts/Alibaba-PuHuiTi-Light.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/Alibaba-PuHuiTi-Regular.otf') format('opentype');
+  src: url('../fonts/Alibaba-PuHuiTi-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/Alibaba-PuHuiTi-Medium.otf') format('opentype');
+  src: url('../fonts/Alibaba-PuHuiTi-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/Alibaba-PuHuiTi-Bold.otf') format('opentype');
+  src: url('../fonts/Alibaba-PuHuiTi-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/Alibaba-PuHuiTi-Heavy.otf') format('opentype');
+  src: url('../fonts/Alibaba-PuHuiTi-Heavy.woff2') format('woff2');
   font-weight: 900;
   font-display: swap;
 }
@@ -48,7 +48,7 @@
   --bg: #F0F0F0;
   --black: #000000;
   --white: #FFFFFF;
-  --green: #41AB6B;
+  --green: #D1F957;
   --page-width: 1440px;
   --side-padding: 47px;
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -76,23 +76,24 @@ body {
   overflow: hidden;
   overscroll-behavior: none;
   margin: 0;
-  opacity: 0;
-}
-body.ready {
-  opacity: 1;
-  transition: opacity 0.25s ease;
 }
 
 /* 分页滚动容器 - fixed 定位，html 滚动不影响视觉 */
+/* 内容区渐现（不影响导航） */
 .page-wrapper {
   width: var(--page-width);
   height: 1080px;
-  overflow: hidden;
+  clip-path: inset(-1px -200vmax);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(var(--page-scale, 1));
   transform-origin: center center;
+  opacity: 0;
+}
+.page-wrapper.ready {
+  opacity: 1;
+  transition: opacity 0.45s ease-out;
 }
 
 /* 内层包裹，通过 transform 移动 */

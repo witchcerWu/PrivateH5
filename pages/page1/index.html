@@ -7,16 +7,19 @@
   <link rel="stylesheet" href="../../shared/css/base.css">
   <link rel="stylesheet" href="../../shared/css/components.css">
   <link rel="stylesheet" href="../../shared/css/nav.css">
-  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/sections.css?v=3">
+  <script src="../../shared/js/page-transition.js"></script>
 </head>
 <body>
 
-<nav class="floating-nav floating-nav--light">
-  <a class="floating-nav__item" href="../home/index.html">Home</a>
-  <div class="floating-nav__divider"></div>
-  <a class="floating-nav__item floating-nav__item--active" href="../page1/index.html">UX Design</a>
-  <div class="floating-nav__divider"></div>
-  <a class="floating-nav__item" href="../page2/index.html">Visual Design</a>
+<nav class="site-nav">
+  <div class="site-nav__inner">
+    <span class="site-nav__slider"></span>
+    <a class="site-nav__item" data-nav-index="0" href="../new-home/index.html">Home</a>
+    <a class="site-nav__item site-nav__item--active" data-nav-index="1" href="../page1/index.html">UX Design</a>
+    <a class="site-nav__item" data-nav-index="2" href="../page2/index.html">Visual Design</a>
+    <a class="site-nav__item" data-nav-index="3" href="../others/index.html">Others</a>
+  </div>
 </nav>
 
 <div class="page-wrapper" id="pageWrapper">
@@ -35,10 +38,10 @@
     </div>
 
     <!-- Left deco line -->
-    <img class="deco-line-left" style="width:2px;height:1395px;" src="https://img.alicdn.com/imgextra/i4/6000000006179/O1CN01cgRJRN1vW2RLK1T6u_!!6000000006179-2-gg_dtc.png" alt="">
+    <div class="deco-line-left" style="width:0.5px;height:1080px;background:#000;"></div>
 
     <!-- Main title line 1 -->
-    <span class="s1__title-top" data-anim="up" style="--d:0.07s">From Random To</span>
+    <img class="s1__title-top" data-anim="up" style="--d:0.07s" src="https://ae-pic-a1.aliexpress-media.com/kf/S918cde73f4304302877f170b24b5df67e.png" alt="From Random To">
 
     <!-- Display area -->
     <div class="s1__display" data-anim="up" style="--d:0.14s">
@@ -46,7 +49,7 @@
     </div>
 
     <!-- Main title line 2 -->
-    <span class="s1__title-bottom" data-anim="up" style="--d:0.21s"><span class="green">「Organized」</span><span class="black">Shop</span></span>
+    <img class="s1__title-bottom" data-anim="up" style="--d:0.21s" src="https://ae-pic-a1.aliexpress-media.com/kf/Scb79d78d40764372af2dc830cfa8a33ei.png" alt="Organized Shop">
 
     <!-- Decoration icon -->
     <img class="s1__deco-icon" data-anim="up" style="--d:0.28s" src="https://img.alicdn.com/imgextra/i4/6000000006068/O1CN01anrqWC1uhCTcc92IY_!!6000000006068-2-gg_dtc.png" alt="">
@@ -61,21 +64,22 @@
     </div>
 
     <!-- Right deco line -->
-    <img class="deco-line-right" style="width:2px;height:1705px;" src="https://img.alicdn.com/imgextra/i2/6000000007024/O1CN01Zindyf21l37ENnCRL_!!6000000007024-2-gg_dtc.png" alt="">
+    <div class="deco-line-right" style="width:0.5px;height:1080px;background:#000;"></div>
 
     <!-- Bottom deco line -->
     <div class="deco-line-bottom s1__deco-line-bottom"></div>
 
     <!-- Phone cards -->
     <div class="phone-card phone-card--left" data-anim="up" style="--d:0.42s">
-      <img src="https://img.alicdn.com/imgextra/i1/O1CN01LZEj5Z1wJVDOdFwgL_!!6000000006287-2-tps-768-2066.png" alt="">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8f765cc1fe4b41b18d8077a09c9e065fn.png" alt="">
     </div>
     <div class="phone-card phone-card--center" data-anim="up" style="--d:0.49s">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01szesp71FrpQAfKXMQ_!!6000000000541-2-tps-768-2066.png" alt="">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0c8a07467510404494c11c5e0a737290x.png" alt="">
     </div>
     <div class="phone-card phone-card--right" data-anim="up" style="--d:0.56s">
-      <img src="https://img.alicdn.com/imgextra/i4/O1CN01yTYA6C1yQwszbaRZL_!!6000000006574-2-tps-768-2066.png" alt="">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd221608db0204fbb9871332acf6c9453r.png" alt="">
     </div>
+
   </div>
 
   <!-- ==================== Section 2: 现状梳理 ==================== -->
@@ -88,12 +92,12 @@
     </div>
 
     <!-- Right deco line -->
-    <img class="deco-line-right s2__deco-line-right" src="https://img.alicdn.com/imgextra/i2/6000000007024/O1CN01Zindyf21l37ENnCRL_!!6000000007024-2-gg_dtc.png" alt="">
+    <div class="deco-line-right s2__deco-line-right" style="width:0.5px;background:#000;"></div>
 
     <!-- Left decoration -->
     <div class="s2__left-deco">
       <img class="s2__left-deco-icon" src="https://img.alicdn.com/imgextra/i4/6000000000870/O1CN01atJxgq1IIVj3DymxL_!!6000000000870-2-gg_dtc.png" alt="">
-      <img class="s2__left-deco-line" src="https://img.alicdn.com/imgextra/i3/6000000007464/O1CN01LNim9Q250ZNtnuVkt_!!6000000007464-2-gg_dtc.png" alt="">
+      <div class="s2__left-deco-line" style="background:#000;"></div>
     </div>
 
     <!-- Top quote -->
@@ -110,10 +114,10 @@
     </div>
 
     <!-- Stats bar -->
-    <img class="s2__stats-bar" style="width:744px;height:90px;" src="https://img.alicdn.com/imgextra/i3/6000000006348/O1CN01pxN8881wlRNJukrgf_!!6000000006348-2-gg_dtc.png" alt="">
+    <img class="s2__stats-bar" style="width:744px;height:90px;" src="https://ae-pic-a1.aliexpress-media.com/kf/Sf8b96c3296bc441a96ada839c23716b3W.png" alt="">
 
     <!-- 6 Phone cards -->
-    <div class="phone-card phone-card--static" style="width:218px;height:932px;z-index:12;top:348px;left:142px;">
+    <div class="phone-card phone-card--static" style="width:218px;height:942px;z-index:12;top:348px;left:142px;">
       <img src="https://img.alicdn.com/imgextra/i2/O1CN01D2JwzN1DxCq5gMSnj_!!6000000000282-2-tps-436-1865.png" alt="">
     </div>
     <div class="phone-card" style="width:218px;height:942px;z-index:11;top:348px;left:330px;">
@@ -144,6 +148,7 @@
       </div>
     </div>
    <span class="s2__bottom-mark-end">&rdquo;</span>
+
   </div>
 
   <!-- ==================== Section 3: 问题与策略 ==================== -->
@@ -163,74 +168,21 @@
       <span class="s3__emoji">🤔</span>
     </div>
 
-    <!-- Layer card 1: 体验层 -->
-    <img class="s3__layer-card-img" style="top:219px;left:43px;z-index:1;" src="https://img.alicdn.com/imgextra/i3/6000000006959/O1CN01vOeNCc21HHN6R092g_!!6000000006959-2-gg_dtc.png" alt="">
+    <!-- 金字塔配图 -->
+    <img class="s3__pyramid-img" data-anim="up" style="--d:0s" src="https://ae-pic-a1.aliexpress-media.com/kf/Sab7725e93b794c07a0f6edd1c7b65b51f.png" alt="">
 
-    <!-- Problem row 1 -->
-    <div class="s3__problem-row" style="top:200px;left:470px;z-index:2;">
-      <div class="s3__problem-labels">
-        <span class="s3__label">现状问题</span>
-        <span class="s3__label">设计策略</span>
-      </div>
-      <div class="s3__problem-title-row">
-        <span class="s3__problem-title">体验负荷过载</span>
-        <img class="s3__problem-dash-img" src="https://img.alicdn.com/imgextra/i2/6000000000300/O1CN014YsK4O1E5RyAe6ohC_!!6000000000300-2-gg_dtc.png" alt="">
-        <span class="s3__strategy-title">信息降噪与创新探索</span>
-      </div>
-      <div class="s3__problem-detail-row">
-        <span class="s3__problem-desc">用研满意度评分同比下滑0.68，较同样高密度的Temu低3-5% ,用户普遍反馈"繁忙且令人不知所措"</span>
-        <div class="s3__step-badge">
-          <span class="s3__step-text"><span class="light">STEP03 </span><span class="bold">体验升维</span></span>
-        </div>
-      </div>
-    </div>
+    <!-- 现状问题1 -->
+    <img class="s3__problem-img s3__problem-img--1" data-anim="up" style="--d:0.07s" src="https://ae-pic-a1.aliexpress-media.com/kf/Sef595ad7025a472894d06b4a829b3ecdy.png" alt="">
 
-    <!-- Layer card 2: 业务层 -->
-    <img class="s3__layer-card-img" style="top:470px;left:43px;z-index:5;" src="https://img.alicdn.com/imgextra/i3/6000000005756/O1CN01tTYzNk1sOIu8ou2ht_!!6000000005756-2-gg_dtc.png" alt="">
+    <!-- 现状问题2 -->
+    <img class="s3__problem-img s3__problem-img--2" data-anim="up" style="--d:0.14s" src="https://ae-pic-a1.aliexpress-media.com/kf/S36828d683e764bd4aa8e2c7f087004ebK.png" alt="">
 
-    <!-- Problem row 2 -->
-    <div class="s3__problem-row" style="top:509px;left:468px;z-index:6;">
-      <div class="s3__problem-title-row">
-        <span class="s3__problem-title">业务视角局限</span>
-        <img class="s3__problem-dash-img" src="https://img.alicdn.com/imgextra/i2/6000000000300/O1CN014YsK4O1E5RyAe6ohC_!!6000000000300-2-gg_dtc.png" alt="">
-        <span class="s3__strategy-title">动态运营与节奏编排</span>
-      </div>
-      <div class="s3__problem-detail-row">
-        <span class="s3__problem-desc">重运营国家业务激增，入口无序堆叠导致转化贡献高的"猜你喜欢"曝光下降，而新增频道L-P仅 0.3%。</span>
-        <div class="s3__step-badge">
-          <span class="s3__step-text"><span class="light">STEP02 </span><span class="bold">流量分级</span></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Layer card 3: 技术层 -->
-    <img class="s3__layer-card-img" style="top:720px;left:43px;z-index:8;" src="https://img.alicdn.com/imgextra/i4/6000000002395/O1CN01LjYZ6H1TYxjA8P25O_!!6000000002395-2-gg_dtc.png" alt="">
-
-    <!-- Problem row 3 -->
-    <div class="s3__problem-row" style="top:760px;left:468px;z-index:9;">
-      <div class="s3__problem-title-row">
-        <span class="s3__problem-title">技术底层限制</span>
-        <img class="s3__problem-dash-img" src="https://img.alicdn.com/imgextra/i2/6000000000300/O1CN014YsK4O1E5RyAe6ohC_!!6000000000300-2-gg_dtc.png" alt="">
-        <span class="s3__strategy-title">体验容器的标准化</span>
-      </div>
-      <div class="s3__problem-detail-row">
-        <span class="s3__problem-desc">各国站UI规则割裂、多风格并存导致70%链路场景不兼容。非标资产增加3倍，且随国家数量线性增长中。</span>
-        <div class="s3__step-badge">
-          <span class="s3__step-text"><span class="light">STEP01 </span><span class="bold">基建重构</span></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Vertical left line -->
-    <img class="s3__vline-left" src="https://img.alicdn.com/imgextra/i2/6000000008054/O1CN01MiWhu129Mn3zvZJXI_!!6000000008054-2-gg_dtc.png" alt="">
+    <!-- 现状问题3 -->
+    <img class="s3__problem-img s3__problem-img--3" data-anim="up" style="--d:0.21s" src="https://ae-pic-a1.aliexpress-media.com/kf/S4532d941db6f40c0b1956980aa74b68eY.png" alt="">
 
     <!-- Vertical right line -->
     <div class="s3__vline-right"></div>
 
-    <!-- Horizontal separator lines -->
-    <img class="s3__hline" style="top:378px;z-index:4;" src="https://img.alicdn.com/imgextra/i2/6000000003232/O1CN01roi3Fa1ZkJEaT6zaG_!!6000000003232-2-gg_dtc.png" alt="">
-    <img class="s3__hline" style="top:629px;z-index:7;" src="https://img.alicdn.com/imgextra/i2/6000000003232/O1CN01roi3Fa1ZkJEaT6zaG_!!6000000003232-2-gg_dtc.png" alt="">
-    <img class="s3__hline-bottom" src="https://img.alicdn.com/imgextra/i3/6000000000294/O1CN015B9Bt91E2hap6kbSl_!!6000000000294-2-gg_dtc.png" alt="">
   </div>
 
   <!-- ==================== Section 4: 三组机制 ==================== -->
@@ -239,13 +191,11 @@
     <!-- Header -->
     <div class="s4__header">
       <div class="s4__header-top">
-        <div class="s4__header-title-wrap">
-          <span class="s4__header-title">以三组机制重建首页秩序</span>
-          <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
-        </div>
-        <img src="https://img.alicdn.com/imgextra/i1/6000000002092/O1CN01EnV6KR1RKBieyL5Ti_!!6000000002092-2-gg_dtc.png" alt="" style="width:29px;height:38px;margin-left:3px;">
+        <span class="s4__header-title">以三组机制重建首页秩序</span>
+        <img class="s4__header-icon" src="images/Vector.png" alt="">
+        <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
       </div>
-      <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
+      <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
     </div>
 
     <!-- Right vertical line -->
@@ -258,10 +208,10 @@
     <span class="s4__col-num" style="left:65px;">01</span>
 
     <img class="s4__col-line-mid" style="left:495px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
-    <span class="s4__col-num" style="left:513px;opacity:0.2;">02</span>
+    <span class="s4__col-num" style="left:513px;">02</span>
 
     <img class="s4__col-line-mid" style="right:494px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
-    <span class="s4__col-num" style="right:450px;opacity:0.2;">03</span>
+    <span class="s4__col-num" style="right:450px;">03</span>
 
     <!-- Column 1: 基建重构 -->
     <div class="s4__col-content" style="left:84px;bottom:191px;">
@@ -275,7 +225,7 @@
     </div>
 
     <!-- Column 2: 流量分级 -->
-    <div class="s4__col-content" style="left:533px;bottom:191px;opacity:0.2;">
+    <div class="s4__col-content" style="left:533px;bottom:191px;">
       <img src="https://img.alicdn.com/imgextra/i4/6000000007865/O1CN011IdHQs27yECtIaZxf_!!6000000007865-2-gg_dtc.png" alt="" style="width:122px;height:116px;">
       <span class="s4__col-title">流量分级：
 动态运营与节奏编排</span>
@@ -286,8 +236,8 @@
     </div>
 
     <!-- Column 3: 体验升维 -->
-    <div class="s4__col-content" style="right:140px;bottom:191px;opacity:0.2;">
-      <img src="https://img.alicdn.com/imgextra/i2/6000000002457/O1CN01IqMpwC1U1MHcVRfqD_!!6000000002457-2-gg_dtc.png" alt="" style="width:116px;height:95px;">
+    <div class="s4__col-content" style="right:140px;bottom:191px;">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se87dec340b854e4aa17722e607c05fe3d.png" alt="" style="width:116px;height:95px;">
       <span class="s4__col-title">体验升维：
 信息降噪与创新探索</span>
       <div class="s4__col-bullets">
@@ -309,6 +259,7 @@
       <span class="s4__bar-text" style="right:80px;">提升视觉精致度，聚焦核心内容</span>
       <img class="s4__bar-icon" style="right:17px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
     </div>
+
   </div>
 
   <!-- ==================== Section 5: 基建重构详解 (3帧滚动切换) ==================== -->
@@ -325,13 +276,13 @@
       </div>
 
       <!-- Left vertical line -->
-      <img class="s5__vline-left" src="https://img.alicdn.com/imgextra/i3/6000000007465/O1CN01TWzcQd2511mO2gAeg_!!6000000007465-2-gg_dtc.png" alt="">
+      <div class="s5__vline-left"></div>
 
       <!-- Right vertical line -->
       <div class="s3__vline-right"></div>
 
       <!-- Bottom line -->
-      <img class="s5__bottom-line" src="https://img.alicdn.com/imgextra/i1/6000000007605/O1CN016yYIk32639EKXdhfq_!!6000000007605-2-gg_dtc.png" alt="">
+      <div class="s5__bottom-line"></div>
 
       <!-- Bottom left icon -->
       <img class="s5__bottom-icon" src="https://img.alicdn.com/imgextra/i2/6000000000236/O1CN01sOHmVe1Dc8cZMb9r0_!!6000000000236-2-gg_dtc.png" alt="">
@@ -344,7 +295,7 @@
 
       <!-- Frame 1: 全局锁定层 -->
       <div class="s5__frame s5__frame--active" data-frame="0">
-        <img class="s5__left-diagram" src="https://img.alicdn.com/imgextra/i1/6000000007909/O1CN0195reRR28INdMnevm2_!!6000000007909-2-gg_dtc.png" alt="">
+        <img class="s5__left-diagram" src="https://ae-pic-a1.aliexpress-media.com/kf/S6b3a97de06504673890a2e3cb4db3edeF.png" alt="">
         <img class="s5__connector" src="https://img.alicdn.com/imgextra/i1/6000000004639/O1CN018sDWGb1k8iUvAEawh_!!6000000004639-2-gg_dtc.png" alt="" style="width:166px;height:177px;top:262px;left:506px;">
         <span class="s5__connector-label" style="top:399px;left:528px;">全站统一</span>
         <div class="s5__panel">
@@ -354,15 +305,15 @@
             <img src="https://img.alicdn.com/imgextra/i2/6000000006983/O1CN01eOwzFg21SGsMtZq6o_!!6000000006983-2-gg_dtc.png" alt="" style="width:21px;height:21px;">
           </div>
           <div class="s5__panel-body">
-            <img src="https://img.alicdn.com/imgextra/i4/O1CN01vmqzHh1S1EwvwHcFG_!!6000000002186-2-tps-1220-856.png" alt="" style="width:610px;height:427px;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb4f80188561e4cdbb3cd2bad26b64c16t.png" alt="" style="width:610px;height:427px;">
           </div>
         </div>
       </div>
 
       <!-- Frame 2: 弹性适配层 -->
       <div class="s5__frame" data-frame="1">
-        <img class="s5__left-diagram" src="https://img.alicdn.com/imgextra/i4/6000000001620/O1CN01GDiuMz1Nq0mC5HKLo_!!6000000001620-2-gg_dtc.png" alt="">
-        <img class="s5__connector" src="https://img.alicdn.com/imgextra/i2/6000000003910/O1CN010vwYD11ekplbmrOFp_!!6000000003910-2-gg_dtc.png" alt="" style="width:164px;height:246px;top:262px;left:509px;">
+        <img class="s5__left-diagram" src="https://ae-pic-a1.aliexpress-media.com/kf/S6b3a97de06504673890a2e3cb4db3edeF.png" alt="">
+        <img class="s5__connector" src="https://ae-pic-a1.aliexpress-media.com/kf/Sab2cefce23ec41d4903424618fac9610O.png" alt="" style="width:164px;height:246px;top:262px;left:509px;">
         <span class="s5__connector-label" style="top:466px;left:529px;">动态编排</span>
         <div class="s5__panel">
           <div class="s5__panel-header">
@@ -371,15 +322,15 @@
             <img src="https://img.alicdn.com/imgextra/i2/6000000006983/O1CN01eOwzFg21SGsMtZq6o_!!6000000006983-2-gg_dtc.png" alt="" style="width:21px;height:21px;">
           </div>
           <div class="s5__panel-body">
-            <img src="https://img.alicdn.com/imgextra/i1/O1CN01jsS5hd1u6Yn8wLEIf_!!6000000005988-2-tps-1314-866.png" alt="" style="width:657px;height:433px;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0adeda40b07846e39e82266ec13369c6q.png" alt="" style="width:657px;height:433px;">
           </div>
         </div>
       </div>
 
       <!-- Frame 3: 国别定制层 -->
       <div class="s5__frame" data-frame="2">
-        <img class="s5__left-diagram" src="https://img.alicdn.com/imgextra/i3/6000000000885/O1CN01PL3ZB51IPNfTQB62f_!!6000000000885-2-gg_dtc.png" alt="">
-        <img class="s5__connector" src="https://img.alicdn.com/imgextra/i2/6000000002269/O1CN011LM9NJ1SdFp5XlcQh_!!6000000002269-2-gg_dtc.png" alt="" style="width:219px;height:127px;top:262px;left:455px;">
+        <img class="s5__left-diagram" src="https://ae-pic-a1.aliexpress-media.com/kf/S6b3a97de06504673890a2e3cb4db3edeF.png" alt="">
+        <img class="s5__connector" src="https://ae-pic-a1.aliexpress-media.com/kf/Scdde8c0d01974643ba98128308bb0510q.png" alt="" style="width:219px;height:127px;top:262px;left:455px;">
         <span class="s5__connector-label" style="top:352px;left:519px;">开放插槽</span>
         <div class="s5__panel">
           <div class="s5__panel-header">
@@ -389,12 +340,9 @@
           </div>
           <div class="s5__panel-body s5__panel-body--overflow"></div>
         </div>
-        <img class="s5__overflow-img" src="https://img.alicdn.com/imgextra/i2/O1CN01Z68TTk1cA4kQg8wim_!!6000000003559-2-tps-178-276.png" alt="" style="width:89px;height:138px;top:332px;left:845px;z-index:7;">
-        <img class="s5__overflow-img" src="https://img.alicdn.com/imgextra/i3/O1CN01dhpSQm1Nde5BEIjfv_!!6000000001593-2-tps-374-277.png" alt="" style="width:187px;height:138px;top:328px;left:682px;z-index:8;">
-        <img class="s5__overflow-img" src="https://img.alicdn.com/imgextra/i1/O1CN01XgWGxL216Hrklg3ZA_!!6000000006935-2-tps-700-601.png" alt="" style="width:350px;height:300px;top:486px;left:637px;z-index:9;">
-        <img class="s5__overflow-img" src="https://img.alicdn.com/imgextra/i2/O1CN01CyfHCN1l4snby7X0E_!!6000000004766-2-tps-914-509.png" alt="" style="width:457px;height:254px;top:304px;right:44px;z-index:10;">
-        <img class="s5__overflow-img" src="https://img.alicdn.com/imgextra/i2/O1CN01DEgG7C21jfvZZbWa9_!!6000000007021-2-tps-700-382.png" alt="" style="width:350px;height:190px;top:556px;right:76px;z-index:11;">
+        <img class="s5__frame3-img" src="https://ae-pic-a1.aliexpress-media.com/kf/Sdd872ba5922f4bbead9c13a9e16e905fK.png" alt="">
       </div>
+
 
     </div>
   </div>
@@ -404,39 +352,118 @@
 
     <!-- Header -->
     <div class="s6__header">
-      <div class="s6__header-top">
-        <span class="s6__header-label">01 基建重构: 体验容器的标准化</span>
-        <img class="s6__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
+      <span class="s6__header-sub">01 基建重构: 体验容器的标准化</span>
+      <div class="s6__title-group">
+        <span class="s6__title">拉齐UI Token界定约束边界</span>
+        <span class="s6__title s6__title--green">全局规范沉淀·智能体协作流</span>
       </div>
-      <span class="s6__header-title">拉齐UI Token界定约束边界</span>
     </div>
 
-    <!-- Left column -->
-    <div class="s6__left">
-      <div class="s6__dot-line">
+    <!-- Left main content: 搭建规范平台&Skill -->
+    <div class="s6__main-content">
+      <div class="s6__label-row">
         <div class="s6__dot"></div>
-        <img class="s6__vline" src="https://img.alicdn.com/imgextra/i2/6000000007137/O1CN01UREuGj22ans4Hym1a_!!6000000007137-2-gg_dtc.png" alt="">
+        <span class="s6__label">搭建规范平台&Skill</span>
       </div>
-      <div class="s6__left-content">
-        <span class="s6__left-title">全局规范沉淀·智能体协作流</span>
-        <span class="s6__left-sub">Figma Libray建设</span>
-        <div class="s6__left-images">
-          <img src="https://img.alicdn.com/imgextra/i1/O1CN01unQLhZ1iFvVBwE52C_!!6000000004384-2-tps-520-312.png" alt="">
-          <img src="https://img.alicdn.com/imgextra/i4/O1CN01G5WJc01IZSNi6A5Sm_!!6000000000907-2-tps-520-312.png" alt="">
-          <img src="https://img.alicdn.com/imgextra/i3/O1CN01GAY11X282oASmult6_!!6000000007875-2-tps-520-312.png" alt="">
+      <div class="s6__screenshots">
+        <div class="s6__img-hover-wrap s6__img-hover-wrap--main">
+          <img class="s6__screenshot-main" src="https://ae-pic-a1.aliexpress-media.com/kf/S9f36db94429c4a4497467e6ce6fd997dH.png" alt="">
+        </div>
+        <div class="s6__img-hover-wrap s6__img-hover-wrap--bar">
+          <img class="s6__screenshot-bar" src="https://ae-pic-a1.aliexpress-media.com/kf/S943a463b6ddc4f98baa100da6131c42c6.png" alt="">
         </div>
       </div>
     </div>
 
+    <!-- Vertical dashed line separator -->
+    <div class="s6__dashed-line"></div>
+
     <!-- Right column -->
-    <div class="s6__right">
-      <span class="s6__right-sub">搭建规范平台 & skill</span>
-      <img class="s6__right-top-img" src="https://img.alicdn.com/imgextra/i4/O1CN01z0QPIR1onG1KPgUrE_!!6000000005269-2-tps-1920-664.png" alt="">
-      <img class="s6__right-bottom-img" src="https://img.alicdn.com/imgextra/i4/O1CN01CZSkDq1ZeoTupoMT1_!!6000000003220-2-tps-1920-932.png" alt="">
+    <div class="s6__right-col">
+      <!-- Figma library -->
+      <div class="s6__right-section">
+        <div class="s6__label-row">
+          <div class="s6__dot"></div>
+          <span class="s6__label">Figma library</span>
+        </div>
+        <div class="s6__right-images">
+          <div class="s6__img-hover-wrap s6__img-hover-wrap--right">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6eb5abd1be934dac94fc7d72b8d49d03A.png" alt="">
+          </div>
+          <div class="s6__img-hover-wrap s6__img-hover-wrap--right">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa487f41151174a42a40a1cd7f6e4154dm.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- D2C 插件 -->
+      <div class="s6__right-section">
+        <div class="s6__label-row">
+          <div class="s6__dot"></div>
+          <span class="s6__label">D2C 插件</span>
+        </div>
+        <div class="s6__img-hover-wrap s6__img-hover-wrap--d2c">
+          <img class="s6__d2c-img" src="https://ae-pic-a1.aliexpress-media.com/kf/Se23a198647e24abdb876e477e79d6d8cN.png" alt="">
+        </div>
+      </div>
     </div>
+
+    <!-- Left vertical line -->
+    <div class="s6__vline-left"></div>
 
     <!-- Right vertical line -->
     <div class="s6__vline-right"></div>
+  </div>
+
+  <!-- ==================== Section 6b: 色彩语义化·Darkmode一键映射 ==================== -->
+  <div class="section s6b">
+
+    <!-- Header -->
+    <div class="s6b__header">
+      <span class="s6b__header-sub">01 基建重构: 体验容器的标准化</span>
+      <div class="s6b__title-group">
+        <span class="s6b__title">拉齐UI Token界定约束边界</span>
+        <span class="s6b__title s6b__title--green">色彩语义化·Darkmode一键映射</span>
+      </div>
+    </div>
+
+    <!-- Left: Screenshots -->
+    <div class="s6b__left-content">
+      <img class="s6b__phone-back" src="https://ae-pic-a1.aliexpress-media.com/kf/Sfc82087d28e74c5db9bdac745663a883B.png" alt="">
+      <img class="s6b__phone-front" src="https://ae-pic-a1.aliexpress-media.com/kf/S1a73eb4d3ab54d3db2d823641c65bca5p.png" alt="">
+    </div>
+
+    <!-- Vertical dashed line separator -->
+    <div class="s6b__dashed-line"></div>
+
+    <!-- Right content -->
+    <div class="s6b__right-content">
+      <!-- App端适配 -->
+      <div class="s6b__right-section">
+        <div class="s6b__section-header">
+          <div class="s6b__dot"></div>
+          <span class="s6b__label">App端适配</span>
+        </div>
+        <img class="s6b__img-adapt" src="images/s6b-app-adapt.png" alt="">
+      </div>
+      <!-- 对比度标准 -->
+      <div class="s6b__right-section s6b__right-section--contrast">
+        <div class="s6b__section-header">
+          <div class="s6b__dot"></div>
+          <span class="s6b__label">对比度标准</span>
+        </div>
+        <img class="s6b__img-contrast" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb540de6bcff741c2b2c960804201add36.png" alt="">
+      </div>
+    </div>
+
+    <!-- Vertical dashed line (section level, extends to bottom) -->
+    <div class="s6b__vline-inner"></div>
+
+
+
+    <!-- Right vertical line -->
+    <div class="s6b__vline-right"></div>
+
+
   </div>
 
   <!-- ==================== Section 7: 拉通首页标准化框架 (2帧切换) ==================== -->
@@ -448,6 +475,9 @@
         <span class="s7__title-sub">01 基建重构: 体验容器的标准化</span>
         <span class="s7__title-main">拉通首页标准化框架</span>
       </div>
+
+      <!-- Static: Left vertical line -->
+      <div class="s7__vline-left"></div>
 
       <!-- Static: Top horizontal line -->
       <div class="s7__hline-top"></div>
@@ -461,26 +491,26 @@
       <!-- Frame 0: Before -->
       <div class="s7__frame s7__frame--active" data-frame="0">
         <span class="s7__state-label">Before</span>
-        <img class="s7__vline-left" src="https://img.alicdn.com/imgextra/i1/6000000005359/O1CN01q3vTze1pSTfMrX797_!!6000000005359-2-gg_dtc.png" alt="">
-        <div class="s7__left-annotation">
-          <span class="s7__annotation-label">用研反馈：</span>
-          <img class="s7__annotation-img" src="https://img.alicdn.com/imgextra/i3/O1CN01rSBL3Q1shXXUNrS8Q_!!6000000005798-2-tps-636-1010.png" alt="">
+
+        <!-- Back phone (no effects, plain screenshot) -->
+        <img class="s7__phone-back" src="images/s7-before-back.png" alt="">
+
+        <!-- Front phone (CSS border/shadow/radius) -->
+        <div class="s7__phone-front">
+          <img src="images/s7-before-front.png" alt="">
         </div>
-        <img class="s7__phone-center" src="https://img.alicdn.com/imgextra/i3/O1CN01mdQNP81IpUFAcT950_!!6000000000942-2-tps-480-1888.png" alt="">
-        <img class="s7__rline-top" src="https://img.alicdn.com/imgextra/i2/6000000005934/O1CN01OWTqnD1thpP7ltMfJ_!!6000000005934-2-gg_dtc.png" alt="">
-        <img class="s7__rline-mid" src="https://img.alicdn.com/imgextra/i4/6000000006865/O1CN01uUZBDk20aE8p8pVUy_!!6000000006865-2-gg_dtc.png" alt="">
-        <img class="s7__rline-bottom" src="https://img.alicdn.com/imgextra/i4/6000000001241/O1CN01c07IKv1L2QfROdxkD_!!6000000001241-2-gg_dtc.png" alt="">
+
+        <!-- Annotations -->
         <div class="s7__anno-row s7__anno-row--head">
           <span class="s7__anno-title">头部区块</span>
           <span class="s7__anno-dash"></span>
         </div>
         <div class="s7__anno-text s7__anno-text--head">
-          <span>搜索是用户旅程的核心起点</span>
-          <span>类目tab点击意愿较低</span>
+          <span>类目tab点击较低</span>
           <span>心智条排版多语言适配性差</span>
         </div>
         <div class="s7__anno-row s7__anno-row--mid">
-          <span class="s7__anno-title">中部楼层(2-5)</span>
+          <span class="s7__anno-title">中部楼层(1-2)</span>
           <span class="s7__anno-dash"></span>
         </div>
         <div class="s7__anno-text s7__anno-text--mid">
@@ -496,51 +526,58 @@
           <span>被挤压至2屏+曝光率</span>
           <span>持续下滑</span>
         </div>
-        <img class="s7__phone-right s7__phone-right--top" src="https://img.alicdn.com/imgextra/i2/6000000001496/O1CN018Ocs5Z1MvDfEiFC6Z_!!6000000001496-2-gg_dtc.png" alt="">
-        <img class="s7__phone-right s7__phone-right--mid" src="https://img.alicdn.com/imgextra/i2/6000000002895/O1CN019RAi031XFxlBsJ6DF_!!6000000002895-2-gg_dtc.png" alt="">
-        <img class="s7__phone-right s7__phone-right--bottom" src="https://img.alicdn.com/imgextra/i4/6000000005358/O1CN01kqIZlB1pS1Gk3QfO6_!!6000000005358-2-gg_dtc.png" alt="">
+
+        <!-- Wireframe diagrams -->
+        <img class="s7__wireframe s7__wireframe--head" src="images/s7-wireframe-before-head.png" alt="">
+        <img class="s7__wireframe s7__wireframe--mid" src="images/s7-wireframe-before-mid.png" alt="">
+        <img class="s7__wireframe s7__wireframe--waterfall" src="images/s7-wireframe-before-waterfall.png" alt="">
+
       </div>
 
       <!-- Frame 1: After -->
       <div class="s7__frame" data-frame="1">
         <span class="s7__state-label">After</span>
-        <img class="s7__vline-left" src="https://img.alicdn.com/imgextra/i1/6000000005359/O1CN01q3vTze1pSTfMrX797_!!6000000005359-2-gg_dtc.png" alt="">
-        <div class="s7__left-annotation">
-          <span class="s7__annotation-label">用研反馈：</span>
-          <img class="s7__annotation-img" src="https://img.alicdn.com/imgextra/i3/O1CN01udzVUD1c7mlZqj7cQ_!!6000000003554-2-tps-638-1070.png" alt="" style="width:319px;height:535px;">
+
+        <!-- Back phone (no effects, plain screenshot) -->
+        <img class="s7__phone-back" src="images/s7-after-back.png" alt="">
+
+        <!-- Front phone (CSS border/shadow/radius) -->
+        <div class="s7__phone-front">
+          <img src="images/s7-after-front.png" alt="">
         </div>
-        <img class="s7__phone-center" src="https://img.alicdn.com/imgextra/i3/O1CN01s0LYo120Ip5h3nzHz_!!6000000006827-2-tps-480-1893.png" alt="">
-        <img class="s7__rline-top" src="https://img.alicdn.com/imgextra/i2/6000000006391/O1CN019ZWaJV1x58PEJrwUx_!!6000000006391-2-gg_dtc.png" alt="" style="height:120px;">
-        <img class="s7__rline-mid" src="https://img.alicdn.com/imgextra/i3/6000000004943/O1CN01qP4Wns1mNwu2YqLYK_!!6000000004943-2-gg_dtc.png" alt="" style="height:296px;top:306px;">
-        <img class="s7__rline-bottom" src="https://img.alicdn.com/imgextra/i2/6000000002629/O1CN01nhatZC1VI8PC4BQV3_!!6000000002629-2-gg_dtc.png" alt="" style="height:426px;bottom:38px;">
+
+        <!-- Annotations -->
         <div class="s7__anno-row s7__anno-row--head">
           <span class="s7__anno-title">头部区块</span>
           <span class="s7__anno-dash"></span>
         </div>
         <div class="s7__anno-text s7__anno-text--head">
           <span>类目tab下移至瀑布流</span>
-          <span>拉通单行轮播心智条</span>
+          <span>拉通单行心智条</span>
         </div>
-        <div class="s7__anno-row s7__anno-row--mid" style="top:304px;">
+        <div class="s7__anno-row s7__anno-row--mid">
           <span class="s7__anno-title">中部楼层(1-2)</span>
           <span class="s7__anno-dash"></span>
         </div>
-        <div class="s7__anno-text s7__anno-text--mid" style="top:334px;">
+        <div class="s7__anno-text s7__anno-text--mid">
           <span>收敛频道数量、</span>
           <span>优化视觉分隔、</span>
           <span>简化楼层布局</span>
         </div>
-        <div class="s7__anno-row s7__anno-row--waterfall" style="top:648px;">
+        <div class="s7__anno-row s7__anno-row--waterfall">
           <span class="s7__anno-title">瀑布流</span>
           <span class="s7__anno-dash"></span>
         </div>
-        <div class="s7__anno-text s7__anno-text--waterfall" style="top:675px;">
+        <div class="s7__anno-text s7__anno-text--waterfall">
           <span>tab动态排序、</span>
           <span>频道插卡个性化分发</span>
         </div>
-        <img class="s7__phone-right" src="https://img.alicdn.com/imgextra/i2/6000000002393/O1CN01TECkt41TY2w4ETPec_!!6000000002393-2-gg_dtc.png" alt="" style="top:159px;height:97px;">
-        <img class="s7__phone-right" src="https://img.alicdn.com/imgextra/i3/6000000000125/O1CN01cv3aN81CnIer3h6U1_!!6000000000125-2-gg_dtc.png" alt="" style="top:293px;height:323px;">
-        <img class="s7__phone-right" src="https://img.alicdn.com/imgextra/i4/6000000007450/O1CN01dhlDJB24u9q8MTmGr_!!6000000007450-2-gg_dtc.png" alt="" style="top:644px;height:215px;">
+
+        <!-- Wireframe diagrams -->
+        <img class="s7__wireframe s7__wireframe--head" src="images/s7-wireframe-after-head.png" alt="">
+        <img class="s7__wireframe s7__wireframe--mid" src="images/s7-wireframe-after-mid.png" alt="">
+        <img class="s7__wireframe s7__wireframe--waterfall" src="images/s7-wireframe-after-waterfall.png" alt="">
+
       </div>
 
     </div>
@@ -552,20 +589,18 @@
     <!-- Header -->
     <div class="s4__header">
       <div class="s4__header-top">
-        <div class="s4__header-title-wrap">
-          <span class="s4__header-title">以三组机制重建首页秩序</span>
-          <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
-        </div>
-        <img src="https://img.alicdn.com/imgextra/i1/6000000002092/O1CN01EnV6KR1RKBieyL5Ti_!!6000000002092-2-gg_dtc.png" alt="" style="width:29px;height:38px;margin-left:3px;">
+        <span class="s4__header-title">以三组机制重建首页秩序</span>
+        <img class="s4__header-icon" src="images/Vector.png" alt="">
+        <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
       </div>
-      <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
+      <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
     </div>
 
     <!-- Right vertical line -->
     <div class="s3__vline-right"></div>
 
     <!-- Column dividers -->
-    <div class="s4__col-divider" style="left:47px;">
+    <div class="s4__col-divider" style="left:47px;opacity:0.2;">
       <img src="https://img.alicdn.com/imgextra/i3/6000000007465/O1CN01TWzcQd2511mO2gAeg_!!6000000007465-2-gg_dtc.png" alt="" style="width:3px;height:685px;">
     </div>
     <span class="s4__col-num" style="left:65px;opacity:0.2;">01</span>
@@ -573,7 +608,7 @@
     <img class="s4__col-line-mid" style="left:495px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
     <span class="s4__col-num" style="left:513px;">02</span>
 
-    <img class="s4__col-line-mid" style="right:494px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
+    <img class="s4__col-line-mid" style="right:494px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
     <span class="s4__col-num" style="right:450px;opacity:0.2;">03</span>
 
     <!-- Column 1: 基建重构 -->
@@ -600,7 +635,7 @@
 
     <!-- Column 3: 体验升维 -->
     <div class="s4__col-content" style="right:140px;bottom:191px;opacity:0.2;">
-      <img src="https://img.alicdn.com/imgextra/i2/6000000002457/O1CN01IqMpwC1U1MHcVRfqD_!!6000000002457-2-gg_dtc.png" alt="" style="width:116px;height:95px;">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se87dec340b854e4aa17722e607c05fe3d.png" alt="" style="width:116px;height:95px;">
       <span class="s4__col-title">体验升维：
 信息降噪与创新探索</span>
       <div class="s4__col-bullets">
@@ -613,15 +648,16 @@
     <div class="s4__bottom-bar">
       <img class="s4__bottom-bar-line" src="https://img.alicdn.com/imgextra/i2/6000000003657/O1CN01aJtvT61csxYuhaFyB_!!6000000003657-2-gg_dtc.png" alt="">
       <img class="s4__bottom-bar-bg" src="https://img.alicdn.com/imgextra/i1/6000000004693/O1CN010n4rpL1kXRt1Hvhob_!!6000000004693-2-gg_dtc.png" alt="">
-      <span class="s4__bar-text" style="left:84px;">提升设计效率与技术框架稳定性</span>
-      <img class="s4__bar-icon" style="left:449px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
+      <span class="s4__bar-text" style="left:84px;opacity:0.2;">提升设计效率与技术框架稳定性</span>
+      <img class="s4__bar-icon" style="left:449px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
       <img class="s4__bar-sep" style="left:496px;" src="https://img.alicdn.com/imgextra/i1/6000000002836/O1CN01PaQ6R41WowOND7Itt_!!6000000002836-2-gg_dtc.png" alt="">
       <span class="s4__bar-text" style="left:532px;">优化首页流量分发效率，引导转化</span>
       <img class="s4__bar-icon" style="right:465px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
       <img class="s4__bar-sep" style="right:446px;" src="https://img.alicdn.com/imgextra/i1/6000000002836/O1CN01PaQ6R41WowOND7Itt_!!6000000002836-2-gg_dtc.png" alt="">
-      <span class="s4__bar-text" style="right:80px;">提升视觉精致度，聚焦核心内容</span>
-      <img class="s4__bar-icon" style="right:17px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
+      <span class="s4__bar-text" style="right:80px;opacity:0.2;">提升视觉精致度，聚焦核心内容</span>
+      <img class="s4__bar-icon" style="right:17px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
     </div>
+
   </div>
 
   <!-- ==================== Section 9: 建立动态流转准入规则 ==================== -->
@@ -658,7 +694,7 @@
           <img class="s9__solution-line" src="https://img.alicdn.com/imgextra/i1/6000000001880/O1CN01C4qyCw1Pl5kguKj3g_!!6000000001880-2-gg_dtc.png" alt="">
           <div class="s9__solution-content">
             <p class="s9__solution-desc">让资源位从<span class="orange">版面争夺</span>变成<span class="orange">按数据表现流转</span>的产品机制。</p>
-            <img class="s9__solution-img" src="https://img.alicdn.com/imgextra/i1/O1CN01URpekm1s8H2gFBxPx_!!6000000005721-2-tps-920-936.png" alt="">
+            <img class="s9__solution-img" src="https://ae-pic-a1.aliexpress-media.com/kf/S9027911faa764a568274b3fc5fdd00daJ.png" alt="">
           </div>
         </div>
       </div>
@@ -703,6 +739,7 @@
       </div>
 
       <!-- Bottom images (comparison + mechanism) -->
+      <div class="s9__mechanism-dot"></div>
       <div class="s9__bottom-images">
         <img class="s9__bottom-img-table" src="https://img.alicdn.com/imgextra/i3/O1CN01YX4lWH1irTynGDToI_!!6000000004466-2-tps-1524-322.png" alt="">
         <img class="s9__bottom-img-flow" src="https://img.alicdn.com/imgextra/i3/O1CN01zKrmYz1clApTOgEKd_!!6000000003640-2-tps-1546-436.png" alt="">
@@ -711,6 +748,7 @@
 
     <!-- Right vertical edge line -->
     <div class="s9__vline-right"></div>
+
   </div>
 
   <!-- ==================== Section 9: 扩展稳态框架下的弹性模版 ==================== -->
@@ -747,43 +785,43 @@
       <div class="s10__body">
         <!-- Left phone mockup -->
         <div class="s10__phone-col">
-          <img class="s10__phone-img" src="https://img.alicdn.com/imgextra/i4/O1CN01o9wW4q1kleAGOuubT_!!6000000004724-2-tps-600-1642.png" alt="">
+          <img class="s10__phone-img" src="https://ae-pic-a1.aliexpress-media.com/kf/S4c6cb3e90f04447b931dd195c47d15f4r.png" alt="">
         </div>
 
         <!-- Right: template grid -->
         <div class="s10__templates">
           <!-- Row 1 -->
           <div class="s10__template-row">
-            <img src="https://img.alicdn.com/imgextra/i2/6000000002282/O1CN01yeUw7Z1SjCyIqhpVQ_!!6000000002282-2-gg_dtc.png" alt="">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S62ca7f5ee93f497092ec225ff5dfa62fi.png" alt="">
             <div class="s10__carousel s10__carousel--2">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN01gQrSLD1bp0WqGbdd9_!!6000000003513-2-tps-676-178.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01FNaRvH1Y23LZLfuvQ_!!6000000003000-2-tps-676-178.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2352f094b2234c0a8d7f998bd019cfabc.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc457b1e503a44d88b9a132250557b43e1.png" alt="">
             </div>
           </div>
           <!-- Row 2 -->
           <div class="s10__template-row s10__template-row--tall">
-            <img src="https://img.alicdn.com/imgextra/i4/6000000005544/O1CN01dYuWT31qpCwEJTMAi_!!6000000005544-2-gg_dtc.png" alt="">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Seeaf58f2ed6e4dc8ab0d3ea601a0f7d7P.png" alt="">
             <div class="s10__carousel s10__carousel--3">
-              <img src="https://img.alicdn.com/imgextra/i2/O1CN01a6e2e91UWVDQjW2VC_!!6000000002525-2-tps-676-453.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01ehlcrw1tnK9m2HN1r_!!6000000005946-2-tps-676-455.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01zcgitB1CKu6MzQJxk_!!6000000000063-2-tps-338-228.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb777f83d98bc42058495e3700283a8abH.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1335a5be64f94fef9e6c71974427c46bO.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7137097408794ea58fd3c425614bd831C.png" alt="">
             </div>
           </div>
           <!-- Row 3 -->
           <div class="s10__template-row s10__template-row--tall">
-            <img src="https://img.alicdn.com/imgextra/i2/6000000001522/O1CN01U4gctb1N77xgRcchH_!!6000000001522-2-gg_dtc.png" alt="">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf866d872f3f1416580a14b3275cf7970z.png" alt="">
             <div class="s10__carousel s10__carousel--3">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN014ispu11c1NDmUwSWd_!!6000000003540-2-tps-676-456.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN01gypPLs1PVWHrEc5N9_!!6000000001846-2-tps-676-456.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN01bYhUaH1q2exIcLoWM_!!6000000005438-2-tps-676-454.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S556a93fd70d443e889ba801fc2d5e44bz.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S94f7acde5819450fa6230b91db8b869dp.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8b9575c5bb694435beaa31300fa11c649.png" alt="">
             </div>
           </div>
           <!-- Row 4 -->
           <div class="s10__template-row s10__template-row--tall">
-            <img src="https://img.alicdn.com/imgextra/i4/6000000001447/O1CN01I7QCXH1MYmFymQtqK_!!6000000001447-2-gg_dtc.png" alt="">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S18126be22a034e6ba0b925551d280495S.png" alt="">
             <div class="s10__carousel s10__carousel--2">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN01vzLNgE1lNCdsDlVB3_!!6000000004806-2-tps-1352-986.png" alt="">
-              <img src="https://gw.alicdn.com/imgextra/i1/O1CN01SwKN5n20Jjsn8rGkw_!!6000000006829-2-tps-671-490.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf639233792804fe1af8404456956fc79P.png" alt="">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S71ab2a35e27147e9879dca69b671bd73M.png" alt="">
             </div>
           </div>
         </div>
@@ -792,123 +830,40 @@
 
     <!-- Right vertical edge line -->
     <div class="s10__vline-right"></div>
+
   </div>
 
-  <!-- ==================== Section 10: 扩展稳态框架下的弹性模版 (3帧滚动切换) ==================== -->
-  <div class="section s11" id="s11">
-    <div class="s11__sticky">
+  <!-- ==================== Section 11: 弹性模版展示 ==================== -->
+  <div class="section s11">
 
-      <!-- Header (static) -->
-      <div class="s11__header">
-        <div class="s11__header-top">
-          <span class="s11__header-label">02流量分级: 动态运营与节奏编排</span>
-          <img class="s11__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
-        </div>
-        <span class="s11__header-title">扩展稳态框架下的弹性模版</span>
+    <!-- Header -->
+    <div class="s11__header">
+      <div class="s11__header-top">
+        <span class="s11__header-label">02流量分级: 动态运营与节奏编排</span>
+        <img class="s11__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
       </div>
-
-      <!-- Left marker (matching s10 style) -->
-      <div class="s11__col-marker">
-        <div class="s11__section-dot"></div>
-        <span class="s11__left-label">弹性模版</span>
-        <img class="s11__vline-left" src="https://img.alicdn.com/imgextra/i2/6000000007137/O1CN01UREuGj22ans4Hym1a_!!6000000007137-2-gg_dtc.png" alt="">
-      </div>
-
-      <!-- Left phone mockup image (static) -->
-      <img class="s11__phone-img" src="https://img.alicdn.com/imgextra/i4/O1CN01s3TxyM1uQiDcXygy7_!!6000000006032-2-tps-600-1642.png" alt="">
-
-      <!-- Right vertical line -->
-      <div class="s11__vline-right"></div>
-
-      <!-- Frame 1: 强化手段一&二 -->
-      <div class="s11__frame s11__frame--active" data-frame="0">
-        <div class="s11__frame-content">
-          <div class="s11__col">
-            <div class="s11__col-marker-inline">
-              <div class="s11__col-dot"></div>
-              <div class="s11__col-vline"></div>
-            </div>
-            <span class="s11__col-title">强化手段一：背景氛围</span>
-            <span class="s11__col-sub">通用类型</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i2/O1CN011QzKWQ22Du4H5swVg_!!6000000007087-2-tps-825-624.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN0152pvBC1ql5NF7mFpt_!!6000000005535-2-tps-825-674.png" alt="">
-            </div>
-          </div>
-          <div class="s11__col">
-            <div class="s11__col-marker-inline">
-              <div class="s11__col-dot"></div>
-              <div class="s11__col-vline"></div>
-            </div>
-            <span class="s11__col-title">强化手段二：破型布局</span>
-            <span class="s11__col-sub">适合多类型内容呈现的业务场景</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN019asdCV1wp6XmKWnjE_!!6000000006356-2-tps-825-434.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN01BPlkzX1E2FCH9Mhuy_!!6000000000293-2-tps-825-434.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i2/O1CN01VgqyXQ1fla1nP8nKr_!!6000000004047-2-tps-825-445.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Frame 2: 强化手段三 -->
-      <div class="s11__frame" data-frame="1">
-        <div class="s11__frame-content">
-          <div class="s11__col">
-            <div class="s11__col-marker-inline">
-              <div class="s11__col-dot"></div>
-              <div class="s11__col-vline"></div>
-            </div>
-            <span class="s11__col-title">强化手段三：异形卡片</span>
-            <span class="s11__col-sub">适合重运营有高质量素材的业务场景</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN01F6oWEh1YN7Z9qHZQL_!!6000000003046-2-tps-825-630.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01xsLtvZ1WoTzpk1UOH_!!6000000002835-2-tps-825-329.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN01AmzyDc1ricrSTvhqo_!!6000000005665-2-tps-825-564.png" alt="">
-            </div>
-          </div>
-          <div class="s11__col">
-            <span class="s11__col-title s11__col-title--hidden">占位</span>
-            <span class="s11__col-sub s11__col-sub--hidden">占位</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN01tfUYnn1sTLGFejzDL_!!6000000005767-2-tps-825-524.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01HUq3RT1k2lLn4BhoG_!!6000000004626-2-tps-825-403.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i2/O1CN01rZpjiH1SSGJff8Cqm_!!6000000002245-2-tps-825-588.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Frame 3: 强化手段四 -->
-      <div class="s11__frame" data-frame="2">
-        <div class="s11__frame-content">
-          <div class="s11__col">
-            <div class="s11__col-marker-inline">
-              <div class="s11__col-dot"></div>
-              <div class="s11__col-vline"></div>
-            </div>
-            <span class="s11__col-title">强化手段四：多形态布局-探索</span>
-            <span class="s11__col-sub">适合AI多主题x内容聚合，当前业务阶段暂不适用</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN017kUfWk1XstQO99Mnm_!!6000000002980-2-tps-824-361.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i2/O1CN01rekmDU1DLBy0H8eWx_!!6000000000199-2-tps-824-335.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01ddlEun1nDFGK5r1tA_!!6000000005055-2-tps-824-448.png" alt="">
-            </div>
-          </div>
-          <div class="s11__col">
-            <span class="s11__col-title s11__col-title--hidden">占位</span>
-            <span class="s11__col-sub s11__col-sub--hidden">占位</span>
-            <div class="s11__col-images">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01bT94tF1jY4oVc0zkJ_!!6000000004559-2-tps-825-358.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01xkQjuS1POeLWlueOs_!!6000000001831-2-tps-825-341.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i3/O1CN01yIxQoG232k200rh9N_!!6000000007198-2-tps-824-337.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01SXflva1hIO0twhjHm_!!6000000004254-2-tps-824-315.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <span class="s11__header-title">扩展稳态框架下的弹性模版</span>
     </div>
+
+    <!-- Right vertical line -->
+    <div class="s11__vline-right"></div>
+
+    <!-- Phone hero image (bottom center) -->
+    <img class="s11__phone-hero" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd958a23c096a4fde8a36527da428462bC.png" alt="">
+
+    <!-- Left column cards (top to bottom) -->
+    <img class="s11__card s11__card-l1" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd43986c65e324ce0b5ec6c1f4c7a529fI.png" alt="">
+    <img class="s11__card s11__card-l2" src="https://ae-pic-a1.aliexpress-media.com/kf/S48aed6af34d54053b17b4b9bbc37a4fcm.png" alt="">
+    <img class="s11__card s11__card-l3" src="https://ae-pic-a1.aliexpress-media.com/kf/S02fc697700aa4b9d96091e66604af9daB.png" alt="">
+    <img class="s11__card s11__card-l4" src="https://ae-pic-a1.aliexpress-media.com/kf/Sca924cbee75d4c37b7ea532b27e93607h.png" alt="">
+    <img class="s11__card s11__card-l5" src="https://ae-pic-a1.aliexpress-media.com/kf/S8583f485a7034dec90c2f21d26f57e743.png" alt="">
+
+    <!-- Right column cards (top to bottom) -->
+    <img class="s11__card s11__card-r1" src="https://ae-pic-a1.aliexpress-media.com/kf/S2583b6c2e2ba4b24a9e5daed4a8491a97.png" alt="">
+    <img class="s11__card s11__card-r2" src="https://ae-pic-a1.aliexpress-media.com/kf/S6a9faff5c00f43bdb309d8e3218425e03.png" alt="">
+    <img class="s11__card s11__card-r3" src="https://ae-pic-a1.aliexpress-media.com/kf/S79d2dd2ebfb9446aa064fd7133bb844a0.png" alt="">
+    <img class="s11__card s11__card-r4" src="https://ae-pic-a1.aliexpress-media.com/kf/S7e90e82b1bb04f5eabf7f4f15c311e827.png" alt="">
+
   </div>
 
   <!-- ==================== Section 12: 以三组机制重建首页秩序 (选中03) ==================== -->
@@ -917,25 +872,23 @@
     <!-- Header -->
     <div class="s4__header">
       <div class="s4__header-top">
-        <div class="s4__header-title-wrap">
-          <span class="s4__header-title">以三组机制重建首页秩序</span>
-          <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
-        </div>
-        <img src="https://img.alicdn.com/imgextra/i1/6000000002092/O1CN01EnV6KR1RKBieyL5Ti_!!6000000002092-2-gg_dtc.png" alt="" style="width:29px;height:38px;margin-left:3px;">
+        <span class="s4__header-title">以三组机制重建首页秩序</span>
+        <img class="s4__header-icon" src="images/Vector.png" alt="">
+        <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
       </div>
-      <img class="s4__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
+      <span class="s4__header-subtitle">收敛差异、分级承接、约束强化。</span>
     </div>
 
     <!-- Right vertical line -->
     <div class="s3__vline-right"></div>
 
     <!-- Column dividers -->
-    <div class="s4__col-divider" style="left:47px;">
+    <div class="s4__col-divider" style="left:47px;opacity:0.2;">
       <img src="https://img.alicdn.com/imgextra/i3/6000000007465/O1CN01TWzcQd2511mO2gAeg_!!6000000007465-2-gg_dtc.png" alt="" style="width:3px;height:685px;">
     </div>
     <span class="s4__col-num" style="left:65px;opacity:0.2;">01</span>
 
-    <img class="s4__col-line-mid" style="left:495px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
+    <img class="s4__col-line-mid" style="left:495px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
     <span class="s4__col-num" style="left:513px;opacity:0.2;">02</span>
 
     <img class="s4__col-line-mid" style="right:494px;" src="https://img.alicdn.com/imgextra/i2/6000000004649/O1CN010mE22u1kDISXl1RMH_!!6000000004649-2-gg_dtc.png" alt="">
@@ -965,7 +918,7 @@
 
     <!-- Column 3: 体验升维 -->
     <div class="s4__col-content" style="right:140px;bottom:191px;">
-      <img src="https://img.alicdn.com/imgextra/i2/6000000002457/O1CN01IqMpwC1U1MHcVRfqD_!!6000000002457-2-gg_dtc.png" alt="" style="width:116px;height:95px;">
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se87dec340b854e4aa17722e607c05fe3d.png" alt="" style="width:116px;height:95px;">
       <span class="s4__col-title">体验升维：
 信息降噪与创新探索</span>
       <div class="s4__col-bullets">
@@ -978,244 +931,208 @@
     <div class="s4__bottom-bar">
       <img class="s4__bottom-bar-line" src="https://img.alicdn.com/imgextra/i2/6000000003657/O1CN01aJtvT61csxYuhaFyB_!!6000000003657-2-gg_dtc.png" alt="">
       <img class="s4__bottom-bar-bg" src="https://img.alicdn.com/imgextra/i1/6000000004693/O1CN010n4rpL1kXRt1Hvhob_!!6000000004693-2-gg_dtc.png" alt="">
-      <span class="s4__bar-text" style="left:84px;">提升设计效率与技术框架稳定性</span>
-      <img class="s4__bar-icon" style="left:449px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
+      <span class="s4__bar-text" style="left:84px;opacity:0.2;">提升设计效率与技术框架稳定性</span>
+      <img class="s4__bar-icon" style="left:449px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
       <img class="s4__bar-sep" style="left:496px;" src="https://img.alicdn.com/imgextra/i1/6000000002836/O1CN01PaQ6R41WowOND7Itt_!!6000000002836-2-gg_dtc.png" alt="">
-      <span class="s4__bar-text" style="left:532px;">优化首页流量分发效率，引导转化</span>
-      <img class="s4__bar-icon" style="right:465px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
+      <span class="s4__bar-text" style="left:532px;opacity:0.2;">优化首页流量分发效率，引导转化</span>
+      <img class="s4__bar-icon" style="right:465px;opacity:0.2;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
       <img class="s4__bar-sep" style="right:446px;" src="https://img.alicdn.com/imgextra/i1/6000000002836/O1CN01PaQ6R41WowOND7Itt_!!6000000002836-2-gg_dtc.png" alt="">
       <span class="s4__bar-text" style="right:80px;">提升视觉精致度，聚焦核心内容</span>
       <img class="s4__bar-icon" style="right:17px;" src="https://img.alicdn.com/imgextra/i1/6000000007744/O1CN011VgQqS274oHbYT8wS_!!6000000007744-2-gg_dtc.png" alt="">
     </div>
-  </div>
-
-  <!-- ==================== Section 13: 构建信息层级映射体系 ==================== -->
-  <div class="section s13">
-
-    <!-- Header -->
-    <div class="s13__header">
-      <div class="s13__header-top">
-        <span class="s13__header-label">03体验升维：信息降噪与品质管控</span>
-        <img class="s13__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
-      </div>
-      <span class="s13__header-title">构建信息层级映射体系</span>
-    </div>
-
-    <!-- Subtitle tags -->
-    <div class="s13__subtitle-row">
-      <div class="s13__tag">
-        <span class="s13__tag-dot"></span>
-        <span class="s13__tag-text">配色收敛</span>
-      </div>
-      <div class="s13__tag s13__tag--right">
-        <span class="s13__tag-dot"></span>
-        <span class="s13__tag-text">节促氛围分层</span>
-      </div>
-    </div>
-
-    <!-- Bottom horizontal line -->
-    <img class="s13__hline-bottom" src="https://img.alicdn.com/imgextra/i1/6000000007605/O1CN016yYIk32639EKXdhfq_!!6000000007605-2-gg_dtc.png" alt="">
-
-    <!-- Left vertical line -->
-    <img class="s13__vline-left" src="https://img.alicdn.com/imgextra/i3/6000000006884/O1CN01jDNDyV20ivfNYsV2M_!!6000000006884-2-gg_dtc.png" alt="">
-
-    <!-- Left content area: 配色收敛 -->
-    <div class="s13__left-content">
-      <!-- Upper: Before/After comparison -->
-      <div class="s13__compare-upper">
-        <!-- Before column -->
-        <div class="s13__before-col">
-          <div class="s13__before-header">
-            <div class="s13__before-header-text">
-              <span class="s13__col-label">Before</span>
-              <span class="s13__col-desc" style="margin-top:7px;">各业务无差别强化</span>
-            </div>
-            <span class="s13__col-dash s13__col-dash--top"></span>
-          </div>
-          <div class="s13__before-body">
-            <img class="s13__col-img" src="https://img.alicdn.com/imgextra/i4/O1CN01J1PK6x1dFrMkr3AmM_!!6000000003707-2-tps-520-352.png" alt="" style="width:260px;height:176px;margin-left:1px;">
-            <div class="s13__before-mid-row">
-              <span class="s13__col-desc">背景氛围识别性较低</span>
-              <span class="s13__col-dash"></span>
-            </div>
-            <img class="s13__col-img" src="https://img.alicdn.com/imgextra/i4/O1CN01IQw6uv22fNpeFG8ON_!!6000000007147-2-tps-520-404.png" alt="" style="width:260px;height:202px;margin-top:11px;margin-left:1px;">
-          </div>
-        </div>
-        <!-- After column -->
-        <div class="s13__after-col">
-          <span class="s13__col-label">After</span>
-          <span class="s13__col-desc">视觉降噪，特殊色留给重要信息</span>
-          <img class="s13__col-img s13__col-img--mt19" src="https://img.alicdn.com/imgextra/i1/O1CN01qbiITJ1f39brAB4hq_!!6000000003950-2-tps-620-436.png" alt="" style="width:310px;height:218px;">
-          <img class="s13__col-img s13__col-img--mt43" src="https://img.alicdn.com/imgextra/i3/O1CN01H6eZyP1aUZEmVu9jV_!!6000000003333-2-tps-620-466.png" alt="" style="width:310px;height:233px;">
-        </div>
-      </div>
-
-      <!-- Lower: 心智条对比 -->
-      <div class="s13__compare-lower">
-        <div class="s13__lower-text">
-          <div class="s13__lower-before-text">
-            <span class="s13__col-desc">各国家站心智条样式混杂</span>
-            <span class="s13__col-dash"></span>
-          </div>
-          <span class="s13__col-desc">中性配色提升与大促场景适配度</span>
-        </div>
-        <div class="s13__lower-images">
-          <img src="https://img.alicdn.com/imgextra/i2/O1CN015qL26S1F6ecuIz64L_!!6000000000438-2-tps-520-314.png" alt="" style="width:260px;height:157px;">
-          <img src="https://img.alicdn.com/imgextra/i3/O1CN01Q58lr41olspeZx2nk_!!6000000005266-2-tps-620-302.png" alt="" style="width:310px;height:151px;">
-        </div>
-      </div>
-    </div>
-
-    <!-- Right content area: 节促氛围分层 -->
-    <div class="s13__right-content">
-      <!-- Before column -->
-      <div class="s13__right-before">
-        <img class="s13__right-vline" src="https://img.alicdn.com/imgextra/i4/6000000001053/O1CN01YKAHUS1JeKCsq09FJ_!!6000000001053-2-gg_dtc.png" alt="">
-        <div class="s13__right-before-inner">
-          <div class="s13__right-label-row">
-            <span class="s13__col-label">Before</span>
-            <span class="s13__col-dash"></span>
-          </div>
-          <span class="s13__col-desc s13__col-desc--pre">每月平均2场a+促，
-全年大部分时间都在大促态</span>
-          <img class="s13__col-img s13__col-img--mt8" src="https://img.alicdn.com/imgextra/i4/O1CN01MA36R21iyLv8FNWAA_!!6000000004481-2-tps-520-1318.png" alt="" style="width:260px;height:659px;">
-        </div>
-      </div>
-      <!-- After column -->
-      <div class="s13__right-after">
-        <span class="s13__col-label">After</span>
-        <span class="s13__col-desc s13__col-desc--pre">A+促弱化全局氛围
-给S级大促预留营销感</span>
-        <img class="s13__col-img s13__col-img--mt13" src="https://img.alicdn.com/imgextra/i2/O1CN01KMRrtP27fuMfDrp6N_!!6000000007825-2-tps-620-1394.png" alt="" style="width:310px;height:697px;">
-      </div>
-    </div>
-
-    <!-- Right edge vertical line -->
-    <div class="s13__vline-right"></div>
 
   </div>
 
-  <!-- ==================== Section 12: 构建信息层级映射体系-节促氛围 ==================== -->
-  <div class="section s14">
+  <!-- ==================== Section 14: 构建信息层级映射体系-升级营销表达 ==================== -->
+  <div class="section s14" id="s14">
+    <div class="s14__sticky">
 
-    <!-- Outer container -->
-    <div class="s14__container">
-
-      <!-- Header -->
+      <!-- Static: Header -->
       <div class="s14__header">
         <div class="s14__header-top">
           <span class="s14__header-label">03体验升维：信息降噪与品质管控</span>
-          <img class="s14__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
+          <img class="s14__header-line" src="https://img.alicdn.com/imgextra/i4/6000000001258/O1CN01lgDRG21LADOsiiIoE_!!6000000001258-2-gg_dtc.png" alt="">
         </div>
         <span class="s14__header-title">构建信息层级映射体系</span>
       </div>
 
-      <!-- Sub-heading -->
-      <div class="s14__subtitle">
-        <span class="s14__subtitle-dot"></span>
-        <span class="s14__subtitle-text">升级营销表达</span>
-      </div>
+      <!-- Static: Left vertical line -->
+      <div class="s14__vline-left"></div>
 
-      <!-- Top separator line -->
-      <img class="s14__hline-top" src="https://img.alicdn.com/imgextra/i4/6000000004685/O1CN01flnn0y1kTmiYjgM5T_!!6000000004685-2-gg_dtc.png" alt="">
+      <!-- Static: Right edge vertical line -->
+      <div class="s14__vline-right"></div>
 
-      <!-- Main content row -->
-      <div class="s14__content">
+      <!-- Frame 0: Before -->
+      <div class="s14__frame s14__frame--active" data-frame="0">
+        <span class="s14__state-label">Before</span>
+        <div class="s14__anno-dot"></div>
+        <span class="s14__anno-heading">现状问题</span>
 
-        <!-- Left vertical line -->
-        <img class="s14__vline-left" src="https://img.alicdn.com/imgextra/i3/6000000003027/O1CN01hWPKZ81YEQ2aNqEoW_!!6000000003027-2-gg_dtc.png" alt="">
-
-        <!-- Left Before column -->
-        <div class="s14__before-col">
-          <span class="s14__before-label">before</span>
-          <span class="s14__before-desc">首页分楼层单独配置，效果受限
-仅banner透出kv，
-主要靠颜色配置，手段单一</span>
-          <img class="s14__before-img" src="https://img.alicdn.com/imgextra/i2/O1CN014WzVoF1drsEtSTlkA_!!6000000003790-2-tps-620-1342.png" alt="">
+        <span class="s14__anno-title s14__anno-title--1">大促氛围</span>
+        <span class="s14__anno-desc s14__anno-desc--1">每月平均2场a+促，全屏强化氛围</span>
+        <div class="s14__palette-row s14__palette-row--1">
+          <span class="s14__palette-dot" style="background:#7B4328"></span>
+          <span class="s14__palette-dot" style="background:#A36539"></span>
+          <span class="s14__palette-dot" style="background:#C78E61"></span>
+          <span class="s14__palette-dot" style="background:#D4965E"></span>
+          <span class="s14__palette-dot" style="background:#FEF9DB"></span>
+          <span class="s14__palette-dot" style="background:#E66217"></span>
         </div>
 
-        <!-- Right large image area -->
-        <div class="s14__right-area">
-          <!-- Base image -->
-          <img class="s14__base-img" src="https://img.alicdn.com/imgextra/i2/6000000006914/O1CN01j5kNwF20wfY3rouu2_!!6000000006914-2-gg_dtc.png" alt="">
-
-          <!-- Overlay layer -->
-          <div class="s14__overlay">
-
-            <!-- 1. After phone screenshot area -->
-            <div class="s14__after-phone">
-              <span class="s14__after-label">After</span>
-              <img class="s14__after-img" src="https://img.alicdn.com/imgextra/i2/O1CN01v6vQuG1PLtyBuaWzP_!!6000000001825-2-tps-750-1624.png" alt="">
-            </div>
-
-            <!-- 2. 版头框架改造标注区 -->
-            <div class="s14__anno-header">
-              <img class="s14__anno-header-vline" src="https://img.alicdn.com/imgextra/i1/6000000006633/O1CN01NTciql1yryFnvEttm_!!6000000006633-2-gg_dtc.png" alt="">
-              <div class="s14__anno-header-title">
-                <span class="s14__green-dot"></span>
-                <span class="s14__anno-header-text">版头框架改造</span>
-              </div>
-              <span class="s14__anno-header-desc">拉通背景层，
-配置更灵活</span>
-              <img class="s14__anno-header-img" src="https://img.alicdn.com/imgextra/i3/6000000001805/O1CN01LVDxJn1PCk33eSLjQ_!!6000000001805-2-gg_dtc.png" alt="">
-              <img class="s14__anno-header-sm1" src="https://img.alicdn.com/imgextra/i2/6000000006288/O1CN01pmIoTq1wJxbxWwTpr_!!6000000006288-2-gg_dtc.png" alt="">
-              <img class="s14__anno-header-sm2" src="https://img.alicdn.com/imgextra/i1/6000000001253/O1CN01iLaFEU1L7vQ1xSKVR_!!6000000001253-2-gg_dtc.png" alt="">
-            </div>
-
-            <!-- 3. 中部绿色圆点 -->
-            <span class="s14__mid-dot"></span>
-
-            <!-- 4. 中部垂直线 -->
-            <img class="s14__mid-vline" src="https://img.alicdn.com/imgextra/i1/6000000004450/O1CN01uWF4Zw1ik9dswDmFh_!!6000000004450-2-gg_dtc.png" alt="">
-
-            <!-- 5. 迎客松标注 -->
-            <span class="s14__pine-title">迎客松开放图片配置项</span>
-
-            <!-- 6. 迎客松描述 -->
-            <span class="s14__pine-desc">大促kv更沉浸</span>
-
-            <!-- 7. 下部长垂直线 -->
-            <img class="s14__bottom-vline" src="https://img.alicdn.com/imgextra/i1/6000000005267/O1CN01oK526L1omLECUypq3_!!6000000005267-2-gg_dtc.png" alt="">
-
-            <!-- 8. 右侧小图标 -->
-            <img class="s14__right-icon" src="https://img.alicdn.com/imgextra/i4/6000000003305/O1CN017NbEi51aHk9AyA0V3_!!6000000003305-2-gg_dtc.png" alt="">
-
-            <!-- 9. 右侧图标组 -->
-            <div class="s14__icon-group">
-              <img src="https://img.alicdn.com/imgextra/i3/6000000004260/O1CN01h8yFMh1hL8OEKxnUc_!!6000000004260-2-gg_dtc.png" alt="">
-              <img class="s14__icon-group-second" src="https://img.alicdn.com/imgextra/i4/6000000003726/O1CN01rEqyMz1dOYtHfyuMJ_!!6000000003726-2-gg_dtc.png" alt="">
-            </div>
-
-            <!-- 10. 金刚位标注区 -->
-            <div class="s14__anno-jingang">
-              <div class="s14__anno-jingang-title">
-                <span class="s14__green-dot"></span>
-                <span class="s14__anno-jingang-text">金刚位元素焕肤</span>
-              </div>
-              <span class="s14__anno-jingang-desc">S促图标跟随节庆氛围</span>
-            </div>
-
-            <!-- 11. 底部图片组 -->
-            <div class="s14__bottom-imgs">
-              <img src="https://img.alicdn.com/imgextra/i1/O1CN017st8961RvHni4RQLE_!!6000000002173-2-tps-1000-262.png" alt="">
-              <img src="https://img.alicdn.com/imgextra/i4/O1CN01DlW8P81aaWNz16Lbj_!!6000000003346-2-tps-1000-262.png" alt="">
-            </div>
-
-          </div>
+        <span class="s14__anno-title s14__anno-title--2">日常楼层</span>
+        <span class="s14__anno-desc s14__anno-desc--2">各业务无差别强化</span>
+        <div class="s14__palette-row s14__palette-row--2">
+          <span class="s14__palette-dot" style="background:#EB262D"></span>
+          <span class="s14__palette-dot" style="background:#FEC716"></span>
+          <span class="s14__palette-dot" style="background:#21B129"></span>
+          <span class="s14__palette-dot" style="background:#E1F6E3"></span>
+          <span class="s14__palette-dot" style="background:#242424"></span>
+          <span class="s14__palette-dot" style="background:#6D6D6D"></span>
+          <span class="s14__palette-dot" style="background:#9D9D9D"></span>
         </div>
 
+        <span class="s14__anno-title s14__anno-title--3">心智条</span>
+        <span class="s14__anno-desc s14__anno-desc--3">各国样式、配色混杂，难与大促氛围兼容</span>
+        <div class="s14__palette-row s14__palette-row--3">
+          <span class="s14__palette-dot" style="background:#2ABD05"></span>
+          <span class="s14__palette-dot" style="background:#ACF961"></span>
+          <span class="s14__palette-dot" style="background:#E1F6E3"></span>
+          <span class="s14__palette-dot" style="background:#621710"></span>
+          <span class="s14__palette-dot" style="background:#F9DD9B"></span>
+        </div>
+
+        <img class="s14__bottom-strip" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd49c42477681482599c2e8431278f711d.png" alt="">
+        <img class="s14__phone-1" src="https://ae-pic-a1.aliexpress-media.com/kf/S14072fc57e0940809da38816221a5124m.png" alt="">
+        <img class="s14__phone-2" src="https://ae-pic-a1.aliexpress-media.com/kf/S837bbde9f66c41f6a35ab431711042c8z.png" alt="">
       </div>
+
+      <!-- Frame 1: After -->
+      <div class="s14__frame" data-frame="1">
+        <span class="s14__state-label">After</span>
+        <div class="s14__anno-dot"></div>
+        <span class="s14__anno-heading">视觉简化降噪</span>
+
+        <span class="s14__anno-title s14__anno-title--1">大促氛围</span>
+        <span class="s14__anno-desc s14__anno-desc--1">A+促分层弱化，给S级大促预留营销感</span>
+        <div class="s14__palette-row s14__palette-row--1">
+          <span class="s14__palette-dot" style="background:#7B4328"></span>
+          <span class="s14__palette-dot" style="background:#A36539"></span>
+          <span class="s14__palette-dot" style="background:#FFF1DE"></span>
+        </div>
+
+        <span class="s14__anno-title s14__anno-title--2">日常楼层</span>
+        <span class="s14__anno-desc s14__anno-desc--2">特殊色留给当前阶段重要信息</span>
+        <div class="s14__palette-row s14__palette-row--2">
+          <span class="s14__palette-dot" style="background:#EB262D"></span>
+          <span class="s14__palette-dot" style="background:#242424"></span>
+          <span class="s14__palette-dot" style="background:#6D6D6D"></span>
+          <span class="s14__palette-dot" style="background:#9D9D9D"></span>
+        </div>
+
+        <span class="s14__anno-title s14__anno-title--3">心智条</span>
+        <span class="s14__anno-desc s14__anno-desc--3">中性配色提升与大促场景适配度</span>
+        <div class="s14__palette-row s14__palette-row--3">
+          <span class="s14__palette-dot" style="background:#1B1823"></span>
+          <span class="s14__palette-dot" style="background:#5F5F79"></span>
+          <span class="s14__palette-dot" style="background:#E9E8F9"></span>
+        </div>
+
+        <img class="s14__bottom-strip" src="https://ae-pic-a1.aliexpress-media.com/kf/S749571dc94184f23ad5928822bfcf401i.png" alt="">
+        <img class="s14__phone-1" src="https://ae-pic-a1.aliexpress-media.com/kf/Scfcd1819f43f4400a209fea8d4ef1bdbd.png" alt="">
+        <img class="s14__phone-2" src="https://ae-pic-a1.aliexpress-media.com/kf/Se0c9a3a4ace94c3d8751bf80da7edbdeR.png" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== Section 14b: 构建信息层级映射体系-升级营销表达 ==================== -->
+  <div class="section s14b">
+
+    <!-- Header -->
+    <div class="s14b__header">
+      <div class="s14b__header-top">
+        <span class="s14b__header-label">03体验升维：信息降噪与品质管控</span>
+        <img class="s14b__header-line" src="https://img.alicdn.com/imgextra/i3/6000000004707/O1CN01vHOowG1kdrQnC5EbG_!!6000000004707-2-gg_dtc.png" alt="">
+      </div>
+      <span class="s14b__header-title">构建信息层级映射体系</span>
+    </div>
+
+    <!-- Sub-heading -->
+    <span class="s14b__subtitle-text">升级营销表达</span>
+
+    <!-- Before column (left) -->
+    <div class="s14b__before-col">
+      <span class="s14b__before-label">Before</span>
+      <img class="s14b__before-img" src="images/s14-before-phone.png" alt="">
+    </div>
+
+    <!-- After column (center) -->
+    <div class="s14b__after-col">
+      <span class="s14b__after-label">After</span>
+      <img class="s14b__after-img" src="images/s14-after-phone.png" alt="">
+    </div>
+
+    <!-- 14p配图 - 右侧渐变装饰图 -->
+    <img class="s14b__14p-img" src="images/s14-14p-img.png" alt="">
+
+    <!-- Right annotations -->
+    <div class="s14b__annotations">
+
+      <!-- 版头框架改造 -->
+      <div class="s14b__anno-section">
+        <div class="s14b__anno-title-row">
+          <span class="s14b__green-dot"></span>
+          <span class="s14b__anno-title">版头框架改造</span>
+        </div>
+        <span class="s14b__anno-desc">背景拉通</span>
+        <img class="s14b__anno-star-img" src="images/s14-header-reform.png" alt="">
+      </div>
+
+      <!-- 竖虚线1 -->
+      <div class="s14b__dashed-line s14b__dashed-line--1"></div>
+
+      <!-- 迎客松开放图片配置 -->
+      <div class="s14b__anno-section">
+        <div class="s14b__anno-title-row">
+          <span class="s14b__green-dot"></span>
+          <span class="s14b__anno-title">迎客松开放图片配置</span>
+        </div>
+        <span class="s14b__anno-desc">沉浸KV</span>
+        <div class="s14b__pine-icons">
+          <img src="images/s14-icon1.png" alt="">
+          <img src="images/s14-icon2.png" alt="">
+          <img src="images/s14-icon3.png" alt="">
+        </div>
+      </div>
+
+      <!-- 竖虚线2 -->
+      <div class="s14b__dashed-line s14b__dashed-line--2"></div>
+
+      <!-- 金刚位元素焕肤 -->
+      <div class="s14b__anno-section">
+        <div class="s14b__anno-title-row">
+          <span class="s14b__green-dot"></span>
+          <span class="s14b__anno-title">金刚位元素焕肤</span>
+        </div>
+        <span class="s14b__anno-desc">跟随节庆氛围</span>
+        <div class="s14b__jingang-imgs">
+          <img src="images/s14-jingang1.png" alt="">
+          <img src="images/s14-jingang2.png" alt="">
+        </div>
+      </div>
+
     </div>
 
     <!-- Bottom horizontal line -->
-    <img class="s14__hline-bottom" src="https://img.alicdn.com/imgextra/i1/6000000007605/O1CN016yYIk32639EKXdhfq_!!6000000007605-2-gg_dtc.png" alt="">
+    <img class="s14b__hline-bottom" src="https://img.alicdn.com/imgextra/i1/6000000007605/O1CN016yYIk32639EKXdhfq_!!6000000007605-2-gg_dtc.png" alt="">
 
     <!-- Right edge vertical line -->
-    <div class="s14__vline-right"></div>
+    <div class="s14b__vline-right"></div>
+
 
   </div>
 
-<!-- ==================== Section 13: 持续探索首页的更多可能性 ==================== -->
+<!-- ==================== Section 15: 持续探索首页的更多可能性 ==================== -->
 <div class="section s15">
 
   <!-- Header -->
@@ -1230,41 +1147,28 @@
   <!-- Right vertical line -->
   <div class="s15__vline-right"></div>
 
-  <!-- Phone screenshots carousel -->
+  <!-- Phone screenshots 3D carousel -->
   <div class="s15__carousel">
     <div class="s15__carousel-track">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01NtB8PS23iQ4bM3YSe_!!6000000007289-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01WEA24q1iJafdvWkFx_!!6000000004392-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01I8cB861Pa6FQqRYLW_!!6000000001856-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01MKdvmM1WPIDAi7utH_!!6000000002780-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01HhJyPx1a2AgHuLEzd_!!6000000003271-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01cjBPCo1qTDvY4esbU_!!6000000005496-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i4/O1CN01UCmZGo1y9XpryUtMS_!!6000000006536-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i1/O1CN01xjCwo029Dd8sZprCS_!!6000000008034-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01OQZpSE1JGy0XDe3dT_!!6000000001002-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i1/O1CN01f3rXwK1hMxySrSbzX_!!6000000004264-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01NzUocP1a0nUcTeEUF_!!6000000003268-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01QzCGbT1SGoPqBUaKm_!!6000000002220-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01eTCQEt1EV69JMxASF_!!6000000000356-2-tps-750-1624.png" alt="">
-      <!-- Duplicated for seamless infinite loop -->
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01NtB8PS23iQ4bM3YSe_!!6000000007289-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01WEA24q1iJafdvWkFx_!!6000000004392-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01I8cB861Pa6FQqRYLW_!!6000000001856-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01MKdvmM1WPIDAi7utH_!!6000000002780-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01HhJyPx1a2AgHuLEzd_!!6000000003271-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01cjBPCo1qTDvY4esbU_!!6000000005496-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i4/O1CN01UCmZGo1y9XpryUtMS_!!6000000006536-2-tps-750-1628.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i1/O1CN01xjCwo029Dd8sZprCS_!!6000000008034-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01OQZpSE1JGy0XDe3dT_!!6000000001002-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i1/O1CN01f3rXwK1hMxySrSbzX_!!6000000004264-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01NzUocP1a0nUcTeEUF_!!6000000003268-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i2/O1CN01QzCGbT1SGoPqBUaKm_!!6000000002220-2-tps-750-1624.png" alt="">
-      <img src="https://img.alicdn.com/imgextra/i3/O1CN01eTCQEt1EV69JMxASF_!!6000000000356-2-tps-750-1624.png" alt="">
+      <div class="s15__card" style="--i:0"><img src="https://img.alicdn.com/imgextra/i1/O1CN01xjCwo029Dd8sZprCS_!!6000000008034-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:1"><img src="https://img.alicdn.com/imgextra/i2/O1CN01I8cB861Pa6FQqRYLW_!!6000000001856-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:2"><img src="https://img.alicdn.com/imgextra/i3/O1CN01NzUocP1a0nUcTeEUF_!!6000000003268-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:3"><img src="https://img.alicdn.com/imgextra/i3/O1CN01HhJyPx1a2AgHuLEzd_!!6000000003271-2-tps-750-1628.png" alt=""></div>
+      <div class="s15__card" style="--i:4"><img src="https://img.alicdn.com/imgextra/i2/O1CN01QzCGbT1SGoPqBUaKm_!!6000000002220-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:5"><img src="https://img.alicdn.com/imgextra/i2/O1CN01NtB8PS23iQ4bM3YSe_!!6000000007289-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:6"><img src="https://img.alicdn.com/imgextra/i1/O1CN01f3rXwK1hMxySrSbzX_!!6000000004264-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:7"><img src="https://img.alicdn.com/imgextra/i2/O1CN01MKdvmM1WPIDAi7utH_!!6000000002780-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:8"><img src="https://img.alicdn.com/imgextra/i3/O1CN01eTCQEt1EV69JMxASF_!!6000000000356-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:9"><img src="https://img.alicdn.com/imgextra/i2/O1CN01cjBPCo1qTDvY4esbU_!!6000000005496-2-tps-750-1628.png" alt=""></div>
+      <div class="s15__card" style="--i:10"><img src="https://img.alicdn.com/imgextra/i3/O1CN01WEA24q1iJafdvWkFx_!!6000000004392-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:11"><img src="https://img.alicdn.com/imgextra/i2/O1CN01OQZpSE1JGy0XDe3dT_!!6000000001002-2-tps-750-1624.png" alt=""></div>
+      <div class="s15__card" style="--i:12"><img src="https://img.alicdn.com/imgextra/i4/O1CN01UCmZGo1y9XpryUtMS_!!6000000006536-2-tps-750-1628.png" alt=""></div>
     </div>
   </div>
 
   <!-- Bottom horizontal line -->
   <img class="s15__hline-bottom" src="https://img.alicdn.com/imgextra/i1/6000000007605/O1CN016yYIk32639EKXdhfq_!!6000000007605-2-gg_dtc.png" alt="">
+
 
 </div>
 
@@ -1275,16 +1179,7 @@
 <!-- Page Indicator -->
 <div class="page-indicator" id="pageIndicator"></div>
 
-<script>
-// 调试：给每个 section 左上角加页码
-document.querySelectorAll('.section').forEach(function(sec, i) {
-  var label = document.createElement('div');
-  label.textContent = i + 1;
-  label.style.cssText = 'position:absolute;top:8px;left:8px;z-index:9999;background:red;color:#fff;font-size:14px;font-weight:bold;padding:2px 6px;border-radius:4px;pointer-events:none;';
-  sec.style.position = sec.style.position || 'relative';
-  sec.appendChild(label);
-});
-</script>
+
 <script src="js/scroll.js"></script>
 </body>
 </html>

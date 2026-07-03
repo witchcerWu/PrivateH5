@@ -3,7 +3,7 @@
  *
  * 核心策略：
  * - 通过 CSS transform: translateY() 移动内容，不使用 scrollTop
- * - 17 个 section 均为 1440×1080 单屏设计，无帧切换、无屏内滚动
+ * - 16 个 section，s10 包含 2 帧切换（VersionA / VersionB）
  * - wheel 事件永远正常触发，无光标位置依赖
  */
 (function () {
@@ -85,6 +85,26 @@
   var isAnimating = false;
   var currentOffset = 0;
 
+  // ========== S10 帧切换 ==========
+  var s10El = document.getElementById('s10');
+  var s10Frames = s10El ? s10El.querySelectorAll('.s10__frame') : [];
+  var s10Frame = 0;
+  var S10_TOTAL_FRAMES = s10Frames.length || 2;
+  var s10PageIndex = -1;
+
+  // 找到 s10 在 sections 中的索引
+  for (var k = 0; k < sections.length; k++) {
+    if (sections[k] === s10El) { s10PageIndex = k; break; }
+  }
+
+  function switchS10Frame(index) {
+    s10Frame = index;
+    for (var i = 0; i < s10Frames.length; i++) {
+      s10Frames[i].classList.remove('s10__frame--active');
+      if (i === index) s10Frames[i].classList.add('s10__frame--active');
+    }
+  }
+
   // ========== 动画引擎 ==========
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
@@ -101,7 +121,6 @@
       return;
     }
     var startTime = null;
-    var unlocked = false;
 
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
@@ -109,12 +128,6 @@
       var progress = Math.min(elapsed / duration, 1);
       currentOffset = startOffset + distance * easeOutCubic(progress);
       inner.style.transform = 'translateY(' + (-currentOffset) + 'px)';
-
-      // 5% 时提前解锁，允许接受下一次输入
-      if (!unlocked && progress >= 0.05) {
-        unlocked = true;
-        isAnimating = false;
-      }
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -132,8 +145,24 @@
   // ========== 翻页逻辑 ==========
   function goNext() {
     if (isAnimating) return false;
+
+    // S10 帧切换优先
+    if (currentPage === s10PageIndex && s10Frame < S10_TOTAL_FRAMES - 1) {
+      isAnimating = true;
+      switchS10Frame(s10Frame + 1);
+      setTimeout(function () { isAnimating = false; }, 800);
+      return;
+    }
+
     var nextPage = currentPage + 1;
-    if (nextPage >= pages.length) return false;
+    if (nextPage >= pages.length) {
+      // 已到最后一页末尾 → 跳转到 Others（双向连续滚动）
+      if (window.__navSetFrom) window.__navSetFrom(2);
+      sessionStorage.setItem('projectEntryDirection', 'forward');
+      if (window.__navigateWithTransition) { window.__navigateWithTransition('../others/index.html', 3); }
+      else { window.location.href = '../others/index.html'; }
+      return;
+    }
     isAnimating = true;
     currentPage = nextPage;
     triggerSectionAnim(currentPage);
@@ -143,8 +172,24 @@
 
   function goPrev() {
     if (isAnimating) return false;
+
+    // S10 帧切换优先
+    if (currentPage === s10PageIndex && s10Frame > 0) {
+      isAnimating = true;
+      switchS10Frame(s10Frame - 1);
+      setTimeout(function () { isAnimating = false; }, 800);
+      return;
+    }
+
     var prevPage = currentPage - 1;
-    if (prevPage < 0) return false;
+    if (prevPage < 0) {
+      // 已到第一页顶部 → 跳转到 page1（双向连续滚动）
+      if (window.__navSetFrom) window.__navSetFrom(2);
+      sessionStorage.setItem('projectEntryDirection', 'backward');
+      if (window.__navigateWithTransition) { window.__navigateWithTransition('../page1/index.html', 1); }
+      else { window.location.href = '../page1/index.html'; }
+      return;
+    }
     isAnimating = true;
     currentPage = prevPage;
     triggerSectionAnim(currentPage);
@@ -318,12 +363,126 @@
     }, (maxDelay + 0.9) * 1000);
   }
 
-  // 首屏立即触发动画
-  setTimeout(function () {
-    triggerSectionAnim(0);
-  }, 300);
+  // ========== 反向进入支持 ==========
+  var entryDir = sessionStorage.getItem('projectEntryDirection');
+  sessionStorage.removeItem('projectEntryDirection');
 
-  // 初始化指示器
-  buildIndicator();
-  document.body.classList.add('ready');
+  if (entryDir === 'backward' && pages.length > 0) {
+    // 从 Others 回退到 page2：定位到最后一页
+    currentPage = pages.length - 1;
+
+    // 如果最后一页是 s10 帧切换，定位到最后一帧
+    if (currentPage === s10PageIndex) {
+      s10Frame = S10_TOTAL_FRAMES - 1;
+      switchS10Frame(s10Frame);
+    }
+
+    currentOffset = pages[currentPage];
+    inner.style.transform = 'translateY(' + (-currentOffset) + 'px)';
+
+    // 触发所有已过 section 动画
+    for (var ai = 0; ai <= currentPage; ai++) {
+      triggerSectionAnim(ai);
+    }
+    buildIndicator();
+    wrapper.classList.add('ready');
+  } else {
+    // 正常进入：从第一页开始
+    setTimeout(function () {
+      triggerSectionAnim(0);
+    }, 300);
+    buildIndicator();
+    wrapper.classList.add('ready');
+  }
+
+  // ========== S7 鼠标跟随视差 ==========
+  (function () {
+    var s7 = document.querySelector('.s7');
+    if (!s7) return;
+    var imgs = s7.querySelectorAll('.s7__img');
+    // 每张图不同的跟随强度（z-index越高移动越多）
+    var factors = [15, 22, 30, 38, 45, 52, 60, 68, 75, 82];
+    var rafId = null;
+    var targetX = 0;
+    var targetY = 0;
+    var currentX = 0;
+    var currentY = 0;
+    var entered = false;
+  
+    // 页面切换到s7时触发入场散开动画
+    function triggerEntrance() {
+      if (entered) return;
+      entered = true;
+      // 各图片从中心向外散开一小段距离
+      var entranceOffsets = [
+        [-12, -8], [10, -6], [-8, 10], [6, 12], [-14, 4],
+        [12, -10], [-6, 8], [8, -12], [14, 6], [-10, -14]
+      ];
+      for (var i = 0; i < imgs.length; i++) {
+        var ox = entranceOffsets[i] ? entranceOffsets[i][0] : 0;
+        var oy = entranceOffsets[i] ? entranceOffsets[i][1] : 0;
+        imgs[i].style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        imgs[i].style.transform = 'translate(' + ox + 'px, ' + oy + 'px)';
+      }
+      // 入场动画结束后切换到鼠标跟随模式
+      setTimeout(function () {
+        for (var i = 0; i < imgs.length; i++) {
+          imgs[i].style.transition = '';
+        }
+      }, 1300);
+    }
+  
+    // 监听s7进入视口（anim-active类被添加时）
+    var observer = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        if (s7.classList.contains('anim-active')) {
+          triggerEntrance();
+          observer.disconnect();
+          break;
+        }
+      }
+    });
+    observer.observe(s7, { attributes: true, attributeFilter: ['class'] });
+    // 如果已经有anim-active，直接触发
+    if (s7.classList.contains('anim-active')) {
+      triggerEntrance();
+      observer.disconnect();
+    }
+  
+    document.addEventListener('mousemove', function (e) {
+      if (currentPage !== 5) return;
+      // 以整个视口为参考区域
+      targetX = e.clientX / window.innerWidth - 0.5;
+      targetY = e.clientY / window.innerHeight - 0.5;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateParallax);
+      }
+    });
+  
+    document.addEventListener('mouseleave', function () {
+      targetX = 0;
+      targetY = 0;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateParallax);
+      }
+    });
+  
+    function updateParallax() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+  
+      for (var i = 0; i < imgs.length; i++) {
+        var f = factors[i] || 20;
+        var dx = currentX * f;
+        var dy = currentY * f;
+        imgs[i].style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      }
+  
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        rafId = requestAnimationFrame(updateParallax);
+      } else {
+        rafId = null;
+      }
+    }
+  })();
 })();

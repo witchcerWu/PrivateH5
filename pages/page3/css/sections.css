@@ -1,0 +1,32 @@
+/* Page3/4 - 自由滚动长页面样式 */
+
+/* 覆盖 base.css 的全页翻页模式 */
+html {
+  height: auto;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+}
+
+body {
+  opacity: 1 !important;
+  overflow: visible !important;
+  min-height: auto !important;
+  display: block !important;
+  height: auto !important;
+  background: #000;
+}
+
+/* 图片长流布局 */
+.gallery-scroll {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-scroll img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

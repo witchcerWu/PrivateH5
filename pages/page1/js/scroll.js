@@ -33,12 +33,16 @@
   const s11Frames = s11 ? s11.querySelectorAll('.s11__frame') : [];
   const s11Dots = s11 ? s11.querySelectorAll('.s11__dot') : [];
 
+  const s14 = document.getElementById('s14');
+  const s14Frames = s14 ? s14.querySelectorAll('.s14__frame') : [];
+
   // 构建翻页点（每个 section 一个点，s5/s7/s11 也只有一个）
   let pages = [];
   let pageHeights = []; // 每个 section 的实际高度
   let s5PageIndex = -1; // s5 在 pages 中的索引
   let s7PageIndex = -1; // s7 在 pages 中的索引
   let s11PageIndex = -1; // s11 在 pages 中的索引
+  let s14PageIndex = -1; // s14 在 pages 中的索引
   function buildPages() {
     pages = [];
     pageHeights = [];
@@ -46,6 +50,7 @@
       if (sec === s5) s5PageIndex = pages.length;
       if (sec === s7) s7PageIndex = pages.length;
       if (sec === s11) s11PageIndex = pages.length;
+      if (sec === s14) s14PageIndex = pages.length;
       pages.push(sec.offsetTop);
       pageHeights.push(sec.offsetHeight);
     });
@@ -105,7 +110,7 @@
 
   // 判断是否为帧切换 section（不需要屏内滚动）
   function isFrameSection(pageIdx) {
-    return pageIdx === s5PageIndex || pageIdx === s7PageIndex || pageIdx === s11PageIndex;
+    return pageIdx === s5PageIndex || pageIdx === s7PageIndex || pageIdx === s11PageIndex || pageIdx === s14PageIndex;
   }
 
   // 屏内滚动步长（每次滚动的距离）
@@ -123,6 +128,10 @@
   let s11Frame = 0;
   const S10_TOTAL_FRAMES = s11Frames.length || 3;
 
+  // s14 帧状态
+  let s14Frame = 0;
+  const S14_TOTAL_FRAMES = s14Frames.length || 2;
+
   // ========== 动画引擎 ==========
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
@@ -139,7 +148,6 @@
       return;
     }
     let startTime = null;
-    let unlocked = false;
 
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
@@ -147,12 +155,6 @@
       const progress = Math.min(elapsed / duration, 1);
       currentOffset = startOffset + distance * easeOutCubic(progress);
       inner.style.transform = 'translateY(' + (-currentOffset) + 'px)';
-
-      // 5% 时提前解锁，允许接受下一次输入
-      if (!unlocked && progress >= 0.05) {
-        unlocked = true;
-        isAnimating = false;
-      }
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -194,6 +196,17 @@
     });
     s7Dots.forEach(function (d, i) {
       d.classList.toggle('s7__dot--active', i === index);
+    });
+  }
+
+  // ========== S14 帧切换 ==========
+  function switchS14Frame(index) {
+    s14Frame = index;
+    s14Frames.forEach(function (f, i) {
+      f.classList.remove('s14__frame--active');
+      if (i === index) {
+        f.classList.add('s14__frame--active');
+      }
     });
   }
 
@@ -241,6 +254,14 @@
       return;
     }
 
+    // 在 s14 页面：先切换帧
+    if (currentPage === s14PageIndex && s14Frame < S14_TOTAL_FRAMES - 1) {
+      isAnimating = true;
+      switchS14Frame(s14Frame + 1);
+      setTimeout(function () { isAnimating = false; }, 500);
+      return;
+    }
+
     // 非帧切换 section：如果内容超出视口，先屏内滚动
     if (!isFrameSection(currentPage)) {
       var maxIntra = getMaxIntraScroll(currentPage);
@@ -257,11 +278,19 @@
 
     // 翻到下一个 section
     var nextPage = currentPage + 1;
-    if (nextPage >= pages.length) return false;
+    if (nextPage >= pages.length) {
+      // 已到最后一页末尾 → 跳转到 page2（双向连续滚动）
+      if (window.__navSetFrom) window.__navSetFrom(1);
+      sessionStorage.setItem('projectEntryDirection', 'forward');
+      if (window.__navigateWithTransition) { window.__navigateWithTransition('../page2/index.html', 2); }
+      else { window.location.href = '../page2/index.html'; }
+      return;
+    }
     isAnimating = true;
     currentPage = nextPage;
     intraOffset = 0;
     triggerSectionAnim(currentPage);
+
     // 如果进入 s5，重置到第一帧
     if (currentPage === s5PageIndex) {
       s5Frame = 0;
@@ -276,6 +305,11 @@
     if (currentPage === s11PageIndex) {
       s11Frame = 0;
       switchS10Frame(0);
+    }
+    // 如果进入 s14，重置到第一帧
+    if (currentPage === s14PageIndex) {
+      s14Frame = 0;
+      switchS14Frame(0);
     }
     updateIndicator();
     animateTo(pages[currentPage], 500);
@@ -308,6 +342,14 @@
       return;
     }
 
+    // 在 s14 页面：先回退帧
+    if (currentPage === s14PageIndex && s14Frame > 0) {
+      isAnimating = true;
+      switchS14Frame(s14Frame - 1);
+      setTimeout(function () { isAnimating = false; }, 500);
+      return;
+    }
+
     // 非帧切换 section：如果当前有屏内偏移，先往回滚
     if (!isFrameSection(currentPage) && intraOffset > 0) {
       isAnimating = true;
@@ -324,6 +366,7 @@
     if (prevPage < 0) return false;
     isAnimating = true;
     currentPage = prevPage;
+
     // 如果回到 s5，定位到最后一帧
     if (currentPage === s5PageIndex) {
       s5Frame = S5_TOTAL_FRAMES - 1;
@@ -338,6 +381,11 @@
     if (currentPage === s11PageIndex) {
       s11Frame = S10_TOTAL_FRAMES - 1;
       switchS10Frame(s11Frame);
+    }
+    // 如果回到 s14，定位到最后一帧
+    if (currentPage === s14PageIndex) {
+      s14Frame = S14_TOTAL_FRAMES - 1;
+      switchS14Frame(s14Frame);
     }
     // 回到上一个 section 时，定位到其底部（展示最后一屏内容）
     triggerSectionAnim(currentPage);
@@ -361,8 +409,10 @@
     if (currentPage === s5PageIndex) { s5Frame = 0; switchS5Frame(0); }
     if (currentPage === s7PageIndex) { s7Frame = 0; switchS7Frame(0); }
     if (currentPage === s11PageIndex) { s11Frame = 0; switchS10Frame(0); }
+    if (currentPage === s14PageIndex) { s14Frame = 0; switchS14Frame(0); }
     triggerSectionAnim(currentPage);
     updateIndicator();
+
     animateTo(pages[currentPage], 500);
   }
 
@@ -509,12 +559,16 @@
     '.s4__header',
     '.s5__header',
     '.s6__header',
+    '.s6__main-content',
+    '.s6__right-col',
+    '.s6b__header',
+    '.s6b__left-content',
+    '.s6b__right-content',
     '.s7__title-block',
     '.s9__header',
     '.s10__header',
     '.s11__header',
     '.s13__header',
-    '.s14__header',
     '.s15__header',
     '.s1__title-top',
     '.s1__title-bottom',
@@ -529,9 +583,8 @@
     '.s3__problem-row',
     '.s4__col-content',
     '.s4__bottom-bar',
-    '.s5__panel',
-    '.s5__left-diagram',
     '.s5__bottom-info',
+    '.s5__left-diagram',
     '.s6__left',
     '.s6__right',
     '.s7__left-annotation',
@@ -547,8 +600,15 @@
     '.s13__subtitle-row',
     '.s13__left-content',
     '.s13__right-content',
-    '.s14__subtitle',
-    '.s14__content',
+    '.s14__header',
+    '.s14__bottom-strip',
+    '.s14__phone-1',
+    '.s14__phone-2',
+    '.s14b__header',
+    '.s14b__subtitle-text',
+    '.s14b__before-col',
+    '.s14b__after-col',
+    '.s14b__annotations',
     '.s15__carousel',
     '.phone-card'
   ];
@@ -592,14 +652,134 @@
   }
 
   initAnimElements();
-  setTimeout(function () {
-    triggerSectionAnim(0);
-  }, 300);
 
-  // 初始化
-  switchS5Frame(0);
-  switchS7Frame(0);
-  switchS10Frame(0);
-  buildIndicator();
-  document.body.classList.add('ready');
+  // ========== 反向进入支持（从 page2 回退到 page1 时定位到末尾） ==========
+  var entryDir = sessionStorage.getItem('projectEntryDirection');
+  sessionStorage.removeItem('projectEntryDirection');
+
+  if (entryDir === 'backward' && pages.length > 0) {
+    // 定位到最后一个 section
+    currentPage = pages.length - 1;
+    intraOffset = 0;
+
+    // 如果最后一页是帧切换 section，定位到最后一帧
+    if (currentPage === s5PageIndex) { s5Frame = S5_TOTAL_FRAMES - 1; switchS5Frame(s5Frame); }
+    if (currentPage === s7PageIndex) { s7Frame = S7_TOTAL_FRAMES - 1; switchS7Frame(s7Frame); }
+    if (currentPage === s11PageIndex) { s11Frame = S10_TOTAL_FRAMES - 1; switchS10Frame(s11Frame); }
+    if (currentPage === s14PageIndex) { s14Frame = S14_TOTAL_FRAMES - 1; switchS14Frame(s14Frame); }
+
+    // 如果非帧切换且内容超过视口，定位到底部
+    if (!isFrameSection(currentPage)) {
+      var maxIntraInit = getMaxIntraScroll(currentPage);
+      if (maxIntraInit > 0) intraOffset = maxIntraInit;
+    }
+
+    currentOffset = pages[currentPage] + intraOffset;
+    inner.style.transform = 'translateY(' + (-currentOffset) + 'px)';
+
+    // 触发所有已经过的 section 动画
+    for (var ai = 0; ai <= currentPage; ai++) {
+      triggerSectionAnim(ai);
+    }
+    buildIndicator();
+    wrapper.classList.add('ready');
+  } else {
+    // 正常进入：从第一页开始
+    switchS5Frame(0);
+    switchS7Frame(0);
+    switchS10Frame(0);
+    setTimeout(function () {
+      triggerSectionAnim(0);
+    }, 300);
+    buildIndicator();
+    wrapper.classList.add('ready');
+  }
+
+  // ========== S11 鼠标跟随视差 ==========
+  (function () {
+    var s11Section = document.querySelector('.s11');
+    if (!s11Section) return;
+    var cards = s11Section.querySelectorAll('.s11__card');
+    var phone = s11Section.querySelector('.s11__phone-hero');
+    var allEls = [];
+    for (var i = 0; i < cards.length; i++) allEls.push(cards[i]);
+    if (phone) allEls.push(phone);
+
+    // 每个元素不同的跟随强度
+    var factors = [12, 18, 8, 14, 10, 20, 16, 9, 11, 6];
+    var rafId = null;
+    var targetX = 0;
+    var targetY = 0;
+    var currentX = 0;
+    var currentY = 0;
+    var entered = false;
+    var s11Idx = Array.prototype.indexOf.call(sections, s11Section);
+
+    function triggerEntrance() {
+      if (entered) return;
+      entered = true;
+      var entranceOffsets = [
+        [-14, -10], [12, -8], [-16, 10], [8, 14], [-10, 6],
+        [14, -12], [-8, 10], [10, -14], [16, 8], [-6, -8]
+      ];
+      for (var i = 0; i < allEls.length; i++) {
+        var ox = entranceOffsets[i] ? entranceOffsets[i][0] : 0;
+        var oy = entranceOffsets[i] ? entranceOffsets[i][1] : 0;
+        allEls[i].style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        allEls[i].style.transform = 'translate(' + ox + 'px, ' + oy + 'px)';
+      }
+      setTimeout(function () {
+        for (var i = 0; i < allEls.length; i++) {
+          allEls[i].style.transition = '';
+        }
+      }, 1300);
+    }
+
+    var observer = new MutationObserver(function (mutations) {
+      if (s11Section.classList.contains('anim-active')) {
+        triggerEntrance();
+        observer.disconnect();
+      }
+    });
+    observer.observe(s11Section, { attributes: true, attributeFilter: ['class'] });
+    if (s11Section.classList.contains('anim-active')) {
+      triggerEntrance();
+      observer.disconnect();
+    }
+
+    document.addEventListener('mousemove', function (e) {
+      if (currentPage !== s11Idx) return;
+      targetX = e.clientX / window.innerWidth - 0.5;
+      targetY = e.clientY / window.innerHeight - 0.5;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateParallax);
+      }
+    });
+
+    document.addEventListener('mouseleave', function () {
+      targetX = 0;
+      targetY = 0;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateParallax);
+      }
+    });
+
+    function updateParallax() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+
+      for (var i = 0; i < allEls.length; i++) {
+        var f = factors[i] || 10;
+        var dx = currentX * f;
+        var dy = currentY * f;
+        allEls[i].style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      }
+
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        rafId = requestAnimationFrame(updateParallax);
+      } else {
+        rafId = null;
+      }
+    }
+  })();
 })();
