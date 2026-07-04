@@ -83,7 +83,7 @@ body {
 .page-wrapper {
   width: var(--page-width);
   height: 1080px;
-  clip-path: inset(-1px -200vmax);
+  clip-path: inset(0 -200vmax);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -112,5 +112,5 @@ body {
   width: var(--page-width);
   position: relative;
   flex-shrink: 0;
-  contain: layout style paint;
+  contain: layout style;
 }

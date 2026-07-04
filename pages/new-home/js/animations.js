@@ -388,6 +388,15 @@
     const muteBtnEl = document.querySelector('.gallery__mute');
     const PROGRESS_SHOW = 0.5; // 缩放进度超过此值显示控件
 
+    // Toast 提示：视频全屏后提示用户继续下滑关闭
+    // 挂载到 body 上用 fixed 定位，避免被 gallery 内部层叠上下文遮挡
+    const toast = document.createElement('div');
+    toast.className = 'gallery__toast';
+    toast.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></svg><span>继续下滑可关闭视频</span>';
+    document.body.appendChild(toast);
+    let toastShown = false;
+    let toastTimer = null;
+
     // 周围图片的推开方向（与视频保持等距推开）
     // DOM顺序: 1,2,3(行1), 4(行2左), 5(行2右), 6,7,8(行3)
     const pushDirections = [
@@ -439,6 +448,16 @@
           eased = 0;
         }
         eased = Math.max(0, Math.min(1, eased));
+
+        // toast：接近全屏时显示，缩小时隐藏
+        if (eased >= 0.95 && !toastShown) {
+          toastShown = true;
+          toast.classList.add('is-visible');
+          toastTimer = setTimeout(() => { toast.classList.remove('is-visible'); }, 3000);
+        } else if (eased < 0.9 && toastShown) {
+          toast.classList.remove('is-visible');
+          if (toastTimer) clearTimeout(toastTimer);
+        }
     
         // 中心视频放大：使用 transform:scale 实现渐进式缩放
         const vw = window.innerWidth;
@@ -538,33 +557,13 @@
     }, { threshold: 0.15 }); // gallery 区域 15% 可见时触发
     videoObserver.observe(gallerySection || video);
 
-    // 首次真实用户手势(click/touch)后解锁音频并开启声音
-    // 注意：scroll 不被浏览器视为用户手势，不能用来解锁音频
+    // 声音只通过点击声音按钮开启，移除全局手势自动解锁
     const muteBtn = document.querySelector('.gallery__mute');
     const syncIcon = () => {
       if (muteBtn) muteBtn.classList.toggle('is-on', !video.muted);
     };
 
-    let audioUnlocked = false;
-    const unlockAudio = () => {
-      if (audioUnlocked) return;
-      audioUnlocked = true;
-      video.muted = false;
-      video.volume = 1;
-      syncIcon();
-      // 如果视频已在播放中，无需额外操作；如果被暂停则尝试带声音播放
-      if (video.paused) {
-        const rect = video.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight && rect.bottom > 0;
-        if (inView) tryPlay();
-      }
-      window.removeEventListener('touchstart', unlockAudio);
-      window.removeEventListener('click', unlockAudio);
-    };
-    window.addEventListener('touchstart', unlockAudio, { passive: true });
-    window.addEventListener('click', unlockAudio);
-
-    // ---- 声音开关 ----
+    // ---- 声音开关（仅通过此按钮控制） ----
     syncIcon();
     if (muteBtn) {
       muteBtn.addEventListener('click', (e) => {
@@ -664,9 +663,13 @@
     initScrollDrivenTyping();
   }
 
-  // 使用 fonts.ready：仅等字体加载完毕就启动动画，不必等所有图片/视频
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(startAnimations);
+  // 仅等首屏 Hero 所需的 Bold 字体加载完就启动动画，不必等全部字体
+  // document.fonts.ready 会等页面所有字重全部加载（5个woff2），导致动画延迟
+  // 改为：只等 Bold 700（Hero 标题字体），加超时兜底
+  if (document.fonts && document.fonts.load) {
+    const heroFont = document.fonts.load('bold 1em AlibabaPuHuiTi');
+    const timeout = new Promise(resolve => setTimeout(resolve, 1500));
+    Promise.race([heroFont, timeout]).then(startAnimations);
   } else {
     // 回退：DOMContentLoaded 后立即启动
     if (document.readyState === 'loading') {

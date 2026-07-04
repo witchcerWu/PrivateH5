@@ -600,6 +600,7 @@ html {
 .s5__header-label {
   font-size: 20px;
   line-height: 28px;
+  font-weight: 300;
   color: var(--black);
   white-space: nowrap;
 }
@@ -614,7 +615,6 @@ html {
   font-weight: 700;
   line-height: 49px;
   color: var(--black);
-  font-family: 'AlibabaSans112-Medium', sans-serif;
   white-space: nowrap;
   margin-top: -1px;
 }
@@ -1655,12 +1655,13 @@ html {
 
 /* Bottom horizontal line */
 .s7__hline-bottom {
-  width: 1440px;
   height: 0.5px;
   position: absolute;
   z-index: 20;
   bottom: 34px;
-  left: -48px;
+  left: 47px;
+  right: 47px;
+  background: #000;
 }
 
 
@@ -1687,6 +1688,7 @@ html {
 .s9__header-sub {
   font-size: 20px;
   line-height: 28px;
+  font-weight: 300;
   color: #000;
 }
 .s9__header-title {
@@ -1945,6 +1947,7 @@ html {
 .s10__header-sub {
   font-size: 20px;
   line-height: 28px;
+  font-weight: 300;
   color: #000;
 }
 .s10__header-title {
@@ -2170,6 +2173,7 @@ html {
 .s11__header-label {
   font-size: 20px;
   line-height: 28px;
+  font-weight: 300;
   color: var(--black);
   white-space: nowrap;
 }
@@ -2658,7 +2662,6 @@ html {
   font-size: 36px;
   font-weight: 700;
   line-height: 49px;
-  font-family: 'Alibaba PuHuiTi', sans-serif;
   color: #000000;
   margin-top: 2px;
 }

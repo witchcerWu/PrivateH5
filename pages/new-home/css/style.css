@@ -853,6 +853,44 @@ body {
   display: none;
 }
 
+/* Toast 提示 - 视频全屏后提示下滑关闭，fixed定位不受gallery层叠上下文影响 */
+.gallery__toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 100px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+.gallery__toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.gallery__toast svg {
+  flex-shrink: 0;
+  animation: toast-bounce 1.2s ease-in-out infinite;
+}
+@keyframes toast-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
 /* 中心视频进度条 - 叠加在视频底部居中 */
 .gallery__progress {
   position: absolute;
