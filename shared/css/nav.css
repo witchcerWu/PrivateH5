@@ -83,10 +83,15 @@
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 13px;
+  /* 固定行高：让胶囊高度由 line-height 决定，而非字体固有度量，
+     避免字体 swap（fallback → AlibabaPuHuiTi）时导航高度跳动 */
+  line-height: 18px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  transition: color 0.3s ease;
+  /* 统一文字颜色渐变：选中(白→黑)与取消选中(黑→白)两个方向都用均匀的
+     ease 缓动，全程平滑可见，避免强 ease-out 曲线让变色显得“瞬间完成” */
+  transition: color 0.4s ease;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
@@ -95,12 +100,24 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* 来源 tab（切页前选中的那个）：入场时滑块仍在其下，先呈选中态(黑字) */
+.site-nav__item.is-slider-source {
+  color: #0a0a0a;
+}
+
+/* 取消选中：滑块滑走后，文字由黑用 ease-out（前段快）迅速渐变回可见亮色。
+   深色页面(如 Others 黑底)上，黑字一旦失去绿色滑块背景就会“看不见”，
+   用 ease-out 让文字快速变亮，避免那一瞬的文字闪烁；同时仍是平滑渐变。 */
+.site-nav__item.is-slider-deselecting {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.35s ease-out;
+}
+
 /* active 项：滑块（绿色）到位前保持亮色，在深色导航底上可读；
    滑块滑到位后由 JS 加 .is-slider-arrived，文字再平滑渐变为黑
-   （避免“字先黑、绿块后到”）。用与滑块同款缓动，衔接更自然。 */
+   （避免“字先黑、绿块后到”）。过渡沿用基类的 color 0.4s ease。 */
 .site-nav__item--active {
   color: rgba(255, 255, 255, 0.9);
-  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .site-nav__item--active.is-slider-arrived,

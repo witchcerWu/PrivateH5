@@ -14,6 +14,9 @@
 
   var STORAGE_KEY = 'navFromIndex';
 
+  // 入场滑动进行中标志：滑动期间字体校正不要插手，避免打断/跳过动画
+  var sliderSliding = false;
+
   // 各页面对应的背景色（与各页面 html background 一致）
   var PAGE_BG_MAP = {
     0: '#FFFFFF',   // Home
@@ -71,9 +74,13 @@
     positionSliderAt(slider, items, startIndex);
     slider.classList.add('site-nav__slider--visible');
     slider.dataset.painted = '1';
-    // 直达/同 tab：滑块首帧就在 active 下，文字立即变黑（无滑动可等）
-    if (startIndex === activeIndex && items[activeIndex]) {
-      items[activeIndex].classList.add('is-slider-arrived');
+    if (startIndex === activeIndex) {
+      // 直达/同 tab：滑块首帧就在 active 下，文字立即变黑（无滑动可等）
+      if (items[activeIndex]) items[activeIndex].classList.add('is-slider-arrived');
+    } else if (items[startIndex]) {
+      // 切页入场：滑块首帧在来源 tab 下，来源 tab 先呈选中态(黑字)，
+      // 待滑块滑走时再渐变回普通色（见 playSliderAnimation）。
+      items[startIndex].classList.add('is-slider-source');
     }
   }
   window.__navPaintSlider = paintInitialSlider;
@@ -98,35 +105,51 @@
 
     if (!isNaN(fromIndex) && fromIndex !== activeIndex) {
       // 有真实滑动：滑块从来源滑到 active，滑到位后文字才变黑
+      sliderSliding = true;
 
-      // 先定位到来源 tab（无动画）
+      // 先确保滑块处于来源位置（首帧通常已由 paintInitialSlider 画好，
+      // 这里兜底并在字体变化时校正来源位置），此时不带过渡。
       slider.classList.remove('site-nav__slider--animated');
       positionSliderAt(slider, items, fromIndex);
-
-      // 定位完成后显示 slider
       slider.classList.add('site-nav__slider--visible');
 
-      // 强制 reflow 确保初始位置渲染
-      void slider.offsetWidth;
+      // 关键：用双 rAF 稳定触发过渡——先让来源位置真正渲染一帧，
+      // 下一帧再开启过渡并滑到 active。避免与同步样式刷新/微任务合并
+      // 导致浏览器“跳过”过渡（这正是之前偶发无滑动动画的原因）。
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          slider.classList.add('site-nav__slider--animated');
+          positionSliderAt(slider, items, activeIndex);
 
-      // 再加上过渡并滑到当前 active tab
-      slider.classList.add('site-nav__slider--animated');
-      positionSliderAt(slider, items, activeIndex);
+          // 滑块开始离开来源 tab：由选中态(黑)切到 deselecting，用 ease-out
+          // 快速渐变回可见亮色，避免深色页面上黑字失去绿块背景时的文字闪烁。
+          var srcItem = items[fromIndex];
+          if (srcItem) {
+            srcItem.classList.remove('is-slider-source');
+            srcItem.classList.add('is-slider-deselecting');
+            // 渐变结束后清理，恢复普通状态（含 hover 行为）
+            setTimeout(function () {
+              srcItem.classList.remove('is-slider-deselecting');
+            }, 450);
+          }
 
-      // 等滑块 left 过渡结束（到位）再让文字变黑；加超时兜底
-      var done = false;
-      var finish = function () {
-        if (done) return;
-        done = true;
-        slider.removeEventListener('transitionend', onEnd);
-        markArrived();
-      };
-      var onEnd = function (e) {
-        if (e.propertyName && e.propertyName !== 'left') return;
-        finish();
-      };
-      slider.addEventListener('transitionend', onEnd);
-      setTimeout(finish, 550);
+          // 等滑块 left 过渡结束（到位）再让文字变黑；加超时兜底
+          var done = false;
+          var finish = function () {
+            if (done) return;
+            done = true;
+            sliderSliding = false;
+            slider.removeEventListener('transitionend', onEnd);
+            markArrived();
+          };
+          var onEnd = function (e) {
+            if (e.propertyName && e.propertyName !== 'left') return;
+            finish();
+          };
+          slider.addEventListener('transitionend', onEnd);
+          setTimeout(finish, 700);
+        });
+      });
     } else {
       // 无滑动（直达/同 tab）：滑块已在 active 下，文字立即变黑
       slider.classList.remove('site-nav__slider--animated');
@@ -236,10 +259,12 @@
     if (nav) nav.classList.add('site-nav--ready');
 
     // 字体真正就绪后，把滑块重新对齐到当前 active，修正首访时字体 swap
-    // 造成的轻微偏移。保留过渡：位置若有变化会平滑校正，无变化则为空操作，
-    // 不会打断入场时“从来源 tab 滑过来”的动画。
+    // 造成的轻微偏移。若此刻正在滑动，则跳过——否则会把滑块直接设到
+    // active 位置，打断/跳过“从来源 tab 滑过来”的动画（缓存命中时该回调
+    // 会作为微任务在绘制前立即执行，正是之前偶发无动画的元凶之一）。
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(function () {
+        if (sliderSliding) return;
         var slider = getSlider();
         var items = getNavItems();
         if (!slider || items.length === 0) return;
