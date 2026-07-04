@@ -172,6 +172,7 @@
     }
     isAnimating = true;
     currentPage = nextPage;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
     triggerSectionAnim(currentPage);
     updateIndicator();
     animateTo(pages[currentPage], 500);
@@ -199,6 +200,7 @@
     }
     isAnimating = true;
     currentPage = prevPage;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
     triggerSectionAnim(currentPage);
     updateIndicator();
     animateTo(pages[currentPage], 500);

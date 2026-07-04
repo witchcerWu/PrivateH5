@@ -296,6 +296,7 @@
     isAnimating = true;
     currentPage = nextPage;
     intraOffset = 0;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
     triggerSectionAnim(currentPage);
 
     // 如果进入 s5，重置到第一帧
@@ -373,6 +374,7 @@
     if (prevPage < 0) return false;
     isAnimating = true;
     currentPage = prevPage;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
 
     // 如果回到 s5，定位到最后一帧
     if (currentPage === s5PageIndex) {

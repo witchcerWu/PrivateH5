@@ -2189,7 +2189,7 @@ body {
   top: 225px;
   width: 369px;
   height: 779px;
-  background-image: url('../images/s13-11.png');
+  background-image: url('../images/s13-11.webp');
 }
 
 .s13__keywords-img--front {
@@ -2198,7 +2198,7 @@ body {
   width: 366px;
   height: 779px;
   z-index: 2;
-  background-image: url('../images/s13-22.png');
+  background-image: url('../images/s13-22.webp');
   box-shadow: -16px 0px 30px 0px rgba(0, 0, 0, 0.15);
 }
 
