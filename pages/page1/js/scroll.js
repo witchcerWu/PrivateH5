@@ -21,6 +21,13 @@
   updatePageScale();
 
   const sections = inner.querySelectorAll('.section');
+  let preloadSectionImages = null;
+  if (window.SectionImageLoader) {
+    preloadSectionImages = SectionImageLoader.init(Array.from(sections), {
+      radius: 1,
+      eagerIndexes: [0],
+    });
+  }
   const s5 = document.getElementById('s5');
   const s5Frames = s5 ? s5.querySelectorAll('.s5__frame') : [];
   const s5Dots = s5 ? s5.querySelectorAll('.s5__dot') : [];
@@ -406,6 +413,7 @@
     isAnimating = true;
     currentPage = targetPage;
     intraOffset = 0;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
     if (currentPage === s5PageIndex) { s5Frame = 0; switchS5Frame(0); }
     if (currentPage === s7PageIndex) { s7Frame = 0; switchS7Frame(0); }
     if (currentPage === s11PageIndex) { s11Frame = 0; switchS10Frame(0); }
@@ -683,6 +691,7 @@
     }
     buildIndicator();
     wrapper.classList.add('ready');
+    if (preloadSectionImages) preloadSectionImages(currentPage);
   } else {
     // 正常进入：从第一页开始
     switchS5Frame(0);
@@ -693,6 +702,7 @@
     }, 300);
     buildIndicator();
     wrapper.classList.add('ready');
+    if (preloadSectionImages) preloadSectionImages(currentPage);
   }
 
   // ========== S11 鼠标跟随视差 ==========

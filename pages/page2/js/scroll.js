@@ -22,6 +22,13 @@
   updatePageScale();
 
   var sections = inner.querySelectorAll('.section');
+  var preloadSectionImages = null;
+  if (window.SectionImageLoader) {
+    preloadSectionImages = SectionImageLoader.init(Array.prototype.slice.call(sections), {
+      radius: 1,
+      eagerIndexes: [0],
+    });
+  }
 
   // ========== 构建翻页偏移表 ==========
   var pages = [];
@@ -202,6 +209,7 @@
     if (isAnimating || targetPage === currentPage || targetPage < 0 || targetPage >= pages.length) return;
     isAnimating = true;
     currentPage = targetPage;
+    if (preloadSectionImages) preloadSectionImages(currentPage);
     triggerSectionAnim(currentPage);
     updateIndicator();
     animateTo(pages[currentPage], 500);
@@ -386,6 +394,7 @@
     }
     buildIndicator();
     wrapper.classList.add('ready');
+    if (preloadSectionImages) preloadSectionImages(currentPage);
   } else {
     // 正常进入：从第一页开始
     setTimeout(function () {
@@ -393,6 +402,7 @@
     }, 300);
     buildIndicator();
     wrapper.classList.add('ready');
+    if (preloadSectionImages) preloadSectionImages(currentPage);
   }
 
   // ========== S7 鼠标跟随视差 ==========
