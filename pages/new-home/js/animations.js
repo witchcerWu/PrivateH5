@@ -25,6 +25,9 @@
       outer.appendChild(inner);
       el.appendChild(outer);
     });
+    // 拆字完成：此时字符仍处于 translateY(100%) 被裁掉的隐藏态，
+    // 元素可以显现但看不到文字，随后由 is-visible 触发逐字滑入
+    el.classList.add('is-split-ready');
   }
 
   // Initialize all split-text elements

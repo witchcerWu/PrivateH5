@@ -1066,6 +1066,11 @@ body {
 }
 
 /* Split text characters */
+/* 启用 JS 时，拆字完成前先隐藏标题，避免原始纯文本闪现后再重新动画 */
+.js [data-split-text]:not(.is-split-ready) {
+  visibility: hidden;
+}
+
 .split-char {
   display: inline-block;
   overflow: hidden;

@@ -11,7 +11,12 @@
   <link rel="stylesheet" href="../../shared/css/nav.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="../../shared/js/page-transition.js"></script>
-  <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+  <script>
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    // 尽早标记 JS 可用，配合 CSS 在拆字前隐藏标题，避免原始文字闪现
+    document.documentElement.className += ' js';
+  </script>
 </head>
 <body>
   <!-- Navigation -->
