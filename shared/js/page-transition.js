@@ -54,6 +54,30 @@
     slider.style.setProperty('--slider-width', width + 'px');
   }
 
+  // ============ 首帧定位滑块（解析期调用，先于首次绘制）============
+  // 由每个页面 <nav> 之后的内联脚本立即调用，确保滑块在首帧就已定位并可见，
+  // 彻底避免“滑块先消失再出现”（等到 DOMContentLoaded 才定位会晚于首帧绘制）。
+  // 定位到来源 tab（无来源则定位到 active），不清除 sessionStorage，
+  // 后续 playSliderAnimation 仍能读取来源并执行滑动动画。
+  function paintInitialSlider() {
+    var slider = getSlider();
+    var items = getNavItems();
+    if (!slider || items.length === 0) return;
+    var activeIndex = getActiveIndex();
+    var fromStr = sessionStorage.getItem(STORAGE_KEY);
+    var startIndex = (fromStr !== null) ? parseInt(fromStr, 10) : activeIndex;
+    if (isNaN(startIndex)) startIndex = activeIndex;
+    slider.classList.remove('site-nav__slider--animated');
+    positionSliderAt(slider, items, startIndex);
+    slider.classList.add('site-nav__slider--visible');
+    slider.dataset.painted = '1';
+    // 直达/同 tab：滑块首帧就在 active 下，文字立即变黑（无滑动可等）
+    if (startIndex === activeIndex && items[activeIndex]) {
+      items[activeIndex].classList.add('is-slider-arrived');
+    }
+  }
+  window.__navPaintSlider = paintInitialSlider;
+
   // ============ 入场滑动动画 ============
   function playSliderAnimation() {
     var slider = getSlider();
@@ -61,11 +85,19 @@
     if (!slider || items.length === 0) return;
 
     var activeIndex = getActiveIndex();
+    var activeItem = items[activeIndex];
     var fromIndexStr = sessionStorage.getItem(STORAGE_KEY);
     sessionStorage.removeItem(STORAGE_KEY);
 
-    if (fromIndexStr !== null) {
-      var fromIndex = parseInt(fromIndexStr, 10);
+    // 标记滑块已到位 → active 文字变黑
+    function markArrived() {
+      if (activeItem) activeItem.classList.add('is-slider-arrived');
+    }
+
+    var fromIndex = (fromIndexStr !== null) ? parseInt(fromIndexStr, 10) : NaN;
+
+    if (!isNaN(fromIndex) && fromIndex !== activeIndex) {
+      // 有真实滑动：滑块从来源滑到 active，滑到位后文字才变黑
 
       // 先定位到来源 tab（无动画）
       slider.classList.remove('site-nav__slider--animated');
@@ -80,11 +112,27 @@
       // 再加上过渡并滑到当前 active tab
       slider.classList.add('site-nav__slider--animated');
       positionSliderAt(slider, items, activeIndex);
+
+      // 等滑块 left 过渡结束（到位）再让文字变黑；加超时兜底
+      var done = false;
+      var finish = function () {
+        if (done) return;
+        done = true;
+        slider.removeEventListener('transitionend', onEnd);
+        markArrived();
+      };
+      var onEnd = function (e) {
+        if (e.propertyName && e.propertyName !== 'left') return;
+        finish();
+      };
+      slider.addEventListener('transitionend', onEnd);
+      setTimeout(finish, 550);
     } else {
-      // 无来源信息：直接定位到 active（无动画）
+      // 无滑动（直达/同 tab）：滑块已在 active 下，文字立即变黑
       slider.classList.remove('site-nav__slider--animated');
       positionSliderAt(slider, items, activeIndex);
       slider.classList.add('site-nav__slider--visible');
+      markArrived();
     }
   }
 
@@ -179,20 +227,24 @@
 
   // ============ 初始化 ============
   function init() {
-    // 等字体加载完后再显示导航并定位 slider，避免 font-swap 导致缩窄
-    function doInit() {
-      playSliderAnimation();
-      initNavClick();
-      initProjectCardNav();
-      // 显示导航栏
-      var nav = document.querySelector('.site-nav');
-      if (nav) nav.classList.add('site-nav--ready');
-    }
+    // 立即定位并显示滑块：不再等字体 Promise（那会把定位推到首帧绘制之后，
+    // 导致滑块“先消失再出现”）。字体已在各页 <head> 预加载，度量基本准确。
+    playSliderAnimation();
+    initNavClick();
+    initProjectCardNav();
+    var nav = document.querySelector('.site-nav');
+    if (nav) nav.classList.add('site-nav--ready');
 
+    // 字体真正就绪后，把滑块重新对齐到当前 active，修正首访时字体 swap
+    // 造成的轻微偏移。保留过渡：位置若有变化会平滑校正，无变化则为空操作，
+    // 不会打断入场时“从来源 tab 滑过来”的动画。
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(doInit);
-    } else {
-      doInit();
+      document.fonts.ready.then(function () {
+        var slider = getSlider();
+        var items = getNavItems();
+        if (!slider || items.length === 0) return;
+        positionSliderAt(slider, items, getActiveIndex());
+      });
     }
   }
 

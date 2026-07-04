@@ -27,10 +27,11 @@
   display: flex;
   justify-content: center;
   pointer-events: none;
-  /* 初始不可见，等字体加载完再显示，避免导航栏因字体swap而缩窄 */
-  opacity: 0;
-  transition: opacity 0.18s ease-out;
+  /* 导航栏首帧即可见：不再用 opacity 淡入，避免每次切页时导航栏“闪一下”。
+     字体已在各页 <head> 预加载，基本不会有字体 swap 抖动。 */
+  opacity: 1;
 }
+/* 保留兼容旧逻辑（JS 仍会加此类，此处为幂等） */
 .site-nav--ready {
   opacity: 1;
 }
@@ -94,11 +95,15 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* active 项仅改文字颜色，背景由 slider 提供 */
+/* active 项：滑块（绿色）到位前保持亮色，在深色导航底上可读；
+   滑块滑到位后由 JS 加 .is-slider-arrived，文字再平滑渐变为黑
+   （避免“字先黑、绿块后到”）。用与滑块同款缓动，衔接更自然。 */
 .site-nav__item--active {
-  color: #0a0a0a;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.site-nav__item--active:hover {
+.site-nav__item--active.is-slider-arrived,
+.site-nav__item--active.is-slider-arrived:hover {
   color: #0a0a0a;
 }

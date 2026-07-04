@@ -6,6 +6,8 @@
   <title>From Random To Organized Shop - UX Design</title>
   <link rel="stylesheet" href="../../shared/css/base.css">
   <link rel="stylesheet" href="../../shared/css/components.css">
+  <!-- 预加载导航字体（Medium 500），避免切页时导航因等字体而闪烁 -->
+  <link rel="preload" href="../../shared/fonts/Alibaba-PuHuiTi-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../shared/css/nav.css">
   <link rel="stylesheet" href="css/sections.css?v=3">
   <script src="../../shared/js/page-transition.js"></script>
@@ -21,6 +23,8 @@
     <a class="site-nav__item" data-nav-index="3" href="../others/index.html">Others</a>
   </div>
 </nav>
+<!-- 首帧即定位滑块，避免“先消失再出现” -->
+<script>window.__navPaintSlider && window.__navPaintSlider();</script>
 
 <div class="page-wrapper" id="pageWrapper">
 <div class="page-inner" id="pageInner">
